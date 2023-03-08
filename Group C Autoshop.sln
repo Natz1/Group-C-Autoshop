@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group C Autoshop", "Group C Autoshop.csproj", "{79870FBA-B540-4967-931C-2D373AFE1022}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79870FBA-B540-4967-931C-2D373AFE1022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79870FBA-B540-4967-931C-2D373AFE1022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79870FBA-B540-4967-931C-2D373AFE1022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79870FBA-B540-4967-931C-2D373AFE1022}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C7F3464-BDA2-4E67-88E1-344B385C24CF}
+	EndGlobalSection
+EndGlobal
