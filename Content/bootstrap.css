@@ -5048,21 +5048,40 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+/*formatting login box*/
+.login-box {
+    background-color: #0B4851;
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    margin: 20px;
+    color: #fff;
+    position: absolute;
+    right: 120px;
+    text-align: center;
+}
+/*formatting website welcome*/
+.welcome {
+    position: absolute;
+    left: 160px;
+}
 .jumbotron {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
+    height: 100vh;
     color: #0B4851; /*text colour of jumbotron*/
     background-color: #ffffff; /*background colour*/
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
+  color: #0B4851;
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
+  font-size: 14px;
   font-weight: 200;
+  color: #0B4851;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
