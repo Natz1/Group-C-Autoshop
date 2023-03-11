@@ -5080,7 +5080,7 @@ a.badge:focus {
 .register-box {
     background-color: #0B4851;
     width: 350px;
-    height: 490px;
+    height: 550px;
     padding: 30px;
     margin: 20px;
     color: #fff;
@@ -5114,7 +5114,7 @@ a.badge:focus {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    height: 100vh;
+    height: 120vh;
     color: #0B4851; /*text colour of jumbotron*/
     background-color: #ffffff; /*background colour*/
 }
