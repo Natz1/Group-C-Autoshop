@@ -6,7 +6,10 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Group_C_Autoshop.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Group_C_Autoshop
 {
@@ -69,6 +72,102 @@ namespace Group_C_Autoshop
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //***********************Creating roles
+            var roleManager = Context.GetOwinContext().Get<ApplicationRoleManager>();
+            string name = "admin";
+            //***********************Checking if the role is already present
+            var search = roleManager.FindByName(name);
+            if (search == null)
+            {
+                IdentityRole roles = new IdentityRole();
+                roles.Id = "1";
+                roles.Name = "admin";
+                IdentityResult result = roleManager.Create(roles);
+            }
+
+            name = "enduser";
+            //***********************Checking if the role is already present
+            search = roleManager.FindByName(name);
+            if (search == null)
+            {
+                IdentityRole roles = new IdentityRole();
+                roles.Id = "2";
+                roles.Name = "enduser";
+                IdentityResult result = roleManager.Create(roles);
+            }
+
+            name = "manager";
+            //***********************Checking if the role is already present
+            search = roleManager.FindByName(name);
+            if (search == null)
+            {
+                IdentityRole roles = new IdentityRole();
+                roles.Id = "3";
+                roles.Name = "manager";
+                IdentityResult result = roleManager.Create(roles);
+            }
+
+            //***********************Creating admin user
+            var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
+            string email = "admin@gmail.com";
+            //***********************Check if user is already present
+            var search1 = userManager.FindByEmail(email);
+            if (search1 == null)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = "admin@gmail.com",
+                    Email = "admin@gmail.com"
+                };
+                IdentityResult result = userManager.Create(user, "Admin123!"); //Password
+                userManager.AddToRole(user.Id, "admin");
+            }
+
+            //***********************Creating admin user
+            var userManager1 = Context.GetOwinContext().Get<ApplicationUserManager>();
+            string email1 = "manager@gmail.com";
+            //***********************Check if user is already present
+            var search2 = userManager.FindByEmail(email);
+            if (search1 == null)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = "manager@gmail.com",
+                    Email = "manager@gmail.com"
+                };
+                IdentityResult result = userManager.Create(user, "Man123!"); //Password
+                userManager.AddToRole(user.Id, "manager");
+            }
+
+
+            //***********************Make navigation invisible
+            admin.Visible = false;
+            admin1.Visible = false;
+            admin2.Visible = false;
+            enduser.Visible = false;
+            enduser1.Visible = false;
+            enduser2.Visible = false;
+            //manager.Visible = false;
+
+            //***********************Make navigation visible depending on user role
+            if (Context.User.IsInRole("admin"))
+            {
+                admin.Visible = true;
+                admin1.Visible = true;
+                admin2.Visible = true;
+            }
+
+            if (Context.User.IsInRole("enduser"))
+            {
+                enduser.Visible = true;
+                enduser1.Visible = true;
+                enduser2.Visible = true;
+            }
+
+            if (Context.User.IsInRole("manager"))
+            {
+                //manager.Visible = true;
+            }
 
         }
 
