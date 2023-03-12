@@ -19,6 +19,9 @@ namespace Group_C_Autoshop.Account
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
+                //************************When user registers assign the role user to them
+                manager.AddToRole(user.Id, "enduser");
+
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
                 //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);

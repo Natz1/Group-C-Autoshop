@@ -37,6 +37,7 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <!--Navigation Bar-->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -50,12 +51,31 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">Employees</a></li>
-                        <li><a runat="server" href="~/About">Services</a></li> <!--Open up dropdown list w -->
-                        <li><a runat="server" href="~/About">Clients</a></li>
+                        <!--User Permissions-Authorization-->
+                        <!--Admin-->
+                        <li id="admin" runat="server"><a runat="server" href="~/UserRoles/Admin/ClientList">Clients</a></li>
+                        <li id="admin1" runat="server"><a runat="server" href="~/UserRoles/Admin/EmployeeList">Employees</a></li>
+                        <li id="admin2" runat="server"><a runat="server" href="~/UserRoles/Admin/VehicleInventory">Vehicle Inventory</a></li>
+
+                        <!--End User-->
+                        <li id="enduser" runat="server"><a runat="server" href="~/UserRoles/EndUser/VehicleList">Vehicles</a></li>
+                        <li id="enduser1" runat="server"><a runat="server" href="~/UserRoles/EndUser/Additions">Additions</a></li>
+                        <li id="enduser2" runat="server"><a runat="server" href="~/UserRoles/EndUser/SpareParts">Repair Parts</a></li>
+                        <!--<li class="enduser" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientInvoice">Invoice</a></li>-->
+                        
+
+                        <!--Manager-->
+                        <!--Add manager pages!!!!!!!!!!!!!!!!!!!!!
+                        <li class="manager" runat="server"><a runat="server" href="~/UserRoles/ClientList">Users</a></li>-->
+
+                        <!--General-->
                         <li><a runat="server" href="~/About">About Us</a></li>
                         <li><a runat="server" href="~/Contact">Contact Us</a></li>
+
+                        
                     </ul>
+
+                    <!--Register and Login-->
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
