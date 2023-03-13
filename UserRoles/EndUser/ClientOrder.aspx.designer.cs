@@ -15,6 +15,15 @@ namespace Group_C_Autoshop.UserRoles.EndUser
     {
 
         /// <summary>
+        /// IDTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView IDTxt;
+
+        /// <summary>
         /// CNameTxt control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,60 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.TextBox CPhoneTxt;
 
         /// <summary>
+        /// VehicleData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource VehicleData;
+
+        /// <summary>
+        /// VehicleList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView VehicleList;
+
+        /// <summary>
+        /// AdditionData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AdditionData;
+
+        /// <summary>
+        /// AdditionList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView AdditionList;
+
+        /// <summary>
+        /// PartsData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource PartsData;
+
+        /// <summary>
+        /// PartsList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PartsList;
+
+        /// <summary>
         /// Confirm control.
         /// </summary>
         /// <remarks>
@@ -58,5 +121,14 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Confirm;
+
+        /// <summary>
+        /// Cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancel;
     }
 }

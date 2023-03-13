@@ -85,7 +85,7 @@ INSERT INTO Client_Phone VALUES
 (14,'(876)-987-7891'),
 (15,'(876)-987-8912');
 
---Vechile Insert Statements
+--Vehicle Insert Statements
 
 INSERT INTO Vehicle VALUES
 ('1HGBH41JXMN109186','2020','Blue','Honda','City','Car','New',3200000.00,25,'52WVC10338',1497,0,'No'),

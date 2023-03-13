@@ -186,7 +186,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\Admin\SalesResults.aspx" />
-    <Content Include="UserRoles\Admin\WorkDone.aspx" />
+    <Content Include="UserRoles\EndUser\ScheduleRepair.aspx" />
+    <Content Include="UserRoles\Manager\WorkDone.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
     <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
@@ -389,11 +390,18 @@
     <Compile Include="UserRoles\Admin\SalesResults.aspx.designer.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\Admin\WorkDone.aspx.cs">
+    <Compile Include="UserRoles\EndUser\ScheduleRepair.aspx.cs">
+      <DependentUpon>ScheduleRepair.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\EndUser\ScheduleRepair.aspx.designer.cs">
+      <DependentUpon>ScheduleRepair.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\WorkDone.aspx.cs">
       <DependentUpon>WorkDone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\Admin\WorkDone.aspx.designer.cs">
+    <Compile Include="UserRoles\Manager\WorkDone.aspx.designer.cs">
       <DependentUpon>WorkDone.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\EndUser\Additions.aspx.cs">

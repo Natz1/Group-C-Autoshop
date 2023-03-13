@@ -118,8 +118,7 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  font: inherit;
-  margin: 0;
+  margin: 0 0 0 30px;
 }
 button {
   overflow: visible;
@@ -5114,7 +5113,7 @@ a.badge:focus {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    height: 120vh;
+    height: 300vh;
     color: #0B4851; /*text colour of jumbotron*/
     background-color: #ffffff; /*background colour*/
 }

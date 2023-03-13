@@ -26,3 +26,15 @@ As
 Return
 	Select * From Employee Where Supervisor_ID = @Supervisor_Id;
 
+--Get last entered Job from Work Done
+
+Create Function Last_Job()
+	Returns Table
+As
+Return
+	Select W.Job_Number, P.Part_Id, P.Part_Name, P.Quantity, P.Cost as Parts_Cost,
+	A.Radio_Installation, A.Car_Alarm, A.Tracking_Device, A.Cost as Addition_Cost
+	From Work_Done W 
+	Inner Join Part_Changed P on P.Job_Number = W.Job_Number
+	Inner Join Add_on A on A.Job_Number = P.Job_Number
+	where W.Job_Number = (Select MAX(Job_Number) from Work_Done); 

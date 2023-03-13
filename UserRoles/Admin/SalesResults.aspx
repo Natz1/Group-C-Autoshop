@@ -4,9 +4,9 @@
     <!--Contains all the data related to vehicles sold to clients-->
     <h1>Sales Results</h1>
     <h3>Vehicles Sold to Clients</h3>
-    <!--Link to database!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <!--Link to database-->
     <asp:SqlDataSource ID="VecSaleData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Vehicle.* FROM Vehicle INNER JOIN Sales_Done ON Vehicle.Chassis_Number = Sales_Done.Chassis_Number"></asp:SqlDataSource>
-    <!--Grid View of supervisor list-->
+    <!--Grid View of vehicle sales list-->
     <asp:GridView ID="VecSaleList" runat="server" AllowPaging="True" DataSourceID="VecSaleData" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
