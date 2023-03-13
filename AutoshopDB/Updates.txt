@@ -1,0 +1,15 @@
+1.Added Increment to the Client, Employee, Work_Done, Purchase, Sale Table PKs (Demo-Tables.sql)
+
+2.Updated the Update Subsitence to be able to update both subsistence and salary (Demo-Modification.sql)
+
+3.Added "Sold" Column to the Vehicle table (To track the cars sold in the table) (Demo-Tables.sql)
+	-Created a view that allow end User to see a list of vehicle available to be purchased (Demo-Modification.sql)
+
+4.Change the Mark_Up_Percent to a numeric data_type (to return a decimal when divided by 100) (Demo-Tables.sql)
+	-Created a Procedure that allows a manger to see the most profitable vehicle in a date range (Demo-Modification.sql)
+
+5.Created two triggers to update the tables accordingly when buying and selling vehicles (Demo-Triggers.sql)
+	-Price and Commission variable store in the Sale table is now calculated in the Vehicle_Sales Trigger, 
+	 hence no need to included in the insert statments
+
+	-Create a add_salesman function to update the Purchase table after the Vehicle_Purchases Trigger execute (TODO)

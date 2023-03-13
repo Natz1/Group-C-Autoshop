@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!--Contains List of all vehicle additions-->
-
+    <h1>Available Vehicle Additions</h1>
 </asp:Content>

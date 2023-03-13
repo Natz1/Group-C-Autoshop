@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Group_C_Autoshop.UserRoles.EndUser
 {
-    public partial class ScheduleRepair : System.Web.UI.Page
+    public partial class ClientOrder : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!--Generates invoice of client's purchases-->
-
+    <h1>Invoice</h1>
 </asp:Content>

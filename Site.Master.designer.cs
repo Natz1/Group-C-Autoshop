@@ -42,13 +42,31 @@ namespace Group_C_Autoshop
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin2;
 
         /// <summary>
-        /// enduser control.
+        /// enduser3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser3;
+
+        /// <summary>
+        /// enduser4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser4;
+
+        /// <summary>
+        /// enduser5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser5;
 
         /// <summary>
         /// enduser1 control.

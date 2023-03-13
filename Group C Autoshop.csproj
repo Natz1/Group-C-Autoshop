@@ -167,6 +167,16 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AutoshopDB\Demo-Modifications.sql" />
+    <Content Include="AutoshopDB\Demo-Triggers.sql" />
+    <Content Include="AutoshopDB\Demo_Functions.sql" />
+    <Content Include="AutoshopDB\Demo_Insert Statements.sql" />
+    <Content Include="AutoshopDB\Demo_Select_Statements.sql" />
+    <Content Include="AutoshopDB\Demo_Stored_Procedures.sql" />
+    <Content Include="AutoshopDB\Demo_Tables.sql" />
+    <Content Include="AutoshopDB\Demo_Transactions.sql" />
+    <Content Include="AutoshopDB\Demo_Views.sql" />
+    <Content Include="AutoshopDB\Updates.txt" />
     <Content Include="UserRoles\Admin\ClientList.aspx" />
     <Content Include="UserRoles\Admin\EmployeeList.aspx" />
     <Content Include="Contact.aspx" />
@@ -178,7 +188,7 @@
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
-    <Content Include="UserRoles\EndUser\ScheduleRepair.aspx" />
+    <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
     <Content Include="UserRoles\EndUser\SpareParts.aspx" />
     <Content Include="UserRoles\Admin\VehicleInventory.aspx" />
     <Content Include="favicon.ico" />
@@ -389,12 +399,12 @@
     <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.designer.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ScheduleRepair.aspx.cs">
-      <DependentUpon>ScheduleRepair.aspx</DependentUpon>
+    <Compile Include="UserRoles\EndUser\ClientOrder.aspx.cs">
+      <DependentUpon>ClientOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ScheduleRepair.aspx.designer.cs">
-      <DependentUpon>ScheduleRepair.aspx</DependentUpon>
+    <Compile Include="UserRoles\EndUser\ClientOrder.aspx.designer.cs">
+      <DependentUpon>ClientOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\EndUser\SpareParts.aspx.cs">
       <DependentUpon>SpareParts.aspx</DependentUpon>

@@ -127,7 +127,7 @@ namespace Group_C_Autoshop
             var userManager1 = Context.GetOwinContext().Get<ApplicationUserManager>();
             string email1 = "manager@gmail.com";
             //***********************Check if user is already present
-            var search2 = userManager.FindByEmail(email);
+            var search2 = userManager.FindByEmail(email1);
             if (search1 == null)
             {
                 var user = new ApplicationUser()
@@ -144,10 +144,7 @@ namespace Group_C_Autoshop
             admin.Visible = false;
             admin1.Visible = false;
             admin2.Visible = false;
-            enduser.Visible = false;
-            enduser1.Visible = false;
-            enduser2.Visible = false;
-            //manager.Visible = false;
+            //manager.Visible = false;*************************************************************!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -155,11 +152,14 @@ namespace Group_C_Autoshop
                 admin.Visible = true;
                 admin1.Visible = true;
                 admin2.Visible = true;
+
+                enduser3.Visible = false;
+                enduser4.Visible = false;
+                enduser5.Visible = false;
             }
 
             if (Context.User.IsInRole("enduser"))
             {
-                enduser.Visible = true;
                 enduser1.Visible = true;
                 enduser2.Visible = true;
             }
@@ -167,6 +167,10 @@ namespace Group_C_Autoshop
             if (Context.User.IsInRole("manager"))
             {
                 //manager.Visible = true;
+
+                enduser3.Visible = false;
+                enduser4.Visible = false;
+                enduser5.Visible = false;
             }
 
         }
