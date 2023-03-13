@@ -1,6 +1,7 @@
 --Demo Documentation Views
 --Version 1 updated Feb 25, 2023
 Use Car_Mart_Web_App
+
 --Shows the sales made by the salesmen and their respective client and the vehicles that were sold.
 
 Create View Sales_Done as

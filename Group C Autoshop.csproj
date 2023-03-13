@@ -160,7 +160,6 @@
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
-    <Content Include="Account\ManageUserRoles.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
@@ -186,6 +185,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="UserRoles\Admin\SalesResults.aspx" />
+    <Content Include="UserRoles\Admin\WorkDone.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
     <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
@@ -235,6 +236,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="UserRoles\EndUser\VehicleList.aspx" />
+    <Content Include="UserRoles\Admin\VehiclePurchases.aspx" />
+    <Content Include="UserRoles\Manager\GenerateReports.aspx" />
+    <Content Include="UserRoles\Manager\ManageUsers.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -296,13 +300,6 @@
     </Compile>
     <Compile Include="Account\ManagePassword.aspx.designer.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManageUserRoles.aspx.cs">
-      <DependentUpon>ManageUserRoles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ManageUserRoles.aspx.designer.cs">
-      <DependentUpon>ManageUserRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -385,6 +382,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserRoles\Admin\SalesResults.aspx.cs">
+      <DependentUpon>SalesResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Admin\SalesResults.aspx.designer.cs">
+      <DependentUpon>SalesResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Admin\WorkDone.aspx.cs">
+      <DependentUpon>WorkDone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Admin\WorkDone.aspx.designer.cs">
+      <DependentUpon>WorkDone.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\EndUser\Additions.aspx.cs">
       <DependentUpon>Additions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -447,6 +458,27 @@
     <Compile Include="UserRoles\EndUser\VehicleList.aspx.designer.cs">
       <DependentUpon>VehicleList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserRoles\Admin\VehiclePurchases.aspx.cs">
+      <DependentUpon>VehiclePurchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Admin\VehiclePurchases.aspx.designer.cs">
+      <DependentUpon>VehiclePurchases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\GenerateReports.aspx.cs">
+      <DependentUpon>GenerateReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\GenerateReports.aspx.designer.cs">
+      <DependentUpon>GenerateReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -457,7 +489,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UserRoles\Manager\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

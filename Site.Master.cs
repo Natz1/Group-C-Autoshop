@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Group_C_Autoshop.Account;
 using Group_C_Autoshop.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -144,7 +145,11 @@ namespace Group_C_Autoshop
             admin.Visible = false;
             admin1.Visible = false;
             admin2.Visible = false;
-            //manager.Visible = false;*************************************************************!!!!!!!!!!!!!!!!!!!!!!!!!!
+            admin3.Visible = false;
+            admin4.Visible = false;
+            admin5.Visible = false;
+            manager.Visible = false;
+            manager1.Visible = false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -152,7 +157,12 @@ namespace Group_C_Autoshop
                 admin.Visible = true;
                 admin1.Visible = true;
                 admin2.Visible = true;
+                admin3.Visible = true;
+                admin4.Visible = true;
+                admin5.Visible = true;
 
+                enduser1.Visible = false;
+                enduser2.Visible = false;
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;
@@ -166,8 +176,11 @@ namespace Group_C_Autoshop
 
             if (Context.User.IsInRole("manager"))
             {
-                //manager.Visible = true;
+                manager.Visible = true;
+                manager1.Visible = true;
 
+                enduser1.Visible = false;
+                enduser2.Visible = false;
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;

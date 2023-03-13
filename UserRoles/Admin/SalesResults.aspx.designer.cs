@@ -7,29 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.Admin
+namespace Group_C_Autoshop.UserRoles.Admin
 {
 
 
-    public partial class ClientList
+    public partial class SalesResults
     {
 
         /// <summary>
-        /// ClientData control.
+        /// VecSaleData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ClientData;
+        protected global::System.Web.UI.WebControls.SqlDataSource VecSaleData;
 
         /// <summary>
-        /// ClientsList control.
+        /// VecSaleList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ClientsList;
+        protected global::System.Web.UI.WebControls.GridView VecSaleList;
     }
 }

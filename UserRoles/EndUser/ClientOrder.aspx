@@ -34,9 +34,12 @@
     <h3>Additions</h3>
     <br />
 
-    <h3>Repair Parts</h3>
+    <h3>Spare Parts</h3>
     <br />
 
+    <asp:Button ID="Confirm" runat="server" Text="Confirm Now" />
 
     <!--Form for scheduling repairs-->
+    <!--Different section from client orders-->
+
 </asp:Content>

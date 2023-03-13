@@ -1,5 +1,6 @@
 --Demo Documentation Transactions
 --Version 1 updated Feb 25, 2023
+Use Car_Mart_Web_App
 
 --To update a specified salesman’s travel subsistence
 
@@ -29,6 +30,6 @@ Begin transaction Update_Subsistence
 	Else
 		Begin
 		Insert into Client values ([Client_Id], [Name], [Residential_Address], [Email])
-		Select * From Client Where Client_Id = @Client_Id
+		Select * From Client Where Client_ID = @Client_Id
 		End
 Commit Transaction Add_Client

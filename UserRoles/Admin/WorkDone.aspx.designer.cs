@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.Account
+namespace Group_C_Autoshop.UserRoles.Admin
 {
 
 
-    public partial class ManageUserRoles
+    public partial class WorkDone
     {
     }
 }
