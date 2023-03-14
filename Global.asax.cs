@@ -21,6 +21,8 @@ namespace Group_C_Autoshop
         void SessionStart(object sender, EventArgs e)
         {
             //Initializing the session's variables
+            //Client
+            Session["ID"] = "";
             //Vehicle
             Session["chassis"] = "";
 

@@ -23,8 +23,8 @@
             <td><asp:TextBox ID="CEmailTxt" runat="server"></asp:TextBox></td>
         </tr>
         <tr>
-            <td><h4>Phone Number(s): </h4></td>
-            <td><asp:TextBox ID="CPhoneTxt" runat="server"></asp:TextBox></td>
+            <td><h4>Phone Number (###)-###-####: </h4></td>
+            <td><asp:TextBox ID="CPhoneTxt" runat="server" MaxLength="14"></asp:TextBox></td>
         </tr>
     </table>
     <asp:SqlDataSource ID="ClientData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="Add_Client" SelectCommandType="StoredProcedure">
@@ -40,17 +40,34 @@
     <!---Selected Options-->
     <h3>Vehicle Information</h3>
     <br />
+    <table>
+        <tr>
+            <td><h4>Select Salesman: </h4></td>
+            <td><asp:DropDownList ID="salesman" runat="server" DataValueField="Salesman_ID"></asp:DropDownList></td>
+            
+        </tr>
+    </table>
     <asp:GridView ID="VehicleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
 
 
-    <!--Fix this*************************-->
-    <h3>Additions</h3>
+    <h3>Work to be done</h3>
+    <table>
+        <tr>
+            <td><h4>Select Mechanic: </h4></td>
+            <td><asp:DropDownList ID="mechanic" DataValueField="Mechanic_ID" runat="server"></asp:DropDownList></td>
+        </tr>
+    </table>
+
+
+    <h4>Additions</h4>
     <br />
     <asp:GridView
         ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
     </asp:GridView>
 
-    <h3>Spare Parts</h3>
+
+
+    <h4>Spare Parts</h4>
     <br />
     <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
     </asp:GridView>

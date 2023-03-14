@@ -29,7 +29,38 @@
 
     <!--Car Types-->
     <h3>Cars</h3>
-    <asp:SqlDataSource ID="CarData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Car.*, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage, Vehicle.Sold FROM Car INNER JOIN Vehicle ON Car.Chassis_Number = Vehicle.Chassis_Number"></asp:SqlDataSource>
+    <h4>Add</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Chassis Number</th>
+                <th>Seating Capacity</th>
+                <th>Wheel Drive</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                <asp:TextBox ID="Chassis1" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Seat1" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Wheel1" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="Add1" runat="server" Text="Add" OnClick="Add1_Click" />
+            </td>
+        </tr>
+    </table><br />
+
+    <asp:SqlDataSource ID="CarData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Car.*, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage, Vehicle.Sold FROM Car INNER JOIN Vehicle ON Car.Chassis_Number = Vehicle.Chassis_Number" InsertCommand="INSERT INTO Car(Chassis_Number, Seating_Capacity, Wheel_Drive) VALUES (@chassis, @seat, @wheel)">
+        <InsertParameters>
+            <asp:ControlParameter Name="chassis" ControlID="Chassis1" PropertyName="Text" />
+            <asp:ControlParameter  Name="seat" ControlID="Seat1" PropertyName="Text" />
+            <asp:ControlParameter  Name="wheel" ControlID="Wheel1" PropertyName="Text" />
+        </InsertParameters>
+    </asp:SqlDataSource>
     <asp:GridView ID="CarList" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"  PageSize="20" 
         runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="CarData">
         <Columns>
@@ -59,7 +90,43 @@
 
 
     <h3>Four Wheel Drive</h3>
-    <asp:SqlDataSource ID="WDData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Four_WD.*, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage, Vehicle.Sold FROM Four_WD INNER JOIN Vehicle ON Four_WD.Chassis_Number = Vehicle.Chassis_Number"></asp:SqlDataSource>
+    <h4>Add</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Chassis Number</th>
+                <th>Seating Capacity</th>
+                <th>Fuel</th>
+                <th>Vehicle Size</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                <asp:TextBox ID="Chassis2" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Seat2" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Fuel2" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Size2" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="Add2" runat="server" Text="Add" OnClick="Add2_Click" />
+            </td>
+        </tr>
+    </table><br />
+
+    <asp:SqlDataSource ID="WDData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Four_WD.*, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage, Vehicle.Sold FROM Four_WD INNER JOIN Vehicle ON Four_WD.Chassis_Number = Vehicle.Chassis_Number" InsertCommand="INSERT INTO Four_WD(Chassis_Number, Seating_Capacity, Fuel, Vehicle_Size) VALUES (@chassis1, @seat1, @fuel, @size)">
+        <InsertParameters>
+            <asp:ControlParameter ControlID="Chassis2" PropertyName="Text" Name="chassis1" />
+            <asp:ControlParameter ControlID="Seat2" PropertyName="Text"  Name="seat1" />
+            <asp:ControlParameter ControlID="Fuel2" PropertyName="Text"  Name="fuel" />
+            <asp:ControlParameter ControlID="Size2" PropertyName="Text"  Name="size" />
+        </InsertParameters>
+    </asp:SqlDataSource>
     <asp:GridView ID="WDList" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"  PageSize="20" 
         runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="WDData">
         <Columns>
@@ -90,7 +157,38 @@
 
 
     <h3>Vans</h3>
-    <asp:SqlDataSource ID="VanData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Van.Chassis_Number, Van.Haulage_Size, Van.Max_Clearance, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage, Vehicle.Sold FROM Van INNER JOIN Vehicle ON Van.Chassis_Number = Vehicle.Chassis_Number"></asp:SqlDataSource>
+    <h4>Add</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Chassis Number</th>
+                <th>Haulage Size</th>
+                <th>Max Clearance</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                <asp:TextBox ID="Chassis3" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Haulage3" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="Max3" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="Add3" runat="server" Text="Add" OnClick="Add3_Click" />
+            </td>
+        </tr>
+    </table><br />
+
+    <asp:SqlDataSource ID="VanData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Van.Chassis_Number, Van.Haulage_Size, Van.Max_Clearance, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage, Vehicle.Sold FROM Van INNER JOIN Vehicle ON Van.Chassis_Number = Vehicle.Chassis_Number" InsertCommand="INSERT INTO Van(Chassis_Number, Haulage_Size, Max_Clearance) VALUES (@chassis2, @haulage, @max)">
+        <InsertParameters>
+            <asp:ControlParameter ControlID="Chassis3" PropertyName="Text"  Name="chassis2" />
+            <asp:ControlParameter ControlID="Haulage3" PropertyName="Text"  Name="haulage" />
+            <asp:ControlParameter ControlID="Max3" PropertyName="Text"  Name="max" />
+        </InsertParameters>
+    </asp:SqlDataSource>
     <asp:GridView ID="VanList" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"  PageSize="20" 
         runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="VanData">
         <Columns>

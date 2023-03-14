@@ -24,12 +24,12 @@ namespace Group_C_Autoshop.EndUser
         protected global::System.Web.UI.WebControls.SqlDataSource InvoiceData;
 
         /// <summary>
-        /// InvoiceList control.
+        /// ListView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView InvoiceList;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }
