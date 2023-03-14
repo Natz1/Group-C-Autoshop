@@ -7,7 +7,8 @@
     <!--Link to database-->
     <asp:SqlDataSource ID="VecSaleData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Vehicle.* FROM Vehicle INNER JOIN Sales_Done ON Vehicle.Chassis_Number = Sales_Done.Chassis_Number"></asp:SqlDataSource>
     <!--Grid View of vehicle sales list-->
-    <asp:GridView ID="VecSaleList" runat="server" AllowPaging="True" DataSourceID="VecSaleData" AutoGenerateColumns="False">
+    <asp:GridView ID="VecSaleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px" PageSize="20" 
+        AllowPaging="True" DataSourceID="VecSaleData" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
             <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
@@ -27,6 +28,24 @@
     <br />
 
     <!--Salesmen who earned commissions-->
+    <h3>Commission Earned By All Salesmen</h3>
+    <asp:SqlDataSource ID="ComData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT * FROM [Commission_Earned]"></asp:SqlDataSource>
+    <asp:GridView ID="ComList" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px" PageSize="20" 
+        AllowPaging="True" runat="server" AutoGenerateColumns="False" DataSourceID="ComData">
+        <Columns>
+            <asp:BoundField DataField="Salesman_ID" HeaderText="Salesman_ID" SortExpression="Salesman_ID" />
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            <asp:BoundField DataField="Travel_Subsistence" HeaderText="Travel_Subsistence" SortExpression="Travel_Subsistence" />
+            <asp:BoundField DataField="Commission" HeaderText="Commission" SortExpression="Commission" />
+            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
+            <asp:BoundField DataField="Model" HeaderText="Model" SortExpression="Model" />
+            <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />
+            <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
+        </Columns>
+<HeaderStyle CssClass="header"></HeaderStyle>
 
+<RowStyle CssClass="rows"></RowStyle>
+    </asp:GridView>
 
 </asp:Content>

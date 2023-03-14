@@ -11,10 +11,6 @@
     <br />
     <table>
         <tr>
-            <td><h4>ID Number: </h4></td>
-            <td><asp:GridView ID="IDTxt" runat="server"></asp:GridView></td>
-        </tr>
-        <tr>
             <td><h4>Name: </h4></td>
             <td><asp:TextBox ID="CNameTxt" runat="server"></asp:TextBox></td>
         </tr>
@@ -32,37 +28,20 @@
         </tr>
     </table>
 
-    <!---Set this up-->
+    <!---Selected Options-->
     <h3>Vehicle Information</h3>
     <br />
-    <asp:SqlDataSource ID="VehicleData" runat="server"></asp:SqlDataSource>
-    <asp:GridView ID="VehicleList" runat="server"></asp:GridView>
+    <asp:GridView ID="VehicleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
 
+
+    <!--Fix this*************************-->
     <h3>Additions</h3>
     <br />
-    <asp:SqlDataSource ID="AdditionData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Job_Number, Radio_Installation, Car_Alarm, Tracking_Device, Addition_Cost FROM dbo.Last_Job() AS Last_Job_1"></asp:SqlDataSource>
-    <asp:GridView ID="AdditionList" runat="server" DataSourceID="AdditionData" AutoGenerateColumns="False" DataKeyNames="Job_Number">
-        <Columns>
-            <asp:BoundField DataField="Job_Number" HeaderText="Job_Number" ReadOnly="True" SortExpression="Job_Number" />
-            <asp:BoundField DataField="Radio_Installation" HeaderText="Radio_Installation" SortExpression="Radio_Installation" />
-            <asp:BoundField DataField="Car_Alarm" HeaderText="Car_Alarm" SortExpression="Car_Alarm" />
-            <asp:BoundField DataField="Tracking_Device" HeaderText="Tracking_Device" SortExpression="Tracking_Device" />
-            <asp:BoundField DataField="Addition_Cost" HeaderText="Addition_Cost" SortExpression="Addition_Cost" />
-        </Columns>
-    </asp:GridView>
+    <asp:GridView ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
 
     <h3>Spare Parts</h3>
     <br />
-    <asp:SqlDataSource ID="PartsData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Job_Number, Part_Id, Part_Name, Quantity, Parts_Cost FROM dbo.Last_Job() AS Last_Job_1"></asp:SqlDataSource>
-    <asp:GridView ID="PartsList" runat="server" AutoGenerateColumns="False" DataSourceID="PartsData">
-        <Columns>
-            <asp:BoundField DataField="Job_Number" HeaderText="Job_Number" SortExpression="Job_Number" />
-            <asp:BoundField DataField="Part_Id" HeaderText="Part_Id" SortExpression="Part_Id" />
-            <asp:BoundField DataField="Part_Name" HeaderText="Part_Name" SortExpression="Part_Name" />
-            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-            <asp:BoundField DataField="Parts_Cost" HeaderText="Parts_Cost" SortExpression="Parts_Cost" />
-        </Columns>
-    </asp:GridView>
+    <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
 
     <br /><br />
     <asp:Button ID="Confirm" runat="server" Text="Confirm" OnClick="Confirm_Click" />

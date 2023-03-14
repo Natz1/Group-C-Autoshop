@@ -147,9 +147,7 @@ namespace Group_C_Autoshop
             admin2.Visible = false;
             admin3.Visible = false;
             admin4.Visible = false;
-            manager.Visible = false;
             manager1.Visible = false;
-            manager2.Visible = false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -170,9 +168,7 @@ namespace Group_C_Autoshop
 
             if (Context.User.IsInRole("manager"))
             {
-                manager.Visible = true;
                 manager1.Visible = true;
-                manager2.Visible = true;
 
                 enduser1.Visible = false;
                 enduser2.Visible = false;

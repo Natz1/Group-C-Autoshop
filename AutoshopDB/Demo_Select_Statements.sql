@@ -1,6 +1,5 @@
 --Demo Documentation Select and Exec Statements
 --Version 1 updated Feb 25, 2023
-Use Car_Mart_Web_App
 
 --Table Select Statements
 
@@ -71,6 +70,8 @@ Select * from Repair_Jobs;
 Select * from Client_Additions;
 --5
 Select * from Profit_Earned_From_Client_Purchases;
+--6
+Select * From Available_Vehicles;
 
 --Stored Procedures Exec Statements
 
@@ -81,17 +82,22 @@ Exec Commission_Earned_By_Salesman [Salesman_ID];
 --3
 Exec Repair_Jobs_By_Mechanic [Mechanic_Id];
 --4
-Exec Client_Additions_Checker [Client_Id];
+Exec Client_Additions_Checker 12;
 --5
 Exec Profit_Earned_From_Client_Purchases_By_Year [Year];
+--6
+Exec Best_Selling_Car [Start_Date], [End_Date];
+--7
+Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id];
 
 --Function Select Statements
 
 --1
-Select * from dbo.Client_Invoice([Client_ID]);
+Select * from dbo.Client_Invoice(12);
 --2
 Select * from dbo.Assigned_Supervisor([Supervisor_Id]);
 
---Modification Statements
-
+--Transaction Statements
+--1
 EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type];
+

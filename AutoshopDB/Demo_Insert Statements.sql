@@ -1,6 +1,5 @@
 --Demo Documentation Select and Exec Statements
 --Version 1 updated Feb 26, 2023
-Use Car_Mart_Web_App
 
 --Employee Insert Statement
 
@@ -85,7 +84,7 @@ INSERT INTO Client_Phone VALUES
 (14,'(876)-987-7891'),
 (15,'(876)-987-8912');
 
---Vehicle Insert Statements
+--Vechile Insert Statements
 
 INSERT INTO Vehicle VALUES
 ('1HGBH41JXMN109186','2020','Blue','Honda','City','Car','New',3200000.00,25,'52WVC10338',1497,0,'No'),
@@ -154,5 +153,27 @@ VALUES ('04/10/2020',5400000,10009,'1KGFH71JXAJ705192',14);
 INSERT INTO Sale (Date,Value,Salesman_ID,Chassis_Number,Client_ID)
 VALUES ('04/25/2020',5400000,10009,'1KGFH71JXAJ705193',10);
 
+INSERT INTO Work_Done(Mechanic_Id, Sale_Id)
+VALUES (10007, 1);
+
+INSERT INTO Add_On(Job_Number,Radio_Installation,Car_Alarm,Tracking_Device)
+VALUES (1,'Yes','Yes','Yes');
+
+INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
+VALUES (1,'Back Bumper',1);
+INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
+VALUES (1,'Front Bumper',1);
+INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
+VALUES (1,'Side Skirt',2);
+
+INSERT INTO Repair VALUES (1, 25000, 'Installation Fee');
+
+DROP TABLE Part_Changed;
+
+Select * From Work_Done
+Select * From Add_On;
+Select * From Part_Changed;
+Select * From Repair;
 Select * From Sale;
 Select * From Vehicle;
+

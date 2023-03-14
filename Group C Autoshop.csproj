@@ -187,7 +187,6 @@
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\Admin\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\ScheduleRepair.aspx" />
-    <Content Include="UserRoles\Manager\WorkDone.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
     <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
@@ -238,8 +237,7 @@
     <Content Include="Site.Master" />
     <Content Include="UserRoles\EndUser\VehicleList.aspx" />
     <Content Include="UserRoles\Admin\VehiclePurchases.aspx" />
-    <Content Include="UserRoles\Manager\GenerateReports.aspx" />
-    <Content Include="UserRoles\Manager\ManageUsers.aspx" />
+    <Content Include="UserRoles\Manager\BusinessInsights.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -397,13 +395,6 @@
     <Compile Include="UserRoles\EndUser\ScheduleRepair.aspx.designer.cs">
       <DependentUpon>ScheduleRepair.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\Manager\WorkDone.aspx.cs">
-      <DependentUpon>WorkDone.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserRoles\Manager\WorkDone.aspx.designer.cs">
-      <DependentUpon>WorkDone.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserRoles\EndUser\Additions.aspx.cs">
       <DependentUpon>Additions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -473,19 +464,12 @@
     <Compile Include="UserRoles\Admin\VehiclePurchases.aspx.designer.cs">
       <DependentUpon>VehiclePurchases.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\Manager\GenerateReports.aspx.cs">
-      <DependentUpon>GenerateReports.aspx</DependentUpon>
+    <Compile Include="UserRoles\Manager\BusinessInsights.aspx.cs">
+      <DependentUpon>BusinessInsights.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\Manager\GenerateReports.aspx.designer.cs">
-      <DependentUpon>GenerateReports.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserRoles\Manager\ManageUsers.aspx.cs">
-      <DependentUpon>ManageUsers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserRoles\Manager\ManageUsers.aspx.designer.cs">
-      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    <Compile Include="UserRoles\Manager\BusinessInsights.aspx.designer.cs">
+      <DependentUpon>BusinessInsights.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

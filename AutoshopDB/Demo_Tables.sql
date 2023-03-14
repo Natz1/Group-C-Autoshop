@@ -1,9 +1,6 @@
-Create Database Car_Mart_Web_App
-Use Car_Mart_Web_App
-
 --Demo Documentation Tables
 --Version 1 updated Feb 25, 2023
-
+Use Car_Mart_Web_App
 --Stores data on all employees in the autoshop
 
 --Create Database Car_Mart_Web_App;
@@ -97,7 +94,7 @@ Create table Vehicle
 	Engine_Number	varchar(17),
 	CC_Ratings		varchar(6),
 	Mileage			integer,
-	Sold			varchar(3),
+	Sold			varchar(3)		DEFAULT 'No',
 	Constraint ck_add check (Sold in('Yes','No'))
 );
 
@@ -168,8 +165,8 @@ Create table Sale
 Create table Work_Done
 (
 	Job_Number		integer		primary key		IDENTITY(1, 1),
-	Mechanic_ID		integer		not null,
-	Sale_ID		integer		not null,
+	Mechanic_ID		integer,
+	Sale_ID		integer,
 	Constraint fk_emp4 foreign key (Mechanic_ID) references Mechanic (Mechanic_ID),
 	Constraint fk_pur1 foreign key (Sale_ID) references Sale (Sale_ID)
 );
@@ -178,7 +175,7 @@ Create table Work_Done
 
 Create table Add_on
 (
-	Job_Number		integer		primary key		IDENTITY(1,1),
+	Job_Number		integer		primary key,
 	Radio_Installation	varchar(3),
 	Car_Alarm		varchar(3),
 	Tracking_Device	varchar(3),
@@ -206,7 +203,7 @@ Create table Part_Changed
 
 Create table Repair
 (
-	Job_Number		integer		primary key		IDENTITY(1,1),
+	Job_Number		integer		primary key,
 	Cost			money, 
 	Description		varchar(100), 
 	Constraint fk_job3 foreign key (Job_Number) references Work_Done (Job_Number)

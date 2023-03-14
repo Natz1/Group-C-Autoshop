@@ -13,3 +13,19 @@
 	 hence no need to included in the insert statments
 
 	-Create a add_salesman function to update the Purchase table after the Vehicle_Purchases Trigger execute (TODO)
+
+6.Update the Work_done table to remove not_null from the Work_Done table
+
+7.Trigger for Part_Changed
+	-Part_Id and the Cost is added automatically if the part name is valid
+
+8.Trigger for Add_On
+	-The cost is automatically added
+
+9.Modify the Client_Invoice Function to remove repeating information
+	-Repeatings rows reduced to one record
+
+10.Modify the Repeat_Jobs to remove repeating information
+
+11.Modify the Profit_Earned_From_Client_Purchases, to include Total Commission Paid and Net Profit
+

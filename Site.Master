@@ -69,9 +69,8 @@
                         
 
                         <!--Manager-->
-                        <li id="manager" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>
-                        <li id="manager1" runat="server"><a runat="server" href="~/UserRoles/Manager/GenerateReports">Generate Reports</a></li>
-                        <li id="manager2" runat="server"><a runat="server" href="~/UserRoles/Manager/WorkDone">Work Done</a></li>
+                        <!--<li id="manager" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
+                        <li id="manager1" runat="server"><a runat="server" href="~/UserRoles/Manager/BusinessInsights">Business Insights</a></li>
 
                         <!--General-->
                         <li><a runat="server" href="~/About">About Us</a></li>

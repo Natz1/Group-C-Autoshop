@@ -21,35 +21,38 @@ namespace Group_C_Autoshop.UserRoles.EndUser
                 con.Close();
             }
             con.Open();
-        }
 
-        public void IDinsert()
-        {
-            //Create a command to insert the values into the database
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            //Increment from the previous client's ID
-            cmd.CommandText =
-                "Select Client_ID + 1 from Client";
-            cmd.ExecuteNonQuery();
+            //If session variable is not empty
+            if (!string.IsNullOrEmpty(Session["chassis"] as string))
+            {
+                String chassis = Session["chassis"].ToString();
+                //Create a command to get the values from the database
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText =
+                    "Select * from Vehicle where Chassis_Number = @chassis";
+                cmd.Parameters.Add("@chassis", SqlDbType.Char);
+                cmd.Parameters["@chassis"].Value = chassis;
+                cmd.ExecuteNonQuery();
 
-            //Store client ID in grid view
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-            adapt.Fill(dt);
-            IDTxt.DataSource = dt;
-            IDTxt.DataBind();
+                //Store details in grid view
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                adapt.Fill(dt);
+                VehicleList.DataSource = dt;
+                VehicleList.DataBind();
+            }
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
-            //Insert into sales table values
+            //Insert into sales table values**********************************
             //Create a command to insert the values into the database
-            SqlCommand cmd = con.CreateCommand();
+            /*SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText =
                 "Insert into Sale values()";
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();*/
 
             //Redirect to Invoice Page
             Response.Redirect("ClientInvoice");
@@ -59,7 +62,7 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         {
             //Cancel runs a deletion operation from the Additions and Parts Changed table
             //Create a command to remove the values from the database
-            SqlCommand cmd = con.CreateCommand();
+            /*SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText =
                 "Delete from Add_on where Job_Number = (SELECT Max(Job_Number) FROM Add_on)";
@@ -67,7 +70,8 @@ namespace Group_C_Autoshop.UserRoles.EndUser
 
             cmd.CommandText =
                 "Delete from Part_Changed where Job_Number = (SELECT Max(Job_Number) FROM Part_Changed)";
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();*/
+            Response.Redirect("ClientOrder");
         }
     }
 }

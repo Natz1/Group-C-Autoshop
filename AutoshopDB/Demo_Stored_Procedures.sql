@@ -1,6 +1,5 @@
 --Demo Documentation Stored Procedures
 --Version 1 updated Feb 25, 2023
-Use Car_Mart_Web_App
 
 --Shows the sales made by a salesman or saleswoman and his or her respective clients and the vehicles that were sold.
 
@@ -62,4 +61,44 @@ BEGIN
 END
 GO
 
---
+--Return the overall profit made form each type of vehicle sold in a particular date_range (Manager) from highest to lowest
+
+Create Procedure Best_Selling_Car
+(
+	@Start_Date Date,
+	@End_Date Date
+)
+AS
+BEGIN
+	SELECT V.Year, V.Make, V.Model, 
+	CAST(ROUND(SUM(V.Import_Price * (V.Mark_Up_Percent / 100) - S.Commission),2) as money) as Profit_Made, COUNT(V.Model) as Number_Of_Units_Sold
+	FROM (Vehicle V
+	Left Join Sale S ON S.Chassis_Number = V.Chassis_Number)
+	WHERE S.Date >= @Start_Date AND S.Date <= @End_Date
+	GROUP BY Year, Make, Model, Sold
+	ORDER BY Profit_Made DESC
+END
+GO
+
+--To update the salesman_id field in a Purchase record
+
+Create Procedure Add_Salesman_Id
+(
+	@Chassis_Number varchar(17),
+	@Salesman_Id integer
+) 
+AS
+BEGIN
+	BEGIN TRANSACTION
+
+		SELECT * FROM Purchase WHERE Chassis_Number = @Chassis_Number;
+		
+		UPDATE Purchase
+		SET Salesman_ID = @Salesman_Id
+		WHERE Chassis_Number = @Chassis_Number;
+
+		SELECT * FROM Purchase WHERE Chassis_Number = @Chassis_Number;
+
+	COMMIT TRANSACTION
+END
+GO

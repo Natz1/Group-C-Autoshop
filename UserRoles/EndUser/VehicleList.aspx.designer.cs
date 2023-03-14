@@ -33,6 +33,15 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.FormView FormView1;
 
         /// <summary>
+        /// Buy1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Buy1;
+
+        /// <summary>
         /// HondaData control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.FormView FormView2;
 
         /// <summary>
+        /// Buy2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Buy2;
+
+        /// <summary>
         /// SubaruData control.
         /// </summary>
         /// <remarks>
@@ -67,5 +85,41 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView FormView3;
+
+        /// <summary>
+        /// Buy3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Buy3;
+
+        /// <summary>
+        /// BMWData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource BMWData;
+
+        /// <summary>
+        /// FormView4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView FormView4;
+
+        /// <summary>
+        /// Buy4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Buy4;
     }
 }

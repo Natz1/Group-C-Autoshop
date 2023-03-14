@@ -17,5 +17,23 @@ namespace Group_C_Autoshop
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        void SessionStart(object sender, EventArgs e)
+        {
+            //Initializing the session's variables
+            //Vehicle
+            Session["chassis"] = "";
+
+            //Additions
+            Session["Track"] = "";
+            Session["Alarm"] = "";
+            Session["Radio"] = "";
+            Session["Price"] = "";
+
+            //Spare Parts
+            Session["Name"] = "";
+            Session["Quantity"] = "";
+            Session["Total"] = "";
+        }
     }
 }

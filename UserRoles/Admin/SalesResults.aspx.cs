@@ -13,5 +13,10 @@ namespace Group_C_Autoshop.UserRoles.Admin
         {
 
         }
+
+        protected void Search_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SalesResults");
+        }
     }
 }

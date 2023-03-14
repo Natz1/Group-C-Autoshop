@@ -3,11 +3,12 @@
 
     <!--Contains List of all spare vehicle parts available-->
     <h1>Available Replacement Parts</h1>
-    <h3>Doors</h3>
+    <img src="/Images/rear.jpg" width="300" height="250"/>
+    <h3>Back Bumper</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox1" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox1" runat="server" ReadOnly="True" Text="61000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -26,16 +27,18 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button7"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy" OnClick="Buy_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
 
-    <h3>Mirrors</h3>
+
+    <img src="/Images/front.jpg" width="300" height="250"/>
+    <h3>Front Bumper</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox2" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox2" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -54,16 +57,18 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button1"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy1" OnClick="Buy1_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
 
-    <h3>Head Lights</h3>
+
+    <img src="/Images/skirt.jpg" width="300" height="250"/>
+    <h3>Side Skirt</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox4" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox4" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -82,16 +87,18 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button2"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy2" OnClick="Buy2_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
 
-    <h3>Tail Lights</h3>
+
+    <img src="/Images/spoiler.jpg" width="300" height="250"/>
+    <h3>Spoiler</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox6" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox6" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -110,16 +117,18 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button3"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy3" OnClick="Buy3_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
 
-    <h3>Tires</h3>
+
+    <img src="/Images/rims.jpg" width="300" height="250"/>
+    <h3>Rims</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox8" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox8" runat="server" ReadOnly="True" Text="30000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -138,16 +147,18 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button4"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy4" OnClick="Buy4_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
 
-    <h3>Bumpers</h3>
+
+    <img src="/Images/tire.jpg" width="300" height="250"/>
+    <h3>Tires</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox10" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox10" runat="server" ReadOnly="True" Text="61000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -166,16 +177,18 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button5"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy5" OnClick="Buy5_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
 
-    <h3>Brakes</h3>
+
+    <img src="/Images/headlight.jpg" width="300" height="250"/>
+    <h3>Head Lamps</h3>
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox13" runat="server" ReadOnly="True" Text=""></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox13" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -194,7 +207,123 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button6"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy6" OnClick="Buy6_Click"></asp:Button></td>
+        </tr>
+    </table>
+    <br /><br />
+
+    <img src="/Images/roof.jpg" width="300" height="250"/>
+    <h3>Roof Rails</h3>
+    <table>
+        <tr>
+            <td>Unit Price: $</td>
+            <td><asp:TextBox Id="TextBox3" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Quantity: </td>
+            <td><asp:DropDownList ID="DropDownList8" runat="server">
+                <asp:ListItem>1</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>4</asp:ListItem>
+                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem>6</asp:ListItem>
+                <asp:ListItem>7</asp:ListItem>
+                <asp:ListItem>8</asp:ListItem>
+                <asp:ListItem>9</asp:ListItem>
+                <asp:ListItem>10</asp:ListItem>
+                </asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Button1" OnClick="Buy6_Click"></asp:Button></td>
+        </tr>
+    </table>
+    <br /><br />
+
+    <img src="/Images/mud.jpg" width="300" height="250"/>
+    <h3>Mud Guard</h3>
+    <table>
+        <tr>
+            <td>Unit Price: $</td>
+            <td><asp:TextBox Id="TextBox5" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Quantity: </td>
+            <td><asp:DropDownList ID="DropDownList9" runat="server">
+                <asp:ListItem>1</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>4</asp:ListItem>
+                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem>6</asp:ListItem>
+                <asp:ListItem>7</asp:ListItem>
+                <asp:ListItem>8</asp:ListItem>
+                <asp:ListItem>9</asp:ListItem>
+                <asp:ListItem>10</asp:ListItem>
+                </asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Button2" OnClick="Buy6_Click"></asp:Button></td>
+        </tr>
+    </table>
+    <br /><br />
+
+    <img src="" width="300" height="250"/>
+    <h3>Haulage Bay Cover</h3>
+    <table>
+        <tr>
+            <td>Unit Price: $</td>
+            <td><asp:TextBox Id="TextBox7" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Quantity: </td>
+            <td><asp:DropDownList ID="DropDownList10" runat="server">
+                <asp:ListItem>1</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>4</asp:ListItem>
+                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem>6</asp:ListItem>
+                <asp:ListItem>7</asp:ListItem>
+                <asp:ListItem>8</asp:ListItem>
+                <asp:ListItem>9</asp:ListItem>
+                <asp:ListItem>10</asp:ListItem>
+                </asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Button3" OnClick="Buy6_Click"></asp:Button></td>
+        </tr>
+    </table>
+    <br /><br />
+
+    <img src="/Images/floodlight.jpg" width="300" height="250"/>
+    <h3>Flood Light</h3>
+    <table>
+        <tr>
+            <td>Unit Price: $</td>
+            <td><asp:TextBox Id="TextBox9" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>Quantity: </td>
+            <td><asp:DropDownList ID="DropDownList11" runat="server">
+                <asp:ListItem>1</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>4</asp:ListItem>
+                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem>6</asp:ListItem>
+                <asp:ListItem>7</asp:ListItem>
+                <asp:ListItem>8</asp:ListItem>
+                <asp:ListItem>9</asp:ListItem>
+                <asp:ListItem>10</asp:ListItem>
+                </asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Button4" OnClick="Buy6_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
