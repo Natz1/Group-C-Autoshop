@@ -126,7 +126,8 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
-            //******************Replace with stored procedure
+            //*****************************Replace with stored procedure
+            DateTime today = DateTime.Today;
             //Save client info
             cmd.CommandText =
                 "Insert into Client (Name, Residential_Address, Email) Values ('" + CNameTxt.Text + "', '" + CAddrTxt.Text + "', '" + CEmailTxt.Text + "')";
@@ -156,7 +157,11 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             cmd.ExecuteNonQuery();
 
 
+            //************************************************Add Date
             //Enter into Sales
+            /*cmd.CommandText =
+                "Insert into Sale (Date, Salesman_ID, Chassis_Number, Client_ID) Values ('" + today + "','" + salesman.Text + "', '" + chassis + "', '" + Session["ID"].ToString() + "')";
+            cmd.ExecuteNonQuery();*/
             cmd.CommandText =
                 "Insert into Sale (Salesman_ID, Chassis_Number, Client_ID) Values ('" + salesman.Text + "', '" + chassis + "', '" + Session["ID"].ToString() + "')";
             cmd.ExecuteNonQuery();
@@ -166,9 +171,9 @@ namespace Group_C_Autoshop.UserRoles.EndUser
                 //Enter into Work Done
                 //Get sale id from db
                 cmd.CommandText = @"select max(Sale_ID) from Sale";
-                id = (int)cmd.ExecuteScalar();
+                int sale = (int)cmd.ExecuteScalar();
                 cmd.CommandText =
-                    "Insert into Work_Done (Mechanic_ID, Sale_ID) Values ('" + mechanic.Text + "', '" + id + "')";
+                    "Insert into Work_Done Values ('" + mechanic.Text + "', '" + sale + "')";
                 cmd.ExecuteNonQuery();
 
                 //********************************************************

@@ -24,51 +24,6 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.TextBox ChassisTxt;
 
         /// <summary>
-        /// YrTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox YrTxt;
-
-        /// <summary>
-        /// ColourTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ColourTxt;
-
-        /// <summary>
-        /// MakeTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MakeTxt;
-
-        /// <summary>
-        /// ModTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ModTxt;
-
-        /// <summary>
-        /// ConTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConTxt;
-
-        /// <summary>
         /// damageTxt control.
         /// </summary>
         /// <remarks>
@@ -78,13 +33,13 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.TextBox damageTxt;
 
         /// <summary>
-        /// dateTxt control.
+        /// mechanic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateTxt;
+        protected global::System.Web.UI.WebControls.DropDownList mechanic;
 
         /// <summary>
         /// Schedule control.
@@ -94,5 +49,14 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Schedule;
+
+        /// <summary>
+        /// RepairOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource RepairOrder;
     }
 }
