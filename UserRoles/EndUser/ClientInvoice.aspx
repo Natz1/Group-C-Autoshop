@@ -3,4 +3,6 @@
 
     <!--Generates invoice of client's purchases-->
     <h1>Invoice</h1>
+    <asp:SqlDataSource ID="InvoiceData" runat="server"></asp:SqlDataSource>
+    <asp:GridView ID="InvoiceList" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px" runat="server" DataSourceID="InvoiceData"></asp:GridView>
 </asp:Content>

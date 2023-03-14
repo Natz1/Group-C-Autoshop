@@ -27,6 +27,15 @@
             <td><asp:TextBox ID="CPhoneTxt" runat="server"></asp:TextBox></td>
         </tr>
     </table>
+    <asp:SqlDataSource ID="ClientData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="Add_Client" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:Parameter Name="Client_Id" Type="Int32" />
+            <asp:ControlParameter ControlID="CNameTxt" DefaultValue="&quot;&quot;" Name="Name" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="CAddrTxt" DefaultValue="&quot;&quot;" Name="Address" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="CEmailTxt" DefaultValue="&quot;&quot;" Name="Email" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="PhoneData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" InsertCommand="SELECT Phone_Number FROM Client_Phone" SelectCommand="SELECT Client_Phone.* FROM Client_Phone"></asp:SqlDataSource>
 
     <!---Selected Options-->
     <h3>Vehicle Information</h3>
@@ -37,11 +46,14 @@
     <!--Fix this*************************-->
     <h3>Additions</h3>
     <br />
-    <asp:GridView ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
+    <asp:GridView
+        ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+    </asp:GridView>
 
     <h3>Spare Parts</h3>
     <br />
-    <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
+    <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+    </asp:GridView>
 
     <br /><br />
     <asp:Button ID="Confirm" runat="server" Text="Confirm" OnClick="Confirm_Click" />

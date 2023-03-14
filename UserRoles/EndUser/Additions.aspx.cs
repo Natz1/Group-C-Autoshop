@@ -20,8 +20,10 @@ namespace Group_C_Autoshop.EndUser
         protected void TrackBuy_Click(object sender, EventArgs e)
         {
             //Store in session variable
+            Session["Alarm"] = "No";
+            Session["Radio"] = "No";
             Session["Track"] = "Yes";
-            Session["Price"] = "12000";
+            Session["Price"] = "5000";
             Response.Redirect("ClientOrder");
         }
 
@@ -29,8 +31,10 @@ namespace Group_C_Autoshop.EndUser
         protected void AlarmBuy_Click(object sender, EventArgs e)
         {
             //Store in session variable
+            Session["Track"] = "No";
+            Session["Radio"] = "No";
             Session["Alarm"] = "Yes";
-            Session["Price"] = "22000";
+            Session["Price"] = "2500";
             Response.Redirect("ClientOrder");
         }
 
@@ -38,8 +42,10 @@ namespace Group_C_Autoshop.EndUser
         protected void RadioBuy_Click(object sender, EventArgs e)
         {
             //Store in session variable
+            Session["Track"] = "No";
+            Session["Alarm"] = "No";
             Session["Radio"] = "Yes";
-            Session["Price"] = "5000";
+            Session["Price"] = "7500";
             Response.Redirect("ClientOrder");
         }
     }

@@ -41,6 +41,63 @@ namespace Group_C_Autoshop.UserRoles.EndUser
                 adapt.Fill(dt);
                 VehicleList.DataSource = dt;
                 VehicleList.DataBind();
+
+                //If session variable is not empty
+                if (!string.IsNullOrEmpty(Session["Track"] as string) && !string.IsNullOrEmpty(Session["Alarm"] as string) &&
+                    !string.IsNullOrEmpty(Session["Radio"] as string) && !string.IsNullOrEmpty(Session["Price"] as string))
+                {
+                    var table = new DataTable();
+                    table.Columns.Add("Radio_Installation");
+                    table.Columns.Add("Car_Alarm");
+                    table.Columns.Add("Tracking_Device");
+                    table.Columns.Add("Price");
+
+                    var row = table.NewRow();
+                    row["Tracking_Device"] = Session["Track"].ToString();
+                    row["Car_Alarm"] = Session["Alarm"].ToString();
+                    row["Radio_Installation"] = Session["Radio"].ToString();
+                    row["Price"] = Session["Price"].ToString();
+
+                    table.Rows.Add(row);
+
+                    AdditionList.DataSource = table;
+                    AdditionList.DataBind();
+                }
+
+                //If session variable is not empty
+                if (!string.IsNullOrEmpty(Session["Name"] as string) && !string.IsNullOrEmpty(Session["Quantity"] as string) &&
+                !string.IsNullOrEmpty(Session["PPrice"] as string))
+                {
+                    var table1 = new DataTable();
+                    table1.Columns.Add("Name");
+                    table1.Columns.Add("Quantity");
+                    table1.Columns.Add("Price");
+
+                    var row = table1.NewRow();
+                    row["Name"] = Session["Name"].ToString();
+                    row["Quantity"] = Session["Quantity"].ToString();
+                    row["Price"] = Session["PPrice"].ToString();
+
+                    table1.Rows.Add(row);
+
+                    PartsList.DataSource = table1;
+                    PartsList.DataBind();
+                }
+            }
+        }
+
+        protected void DataBind1(object sender, GridViewRowEventArgs e)
+        {
+            //If session variable is not empty
+            if (!string.IsNullOrEmpty(Session["Name"] as string) && !string.IsNullOrEmpty(Session["Quantity"] as string) &&
+                !string.IsNullOrEmpty(Session["PPrice"] as string))
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    e.Row.Cells[0].Text = Session["Name"].ToString();
+                    e.Row.Cells[1].Text = Session["Quantity"].ToString();
+                    e.Row.Cells[2].Text = Session["PPrice"].ToString();
+                }
             }
         }
 
@@ -50,9 +107,17 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             //Create a command to insert the values into the database
             /*SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
+            cmd.CommandType = CommandType.Text;
             cmd.CommandText =
-                "Insert into Sale values()";
-            cmd.ExecuteNonQuery();*/
+                "Insert into Client (Name, Residentia) Values ('" + CNameTxt.Text + "', '" + CAddrTxt.Text + "', '" + CEmailTxt.Text + "')";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText =
+                "Insert into Client_Phone (Phone_Number) Values ('" + CPhoneTxt + "')";
+            cmd.ExecuteNonQuery();
+
+            Response.Redirect("VehiclePurchases");*/
 
             //Redirect to Invoice Page
             Response.Redirect("ClientInvoice");

@@ -166,7 +166,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="AutoshopDB\Demo-Modifications.sql" />
     <Content Include="AutoshopDB\Demo-Triggers.sql" />
     <Content Include="AutoshopDB\Demo_Functions.sql" />
     <Content Include="AutoshopDB\Demo_Insert Statements.sql" />

@@ -8,11 +8,11 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox1" runat="server" ReadOnly="True" Text="61000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox1" runat="server" ReadOnly="True" Text="50000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
-            <td><asp:DropDownList ID="DropDownList7" runat="server">
+            <td><asp:DropDownList ID="DropDownList1" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -38,11 +38,11 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox2" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox2" runat="server" ReadOnly="True" Text="50000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
-            <td><asp:DropDownList ID="DropDownList6" runat="server">
+            <td><asp:DropDownList ID="DropDownList2" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -68,11 +68,11 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox4" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox3" runat="server" ReadOnly="True" Text="25000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
-            <td><asp:DropDownList ID="DropDownList5" runat="server">
+            <td><asp:DropDownList ID="DropDownList3" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -98,7 +98,7 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox6" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox4" runat="server" ReadOnly="True" Text="30000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -128,11 +128,11 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox8" runat="server" ReadOnly="True" Text="30000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox5" runat="server" ReadOnly="True" Text="30000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
-            <td><asp:DropDownList ID="DropDownList3" runat="server">
+            <td><asp:DropDownList ID="DropDownList5" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -158,11 +158,11 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox10" runat="server" ReadOnly="True" Text="61000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox6" runat="server" ReadOnly="True" Text="20000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
-            <td><asp:DropDownList ID="DropDownList2" runat="server">
+            <td><asp:DropDownList ID="DropDownList6" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -188,11 +188,11 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox13" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox7" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
-            <td><asp:DropDownList ID="DropDownList1" runat="server">
+            <td><asp:DropDownList ID="DropDownList7" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -217,7 +217,7 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox3" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox8" runat="server" ReadOnly="True" Text="15000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -236,7 +236,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button1" OnClick="Buy6_Click"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy7" OnClick="Buy7_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
@@ -246,7 +246,7 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox5" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox9" runat="server" ReadOnly="True" Text="10000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -265,7 +265,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button2" OnClick="Buy6_Click"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy8" OnClick="Buy8_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
@@ -275,7 +275,7 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox7" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox10" runat="server" ReadOnly="True" Text="20000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -294,7 +294,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button3" OnClick="Buy6_Click"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy9" OnClick="Buy9_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />
@@ -304,7 +304,7 @@
     <table>
         <tr>
             <td>Unit Price: $</td>
-            <td><asp:TextBox Id="TextBox9" runat="server" ReadOnly="True" Text="45000"></asp:TextBox></td>
+            <td><asp:TextBox Id="TextBox11" runat="server" ReadOnly="True" Text="10000"></asp:TextBox></td>
         </tr>
         <tr>
             <td>Quantity: </td>
@@ -323,7 +323,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><asp:Button runat="server" Text="Buy" Id="Button4" OnClick="Buy6_Click"></asp:Button></td>
+            <td><asp:Button runat="server" Text="Buy" Id="Buy10" OnClick="Buy10_Click"></asp:Button></td>
         </tr>
     </table>
     <br /><br />

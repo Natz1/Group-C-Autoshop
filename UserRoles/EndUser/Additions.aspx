@@ -8,7 +8,7 @@
     <table>
         <tr>
             <td>Price: $</td>
-            <td><asp:TextBox Id="Price1" runat="server" ReadOnly="True" Text="12000"></asp:TextBox></td>
+            <td><asp:TextBox Id="Price1" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
         </tr>
         <tr>
             <td></td>
@@ -23,7 +23,7 @@
     <table>
         <tr>
             <td>Price: $</td>
-            <td><asp:TextBox Id="Price2" runat="server" ReadOnly="True" Text="22000"></asp:TextBox></td>
+            <td><asp:TextBox Id="Price2" runat="server" ReadOnly="True" Text="2500"></asp:TextBox></td>
         </tr>
         <tr>
             <td></td>
@@ -37,7 +37,7 @@
     <table>
         <tr>
             <td>Price: $</td>
-            <td><asp:TextBox Id="Price3" runat="server" ReadOnly="True" Text="5000"></asp:TextBox></td>
+            <td><asp:TextBox Id="Price3" runat="server" ReadOnly="True" Text="7500"></asp:TextBox></td>
         </tr>
         <tr>
             <td></td>

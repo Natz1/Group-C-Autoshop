@@ -25,15 +25,15 @@ namespace Group_C_Autoshop
             Session["chassis"] = "";
 
             //Additions
-            Session["Track"] = "";
-            Session["Alarm"] = "";
-            Session["Radio"] = "";
+            Session["Track"] = "No";
+            Session["Alarm"] = "No";
+            Session["Radio"] = "No";
             Session["Price"] = "";
 
             //Spare Parts
             Session["Name"] = "";
             Session["Quantity"] = "";
-            Session["Total"] = "";
+            Session["PPrice"] = "";
         }
     }
 }

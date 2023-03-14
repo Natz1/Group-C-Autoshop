@@ -51,6 +51,24 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.TextBox CPhoneTxt;
 
         /// <summary>
+        /// ClientData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ClientData;
+
+        /// <summary>
+        /// PhoneData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource PhoneData;
+
+        /// <summary>
         /// VehicleList control.
         /// </summary>
         /// <remarks>
