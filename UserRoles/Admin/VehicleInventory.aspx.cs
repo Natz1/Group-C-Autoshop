@@ -13,5 +13,20 @@ namespace Group_C_Autoshop.EndUser
         {
 
         }
+
+        protected void Add1_Click(object sender, EventArgs e)
+        {
+            CarData.Insert();
+        }
+
+        protected void Add2_Click(object sender, EventArgs e)
+        {
+            WDData.Insert();
+        }
+
+        protected void Add3_Click(object sender, EventArgs e)
+        {
+            VanData.Insert();
+        }
     }
 }

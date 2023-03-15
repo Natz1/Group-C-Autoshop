@@ -56,17 +56,21 @@
                         <li id="admin" runat="server"><a runat="server" href="~/UserRoles/Admin/ClientList">Clients</a></li>
                         <li id="admin1" runat="server"><a runat="server" href="~/UserRoles/Admin/EmployeeList">Employees</a></li>
                         <li id="admin2" runat="server"><a runat="server" href="~/UserRoles/Admin/VehicleInventory">Vehicle Inventory</a></li>
+                        <li id="admin3" runat="server"><a runat="server" href="~/UserRoles/Admin/VehiclePurchases">Purchases</a></li>
+                        <li id="admin4" runat="server"><a runat="server" href="~/UserRoles/Admin/SalesResults">Sales</a></li>
 
                         <!--End User-->
-                        <li id="enduser" runat="server"><a runat="server" href="~/UserRoles/EndUser/VehicleList">Vehicles</a></li>
-                        <li id="enduser1" runat="server"><a runat="server" href="~/UserRoles/EndUser/Additions">Additions</a></li>
-                        <li id="enduser2" runat="server"><a runat="server" href="~/UserRoles/EndUser/SpareParts">Repair Parts</a></li>
-                        <!--<li class="enduser" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientInvoice">Invoice</a></li>-->
+                        <li id="enduser3" runat="server"><a runat="server" href="~/UserRoles/EndUser/VehicleList">Vehicles</a></li>
+                        <li id="enduser4" runat="server"><a runat="server" href="~/UserRoles/EndUser/Additions">Additions</a></li>
+                        <li id="enduser5" runat="server"><a runat="server" href="~/UserRoles/EndUser/SpareParts">Replace Parts</a></li>
+                        <li id="enduser1" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientOrder">Order Now</a></li>
+                        <li id="enduser2" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientInvoice">Invoice</a></li>
+                        <li id="enduser6" runat="server"><a runat="server" href="~/UserRoles/EndUser/ScheduleRepair">Repairs</a></li>
                         
 
                         <!--Manager-->
-                        <!--Add manager pages!!!!!!!!!!!!!!!!!!!!!
-                        <li class="manager" runat="server"><a runat="server" href="~/UserRoles/ClientList">Users</a></li>-->
+                        <!--<li id="manager" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
+                        <li id="manager1" runat="server"><a runat="server" href="~/UserRoles/Manager/BusinessInsights">Business Insights</a></li>
 
                         <!--General-->
                         <li><a runat="server" href="~/About">About Us</a></li>

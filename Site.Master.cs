@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Group_C_Autoshop.Account;
 using Group_C_Autoshop.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -127,7 +128,7 @@ namespace Group_C_Autoshop
             var userManager1 = Context.GetOwinContext().Get<ApplicationUserManager>();
             string email1 = "manager@gmail.com";
             //***********************Check if user is already present
-            var search2 = userManager.FindByEmail(email);
+            var search2 = userManager.FindByEmail(email1);
             if (search1 == null)
             {
                 var user = new ApplicationUser()
@@ -144,10 +145,9 @@ namespace Group_C_Autoshop
             admin.Visible = false;
             admin1.Visible = false;
             admin2.Visible = false;
-            enduser.Visible = false;
-            enduser1.Visible = false;
-            enduser2.Visible = false;
-            //manager.Visible = false;
+            admin3.Visible = false;
+            admin4.Visible = false;
+            manager1.Visible = false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -155,18 +155,27 @@ namespace Group_C_Autoshop
                 admin.Visible = true;
                 admin1.Visible = true;
                 admin2.Visible = true;
-            }
+                admin3.Visible = true;
+                admin4.Visible = true;
 
-            if (Context.User.IsInRole("enduser"))
-            {
-                enduser.Visible = true;
-                enduser1.Visible = true;
-                enduser2.Visible = true;
+                enduser1.Visible = false;
+                enduser2.Visible = false;
+                enduser3.Visible = false;
+                enduser4.Visible = false;
+                enduser5.Visible = false;
+                enduser6.Visible = false;
             }
 
             if (Context.User.IsInRole("manager"))
             {
-                //manager.Visible = true;
+                manager1.Visible = true;
+
+                enduser1.Visible = false;
+                enduser2.Visible = false;
+                enduser3.Visible = false;
+                enduser4.Visible = false;
+                enduser5.Visible = false;
+                enduser6.Visible = false;
             }
 
         }

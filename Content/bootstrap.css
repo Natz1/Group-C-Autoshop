@@ -118,8 +118,7 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  font: inherit;
-  margin: 0;
+  margin: 0 0 0 30px;
 }
 button {
   overflow: visible;
@@ -2354,6 +2353,7 @@ pre code {
 }
 table {
   background-color: transparent;
+    margin-bottom: 6px;
 }
 table col[class*="col-"] {
   position: static;
@@ -5054,6 +5054,15 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+/*Table display*/
+.header {
+    background-color: #0B4851;
+    color: #fff;
+}
+.rows {
+    background-color: #87A2A6;
+
+}
 /*hero image at top of page*/
 .hero-image {
     max-width: 100vw;
@@ -5091,7 +5100,7 @@ a.badge:focus {
 /*formatting login box*/
 .login-box {
     background-color: #0B4851;
-    width: 350px;
+    width: 380px;
     height: 450px;
     padding: 30px;
     margin: 20px;
@@ -5114,7 +5123,7 @@ a.badge:focus {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    height: 120vh;
+    height: 850vh;
     color: #0B4851; /*text colour of jumbotron*/
     background-color: #ffffff; /*background colour*/
 }
