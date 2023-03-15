@@ -18,8 +18,9 @@ namespace Group_C_Autoshop
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        void SessionStart(object sender, EventArgs e)
+        void Session_Start(object sender, EventArgs e)
         {
+            Response.Redirect("/Default.aspx");
             //Initializing the session's variables
             //Client
             Session["ID"] = "";
@@ -30,12 +31,10 @@ namespace Group_C_Autoshop
             Session["Track"] = "No";
             Session["Alarm"] = "No";
             Session["Radio"] = "No";
-            Session["Price"] = "";
+            Session["APrice"] = "0.00";
 
             //Spare Parts
-            Session["Name"] = "";
-            Session["Quantity"] = "";
-            Session["PPrice"] = "";
+            Session["Parts"] = new Parts[11]; ;
         }
     }
 }

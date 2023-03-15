@@ -1,6 +1,6 @@
 --Demo Documentation Select and Exec Statements
 --Version 1 updated Feb 26, 2023
-
+Use Car_Mart_Web_App
 --Employee Insert Statement
 
 INSERT INTO Employee VALUES
@@ -89,14 +89,14 @@ INSERT INTO Client_Phone VALUES
 INSERT INTO Vehicle VALUES
 ('1HGBH41JXMN109186','2020','Blue','Honda','City','Car','New',3200000.00,25,'52WVC10338',1497,0,'No'),
 ('1HGBH41JXMN109187','2020','Black','Honda','City','Car','New',3200000.00,25,'52WVC50337',1497,0,'No'),
+
 ('1IGCH51JXOQ109204','2020','Red','Toyota','Tacoma','Van','New',4400000.00,20,'74WVC50338',2694,0,'No'),
 ('1IGCH51JXOQ109205','2020','Jade','Toyota','Tacoma','Van','New',4400000.00,20,'74WVC50339',2694,0,'No'),
+
 ('1LGDH61JXTW503410','2020','Gray','BMW','X6','4WD','New',8000000.00,37.5,'34WVC11324',2998,0,'No'),
 ('1LGDH61JXTW503411','2020','Green','BMW','X6','4WD','New',8000000.00,37.5,'34WVC11326',2998,0,'No'),
 ('1KGFH71JXAJ705192','2020','White','Subaru','WRX','4WD','New',5400000.00,15,'29WVC15550',2457,0,'No'),
-('1KGFH71JXAJ705193','2020','Gold','Subaru','WRX','4WD','New',5400000.00,15,'29WVC15558',2457,0,'No');
-
-INSERT INTO Vehicle VALUES
+('1KGFH71JXAJ705193','2020','Gold','Subaru','WRX','4WD','New',5400000.00,15,'29WVC15558',2457,0,'No'),
 ('1LGDI71JXTW504511','2020','Black','BMW','X6','4WD','New',8000000.00,37.5,'34WVD11724',2998,0,'No'),
 ('1LGDI71JXTW504512','2020','Red','BMW','X6','4WD','New',8000000.00,37.5,'34WVD11725',2998,0,'No'),
 ('1KGFH89JXAK705352','2020','Blue','Subaru','WRX','4WD','New',5400000.00,15,'29WZC73551',2457,0,'No'),
@@ -114,7 +114,11 @@ INSERT INTO Four_WD VALUES
 ('1LGDH61JXTW503410',5,'Diesel','591 cubic ft'),
 ('1LGDH61JXTW503411',5,'Diesel','591 cubic ft'),
 ('1KGFH71JXAJ705192',5,'Petrol','104 cubic ft'),
-('1KGFH71JXAJ705193',5,'Petrol','104 cubic ft');
+('1KGFH71JXAJ705193',5,'Petrol','104 cubic ft'),
+('1LGDI71JXTW504511',5,'Petrol','104 cubic ft'),
+('1LGDI71JXTW504512',5,'Petrol','104 cubic ft'),
+('1KGFH89JXAK705352',5,'Petrol','104 cubic ft'),
+('1KGFH89JXAK705353',5,'Petrol','104 cubic ft');
 
 --Van Insert Statement
 
@@ -159,21 +163,12 @@ VALUES (10007, 1);
 INSERT INTO Add_On(Job_Number,Radio_Installation,Car_Alarm,Tracking_Device)
 VALUES (1,'Yes','Yes','Yes');
 
-INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
-VALUES (1,'Back Bumper',1);
-INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
-VALUES (1,'Front Bumper',1);
-INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
-VALUES (1,'Side Skirt',2);
+INSERT INTO Part_Changed(Job_Number,Part_Id,Part_Name,Quantity)
+VALUES (1,1,'Back Bumper',1);
+INSERT INTO Part_Changed(Job_Number,Part_Id,Part_Name,Quantity)
+VALUES (1,2,'Front Bumper',1);
+INSERT INTO Part_Changed(Job_Number,Part_Id,Part_Name,Quantity)
+VALUES (1,3,'Side Skirt',2);
 
 INSERT INTO Repair VALUES (1, 25000, 'Installation Fee');
-
-DROP TABLE Part_Changed;
-
-Select * From Work_Done
-Select * From Add_On;
-Select * From Part_Changed;
-Select * From Repair;
-Select * From Sale;
-Select * From Vehicle;
 

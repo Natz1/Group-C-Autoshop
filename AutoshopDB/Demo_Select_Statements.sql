@@ -1,6 +1,6 @@
 --Demo Documentation Select and Exec Statements
 --Version 1 updated Feb 25, 2023
-
+Use Car_Mart_Web_App
 --Table Select Statements
 
 --1
@@ -38,26 +38,6 @@ Select * From Part_Changed;
 --17
 Select * From Repair;
 
---TABLE Drop Statements
-
-DROP TABLE Repair;
-DROP TABLE Part_Changed;
-DROP TABLE Add_on;
-DROP TABLE Work_Done;
-DROP TABLE Sale;
-DROP TABLE Purchase;
-DROP TABLE Van;
-DROP TABLE Four_WD;
-DROP TABLE Car;
-DROP TABLE Vehicle;
-DROP TABLE Client_Phone;
-DROP TABLE Client;
-DROP TABLE Salesman;
-DROP TABLE Mechanic;
-DROP TABLE Administrative_Personnel;
-DROP TABLE Supervises;
-DROP TABLE Employee;
-
 --View Select Statements 
 
 --1
@@ -93,7 +73,7 @@ Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id];
 --Function Select Statements
 
 --1
-Select * from dbo.Client_Invoice(12);
+Select * from dbo.Client_Invoice(53);
 --2
 Select * from dbo.Assigned_Supervisor([Supervisor_Id]);
 
@@ -101,3 +81,29 @@ Select * from dbo.Assigned_Supervisor([Supervisor_Id]);
 --1
 EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type];
 
+
+--TABLE Drop Statements
+
+DROP TABLE Repair;
+DROP TABLE Part_Changed;
+DROP TABLE Add_on;
+DROP TABLE Work_Done;
+DROP TABLE Sale;
+DROP TABLE Purchase;
+DROP TABLE Van;
+DROP TABLE Four_WD;
+DROP TABLE Car;
+DROP TABLE Vehicle;
+DROP TABLE Client_Phone;
+DROP TABLE Client;
+DROP TABLE Salesman;
+DROP TABLE Mechanic;
+DROP TABLE Administrative_Personnel;
+DROP TABLE Supervises;
+DROP TABLE Employee;
+
+--Trigger drop statements
+Drop Trigger Vehicle_Sales
+Drop Trigger Vehicle_Purchases
+Drop Trigger Part_Changed_Insert
+Drop Trigger Add_On_Insert

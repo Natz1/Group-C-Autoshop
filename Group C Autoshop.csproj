@@ -341,6 +341,7 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Parts.cs" />
     <Compile Include="UserRoles\Admin\ClientList.aspx.cs">
       <DependentUpon>ClientList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

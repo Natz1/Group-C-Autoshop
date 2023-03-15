@@ -4,7 +4,8 @@
     <h1>Order Now!</h1>
     <!--The client can order vehicles, additions for vehicles and schedule repairs for their owned vehicles-->
     <!--Only clients can access this page-->
-    <!--Once they click submit it will redirect to invoice page-->
+    <!--Once they click submit it will send their order to the admin to
+        add a salesman or mechanic-->
 
     <!--Form for client information-->
     <h3>Customer Information</h3>
@@ -27,23 +28,24 @@
             <td><asp:TextBox ID="CPhoneTxt" runat="server" MaxLength="14"></asp:TextBox></td>
         </tr>
     </table>
-    <asp:SqlDataSource ID="ClientData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="Add_Client" SelectCommandType="StoredProcedure">
-        <SelectParameters>
-            <asp:Parameter Name="Client_Id" Type="Int32" />
-            <asp:ControlParameter ControlID="CNameTxt" DefaultValue="&quot;&quot;" Name="Name" PropertyName="Text" Type="String" />
-            <asp:ControlParameter ControlID="CAddrTxt" DefaultValue="&quot;&quot;" Name="Address" PropertyName="Text" Type="String" />
-            <asp:ControlParameter ControlID="CEmailTxt" DefaultValue="&quot;&quot;" Name="Email" PropertyName="Text" Type="String" />
-        </SelectParameters>
+    <!--Insert into client and phone number-->
+    <asp:SqlDataSource ID="ClientData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Client.* FROM Client" InsertCommand="Add_Client" InsertCommandType="StoredProcedure">
+        <InsertParameters>
+            <asp:ControlParameter Name="Name" Type="String" ControlID="CNameTxt" PropertyName="Text" />
+            <asp:ControlParameter Name="Address" Type="String" ControlID="CAddrTxt" PropertyName="Text" />
+            <asp:ControlParameter Name="Email" Type="String" ControlID="CEmailTxt" PropertyName="Text" />
+            <asp:ControlParameter Name="Phone" Type="String" ControlID="CPhoneTxt" PropertyName="Text" />
+        </InsertParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="PhoneData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" InsertCommand="SELECT Phone_Number FROM Client_Phone" SelectCommand="SELECT Client_Phone.* FROM Client_Phone"></asp:SqlDataSource>
 
     <!---Selected Options-->
     <h3>Vehicle Information</h3>
     <br />
+    <!--Select Salesman for admin only-->
     <table>
         <tr>
-            <td><h4>Select Salesman: </h4></td>
-            <td><asp:DropDownList ID="salesman" runat="server" DataValueField="Salesman_ID"></asp:DropDownList></td>
+            <td hidden="hidden"><h4>Select Salesman: </h4></td>
+            <td hidden="hidden"><asp:DropDownList ID="salesman" runat="server" DataValueField="Salesman_ID"></asp:DropDownList></td>
             
         </tr>
     </table>
@@ -53,8 +55,8 @@
     <h3>Work to be done</h3>
     <table>
         <tr>
-            <td><h4>Select Mechanic: </h4></td>
-            <td><asp:DropDownList ID="mechanic" DataValueField="Mechanic_ID" runat="server"></asp:DropDownList></td>
+            <td><h4 hidden="hidden">Select Mechanic: </h4></td>
+            <td hidden="hidden"><asp:DropDownList ID="mechanic" DataValueField="Mechanic_ID" runat="server"></asp:DropDownList></td>
         </tr>
     </table>
 
@@ -67,7 +69,7 @@
 
 
 
-    <h4>Spare Parts</h4>
+    <h4>Replacement Parts</h4>
     <br />
     <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
     </asp:GridView>

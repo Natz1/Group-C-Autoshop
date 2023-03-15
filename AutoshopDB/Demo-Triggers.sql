@@ -1,6 +1,6 @@
 --Demo Documentation Modifications
 --Version 1 updated Mar 7, 2023
-
+Use Car_Mart_Web_App
 --Creating a trigger to delete a vehicle form the Vehicle Table when a insert statement is completed on the Sale Table
 
 Create Trigger Vehicle_Sales
@@ -32,8 +32,6 @@ DECLARE
 	UPDATE Vehicle
 	SET Sold = 'Yes'
 	Where Chassis_Number = @Chassis_Number;
-
-DROP TRIGGER Vehicle_Sales;
 
 --Creating a trigger to add a vehicle to the vehicle table when a insert statement is completed on the Purchase Table
 

@@ -9,7 +9,7 @@ as
 Return
 	Select S.Date, S.Chassis_Number, C.Name, V.Year, V.Make, V.Model, A.Car_Alarm, A.Radio_Installation, A.Tracking_Device,
 	S.Price as 'Car_Price', SUM(R.Number_of_parts_Used) as 'Number_of_Parts_Purchased', SUM(R.Parts_Cost) as 'Parts_Cost_Total', R.Repair_Cost as 'Repair_Cost_Total', 
-	A.Addition_Cost as 'Add_On(s)_Cost_Total', 
+	A.Addition_Cost as 'Add_On_Cost_Total', 
 	isnull(S.Price,0) + isnull(R.Repair_Cost,0) + isnull(SUM(R.Parts_Cost),0) + isnull(A.Addition_Cost,0) as 'Invoice_Total'
 	from Client C
 	Full Join Sale S on S.Client_ID = C.Client_ID

@@ -13,7 +13,6 @@ namespace Group_C_Autoshop.UserRoles.EndUser
 {
     public partial class ClientOrder : System.Web.UI.Page
     {
-        //Get the client ID
         //Make new SQL Connection
         SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
@@ -24,9 +23,11 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             }
             con.Open();
 
-            //If session variable is not empty
+            //If chassis session variable is not empty
             if (!string.IsNullOrEmpty(Session["chassis"] as string))
             {
+                //Creates salesman dropdown list!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //Admin purposes, will be changes so only admins can access it and alter it
                 string com = "Select Salesman_ID From Salesman";
                 SqlDataAdapter adpt = new SqlDataAdapter(com, con);
                 DataSet ds = new DataSet();
@@ -34,11 +35,11 @@ namespace Group_C_Autoshop.UserRoles.EndUser
                 salesman.DataSource = ds;
                 salesman.DataValueField = "Salesman_ID";
                 salesman.DataBind();
-
                 ds.Dispose();
 
+                //Get chassis number from session variable
                 String chassis = Session["chassis"].ToString();
-                //Create a command to get the values from the database
+                //Create a command to get the vehicle values from the database
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText =
@@ -47,76 +48,95 @@ namespace Group_C_Autoshop.UserRoles.EndUser
                 cmd.Parameters["@chassis"].Value = chassis;
                 cmd.ExecuteNonQuery();
 
-                //Store details in grid view
+                //Store vehicle details in grid view for client display
                 DataTable dt = new DataTable();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 adapt.Fill(dt);
                 VehicleList.DataSource = dt;
                 VehicleList.DataBind();
 
-                //If session variable is not empty
-                if (!string.IsNullOrEmpty(Session["Track"] as string) && !string.IsNullOrEmpty(Session["Alarm"] as string) &&
-                    !string.IsNullOrEmpty(Session["Radio"] as string) && !string.IsNullOrEmpty(Session["Price"] as string))
+                
+            }
+
+            //Displays the additions selected in a table
+            var table = new DataTable();
+            table.Columns.Add("Radio_Installation");
+            table.Columns.Add("Car_Alarm");
+            table.Columns.Add("Tracking_Device");
+            table.Columns.Add("Price");
+
+            var row = table.NewRow();
+            row["Tracking_Device"] = Session["Track"].ToString();
+            row["Car_Alarm"] = Session["Alarm"].ToString();
+            row["Radio_Installation"] = Session["Radio"].ToString();
+            row["Price"] = Session["APrice"].ToString();
+
+            table.Rows.Add(row);
+
+            AdditionList.DataSource = table;
+            AdditionList.DataBind();
+
+
+            //Get parts from session array
+            Parts[] listing = Session["Parts"] as Parts[];
+            //Displays the parts selected in a table
+            var table1 = new DataTable();
+            table1.Columns.Add("Name");
+            table1.Columns.Add("Quantity");
+            table1.Columns.Add("Price");
+            table1.Columns.Add("Total");
+
+            if (listing.Length != 0)
+            {
+                foreach (var item in listing)
                 {
-                    com = "Select Mechanic_ID From Mechanic";
-                    adpt = new SqlDataAdapter(com, con);
-                    ds = new DataSet();
-                    adpt.Fill(ds);
-                    mechanic.DataSource = ds;
-                    mechanic.DataValueField = "Mechanic_ID";
-                    mechanic.DataBind();
-
-                    ds.Dispose();
-
-                    var table = new DataTable();
-                    table.Columns.Add("Radio_Installation");
-                    table.Columns.Add("Car_Alarm");
-                    table.Columns.Add("Tracking_Device");
-                    table.Columns.Add("Price");
-
-                    var row = table.NewRow();
-                    row["Tracking_Device"] = Session["Track"].ToString();
-                    row["Car_Alarm"] = Session["Alarm"].ToString();
-                    row["Radio_Installation"] = Session["Radio"].ToString();
-                    row["Price"] = Session["Price"].ToString();
-
-                    table.Rows.Add(row);
-
-                    AdditionList.DataSource = table;
-                    AdditionList.DataBind();
-                }
-
-                //If session variable is not empty
-                if (!string.IsNullOrEmpty(Session["Name"] as string) && !string.IsNullOrEmpty(Session["Quantity"] as string) &&
-                !string.IsNullOrEmpty(Session["PPrice"] as string))
-                {
-                    com = "Select Mechanic_ID From Mechanic";
-                    adpt = new SqlDataAdapter(com, con);
-                    ds = new DataSet();
-                    adpt.Fill(ds);
-                    mechanic.DataSource = ds;
-                    mechanic.DataValueField = "Mechanic_ID";
-                    mechanic.DataBind();
-
-                    ds.Dispose();
-
-                    var table1 = new DataTable();
-                    table1.Columns.Add("Name");
-                    table1.Columns.Add("Quantity");
-                    table1.Columns.Add("Price");
-
-                    var row = table1.NewRow();
-                    row["Name"] = Session["Name"].ToString();
-                    row["Quantity"] = Session["Quantity"].ToString();
-                    row["Price"] = Session["PPrice"].ToString();
+                    row = table1.NewRow();
+                    row["Name"] = item?.MyName;
+                    row["Quantity"] = item?.MyQuantity;
+                    row["Price"] = item?.MyCost;
+                    row["Total"] = item?.MyCost * item?.MyQuantity;
 
                     table1.Rows.Add(row);
-
-                    PartsList.DataSource = table1;
-                    PartsList.DataBind();
                 }
             }
-            
+
+            PartsList.DataSource = table1;
+            PartsList.DataBind();
+
+            //If addition session variables are not empty
+            /*if (!string.IsNullOrEmpty(Session["APrice"] as string))
+            {
+                //Creates mechanic dropdown list!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //Admin purposes, will be changes so only admins can access it and alter it
+                string com = "Select Mechanic_ID From Mechanic";
+                SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+                DataSet ds = new DataSet();
+                adpt.Fill(ds);
+                mechanic.DataSource = ds;
+                mechanic.DataValueField = "Mechanic_ID";
+                mechanic.DataBind();
+
+                ds.Dispose();
+
+                
+            }*/
+
+            //If session variable is not empty
+            /*if (!string.IsNullOrEmpty(Session["PPrice"] as string))
+            {
+                //Creates mechanic dropdown list!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //Admin purposes, will be changes so only admins can access it and alter it
+                string com = "Select Mechanic_ID From Mechanic";
+                SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+                DataSet ds = new DataSet();
+                adpt.Fill(ds);
+                mechanic.DataSource = ds;
+                mechanic.DataValueField = "Mechanic_ID";
+                mechanic.DataBind();
+
+                ds.Dispose();
+            }*/
+
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
@@ -129,7 +149,9 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             //*****************************Replace with stored procedure
             DateTime today = DateTime.Today;
             //Save client info
-            cmd.CommandText =
+            ClientData.Insert();
+
+            /*cmd.CommandText =
                 "Insert into Client (Name, Residential_Address, Email) Values ('" + CNameTxt.Text + "', '" + CAddrTxt.Text + "', '" + CEmailTxt.Text + "')";
             cmd.ExecuteNonQuery();
             //Client Phone
@@ -139,7 +161,7 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             String cphone = CPhoneTxt.Text;
             cmd.CommandText =
                 "Insert into Client_Phone Values ('" + id + "','" + cphone + "')";
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();*/
 
 
 
@@ -221,12 +243,10 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             Session["Track"] = "No";
             Session["Alarm"] = "No";
             Session["Radio"] = "No";
-            Session["Price"] = "";
+            Session["APrice"] = "0.00";
 
             //Spare Parts
-            Session["Name"] = "";
-            Session["Quantity"] = "";
-            Session["PPrice"] = "";
+            Session["Parts"] = new Parts[11]; ;
             Response.Redirect("ClientOrder");
         }
     }
