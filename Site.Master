@@ -58,13 +58,13 @@
                         <li id="admin2" runat="server"><a runat="server" href="~/UserRoles/Admin/VehicleInventory">Vehicle Inventory</a></li>
                         <li id="admin3" runat="server"><a runat="server" href="~/UserRoles/Admin/VehiclePurchases">Purchases</a></li>
                         <li id="admin4" runat="server"><a runat="server" href="~/UserRoles/Admin/SalesResults">Sales</a></li>
+                        <li id="admin5" runat="server"><a runat="server" href="~/UserRoles/Admin/ClientInvoice">Invoice</a></li>
 
                         <!--End User-->
                         <li id="enduser3" runat="server"><a runat="server" href="~/UserRoles/EndUser/VehicleList">Vehicles</a></li>
                         <li id="enduser4" runat="server"><a runat="server" href="~/UserRoles/EndUser/Additions">Additions</a></li>
                         <li id="enduser5" runat="server"><a runat="server" href="~/UserRoles/EndUser/SpareParts">Replace Parts</a></li>
                         <li id="enduser1" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientOrder">Order Now</a></li>
-                        <li id="enduser2" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientInvoice">Invoice</a></li>
                         <li id="enduser6" runat="server"><a runat="server" href="~/UserRoles/EndUser/ScheduleRepair">Repairs</a></li>
                         
 

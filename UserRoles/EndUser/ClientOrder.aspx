@@ -68,7 +68,7 @@
     </asp:GridView>
 
 
-
+    <br />
     <h4>Replacement Parts</h4>
     <br />
     <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">

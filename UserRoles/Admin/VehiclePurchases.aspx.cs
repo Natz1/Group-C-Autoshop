@@ -27,21 +27,9 @@ namespace Group_C_Autoshop.UserRoles
 
         protected void Add_Click(object sender, EventArgs e)
         {
-            //Create a command to save values
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
+            PurchaseData.Insert();
 
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText =
-                "Insert into Vehicle Values ('" + ChassisTxt.Text + "', '" + YrTxt.Text + "', '" + ColourTxt.Text + "', '" + MakeTxt.Text +
-                "','" + ModTxt.Text + "','" + TypeTxt.Text + "','" + ConTxt.Text + "','" + ImportTxt.Text + "','" + MarkUpTxt.Text +
-                "','" + EngineTxt.Text + "','" + CCTxt.Text + "','" + MileTxt.Text + "','" + SoldTxt.Text + "')";
-            cmd.ExecuteNonQuery();
-
-            cmd.CommandText =
-                "Insert into Purchase (Date, Value, Cost, Salesman_ID, Chassis_Number) Values ('" + DateTxt.Text + "', '" + 
-                ValueTxt.Text + "', '" + CostTxt.Text + "','" + SalesmanTxt.Text + "','" + ChassisTxt.Text + "')";
-            cmd.ExecuteNonQuery();
+            AddVData.Update();
 
             Response.Redirect("VehiclePurchases");
         }

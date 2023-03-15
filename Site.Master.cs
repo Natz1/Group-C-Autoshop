@@ -147,6 +147,7 @@ namespace Group_C_Autoshop
             admin2.Visible = false;
             admin3.Visible = false;
             admin4.Visible = false;
+            admin5.Visible = false;
             manager1.Visible = false;
 
             //***********************Make navigation visible depending on user role
@@ -157,9 +158,9 @@ namespace Group_C_Autoshop
                 admin2.Visible = true;
                 admin3.Visible = true;
                 admin4.Visible = true;
+                admin5.Visible = true;
 
                 enduser1.Visible = false;
-                enduser2.Visible = false;
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;
@@ -171,7 +172,6 @@ namespace Group_C_Autoshop
                 manager1.Visible = true;
 
                 enduser1.Visible = false;
-                enduser2.Visible = false;
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;

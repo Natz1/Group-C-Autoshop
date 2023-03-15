@@ -60,6 +60,15 @@ namespace Group_C_Autoshop
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin4;
 
         /// <summary>
+        /// admin5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin5;
+
+        /// <summary>
         /// enduser3 control.
         /// </summary>
         /// <remarks>
@@ -94,15 +103,6 @@ namespace Group_C_Autoshop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser1;
-
-        /// <summary>
-        /// enduser2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser2;
 
         /// <summary>
         /// enduser6 control.

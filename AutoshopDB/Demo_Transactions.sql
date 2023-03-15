@@ -123,24 +123,20 @@ BEGIN
 				Insert into Vehicle values (@Chassis_Number, @Year, @Colour,@Make,@Model,@Type,@Condition,@Import_Price,@Mark_Up_Percent,@Engine_Number,@CC_Ratings,@Mileage,@Sold)
 				Select * From Vehicle Where Chassis_Number = @Chassis_Number
 
-				--Get the last entered employee ID
-				Declare @chas char(17)
-				Set @chas = (Select MAX(Chassis_Number) From Vehicle)
-
 				--Add the ID into the table based on the employee's type
 				If (@Type = 'Car')
 					Begin
-						Insert into Car (Chassis_Number) Values (@chas)
+						Insert into Car (Chassis_Number) Values (@Chassis_Number)
 					End
 				Else
 					If (@Type = 'Van')
 					Begin
-						Insert into Van (Chassis_Number) Values (@chas)
+						Insert into Van (Chassis_Number) Values (@Chassis_Number)
 					End
 				Else
 					If (@Type = '4WD')
 					Begin
-						Insert into Four_WD (Chassis_Number) Values (@chas)
+						Insert into Four_WD (Chassis_Number) Values (@Chassis_Number)
 					End
 			End
 	Commit Transaction Add_Vehicle

@@ -187,7 +187,7 @@
     <Content Include="UserRoles\Admin\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\ScheduleRepair.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
-    <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
+    <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
     <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
     <Content Include="UserRoles\EndUser\SpareParts.aspx" />
     <Content Include="UserRoles\Admin\VehicleInventory.aspx" />
@@ -402,11 +402,11 @@
     <Compile Include="UserRoles\EndUser\Additions.aspx.designer.cs">
       <DependentUpon>Additions.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.cs">
+    <Compile Include="UserRoles\Admin\ClientInvoice.aspx.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.designer.cs">
+    <Compile Include="UserRoles\Admin\ClientInvoice.aspx.designer.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\EndUser\ClientOrder.aspx.cs">
