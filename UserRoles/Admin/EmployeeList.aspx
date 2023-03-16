@@ -13,7 +13,7 @@
             <asp:ControlParameter Name="Name" Type="String" ControlID="NameTxt" PropertyName="Text" />
             <asp:ControlParameter Name="Date_Employed" Type="DateTime" ControlID="DateTxt" PropertyName="Text" />
             <asp:ControlParameter Name="DOB" Type="DateTime" ControlID="DOBTxt" PropertyName="Text" />
-            <asp:ControlParameter Name="Supervisor_ID" Type="Int32" ControlID="SupTxt" PropertyName="SelectedValue" />
+            <asp:ControlParameter Name="Supervisor_ID" Type="Int32" ControlID="Sup1Txt" PropertyName="Text" />
             <asp:ControlParameter Name="employee_type" Type="String" ControlID="TypeTxt" PropertyName="Text" />
         </InsertParameters>
     </asp:SqlDataSource>
@@ -58,7 +58,7 @@
         <tr>
             <td><h4>Supervisor ID: </h4></td>
             <td>
-                <asp:DropDownList ID="SupTxt" runat="server" DataValueField="Supervisor_ID"></asp:DropDownList>
+                <asp:TextBox ID="Sup1Txt" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -128,7 +128,7 @@
     <!--Link to database-->
     <asp:SqlDataSource ID="AdminData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT E.Employee_ID, E.Name, E.Date_Employed, E.DOB, E.Supervisor_ID, A.Salary FROM Administrative_Personnel AS A INNER JOIN Employee AS E ON E.Employee_ID = A.Admin_ID" UpdateCommand="Update_Salary_Or_Subsistence" UpdateCommandType="StoredProcedure">
         <UpdateParameters>
-            <asp:ControlParameter Name="Employee_Id" Type="Int32" ControlID="EmpID" PropertyName="SelectedValue" />
+            <asp:ControlParameter Name="Employee_Id" Type="Int32" ControlID="Emp1ID" PropertyName="Text" />
             <asp:ControlParameter Name="Salary" Type="Decimal" ControlID="Sal" PropertyName="Text" />
             <asp:ControlParameter Name="Employee_Type" Type="String" ControlID="SalType" PropertyName="SelectedValue" />
         </UpdateParameters>
@@ -199,7 +199,7 @@
         <tr>
             <td><h4>Employee ID: </h4></td>
             <td>
-                <asp:DropDownList ID="EmpID" runat="server" DataValueField="Employee_ID"></asp:DropDownList>
+                <asp:TextBox ID="Emp1ID" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>

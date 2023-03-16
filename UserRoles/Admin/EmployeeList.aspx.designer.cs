@@ -60,13 +60,13 @@ namespace Group_C_Autoshop.Admin
         protected global::System.Web.UI.WebControls.TextBox DOBTxt;
 
         /// <summary>
-        /// SupTxt control.
+        /// Sup1Txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SupTxt;
+        protected global::System.Web.UI.WebControls.TextBox Sup1Txt;
 
         /// <summary>
         /// TypeTxt control.
@@ -177,13 +177,13 @@ namespace Group_C_Autoshop.Admin
         protected global::System.Web.UI.WebControls.GridView SalesmanList;
 
         /// <summary>
-        /// EmpID control.
+        /// Emp1ID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList EmpID;
+        protected global::System.Web.UI.WebControls.TextBox Emp1ID;
 
         /// <summary>
         /// Sal control.
