@@ -133,7 +133,7 @@ DECLARE
 	@Tracking_Device varchar(3),
 	@Cost money;
 
-	--Storing the values in the variables from inserted
+	--Storing the values in the variables from inserted (from what?)
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Radio_Installation = Radio_Installation From inserted
 	SELECT @Car_Alarm = Car_Alarm From inserted
