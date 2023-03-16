@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Group_C_Autoshop.UserRoles.Manager
 {
-    public partial class GenerateReports : System.Web.UI.Page
+    public partial class WorkDone : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

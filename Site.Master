@@ -57,7 +57,6 @@
                         <li id="admin1" runat="server"><a runat="server" href="~/UserRoles/Admin/EmployeeList">Employees</a></li>
                         <li id="admin2" runat="server"><a runat="server" href="~/UserRoles/Admin/VehicleInventory">Vehicle Inventory</a></li>
                         <li id="admin3" runat="server"><a runat="server" href="~/UserRoles/Admin/VehiclePurchases">Purchases</a></li>
-                        <li id="admin4" runat="server"><a runat="server" href="~/UserRoles/Admin/SalesResults">Sales</a></li>
                         <li id="admin5" runat="server"><a runat="server" href="~/UserRoles/Admin/ClientInvoice">Invoice</a></li>
 
                         <!--End User-->
@@ -69,8 +68,12 @@
                         
 
                         <!--Manager-->
-                        <!--<li id="manager" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
                         <li id="manager1" runat="server"><a runat="server" href="~/UserRoles/Manager/BusinessInsights">Business Insights</a></li>
+                        <li id="manager2" runat="server"><a runat="server" href="~/UserRoles/Manager/SalesResults">Sales Results</a></li>
+                        <li id="manager3" runat="server"><a runat="server" href="~/UserRoles/Manager/WorkDone">Work Done</a></li>
+
+                        <!--Super User-->
+                        <!--<li id="superuser" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
 
                         <!--General-->
                         <li><a runat="server" href="~/About">About Us</a></li>

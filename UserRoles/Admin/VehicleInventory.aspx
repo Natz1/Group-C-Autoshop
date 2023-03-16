@@ -24,6 +24,7 @@
             <asp:BoundField DataField="Mileage" HeaderText="Mileage" SortExpression="Mileage" />
             <asp:BoundField DataField="Sold" HeaderText="Sold" SortExpression="Sold" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
     </asp:GridView>
     <br />
 
@@ -75,6 +76,7 @@
             <asp:BoundField DataField="Mileage" HeaderText="Mileage" SortExpression="Mileage" />
             <asp:BoundField DataField="Sold" HeaderText="Sold" SortExpression="Sold" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
             <HeaderStyle CssClass="header"></HeaderStyle>
 
             <RowStyle CssClass="rows"></RowStyle>
@@ -136,6 +138,7 @@
             <asp:BoundField DataField="Mileage" HeaderText="Mileage" SortExpression="Mileage" />
             <asp:BoundField DataField="Sold" HeaderText="Sold" SortExpression="Sold" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
             <HeaderStyle CssClass="header"></HeaderStyle>
 
             <RowStyle CssClass="rows"></RowStyle>
@@ -192,6 +195,7 @@
             <asp:BoundField DataField="Mileage" HeaderText="Mileage" SortExpression="Mileage" />
             <asp:BoundField DataField="Sold" HeaderText="Sold" SortExpression="Sold" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
             <HeaderStyle CssClass="header"></HeaderStyle>
 
             <RowStyle CssClass="rows"></RowStyle>

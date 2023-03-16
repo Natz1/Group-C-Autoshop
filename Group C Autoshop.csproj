@@ -184,7 +184,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="UserRoles\Admin\SalesResults.aspx" />
+    <Content Include="UserRoles\Manager\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\ScheduleRepair.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
@@ -237,6 +237,7 @@
     <Content Include="UserRoles\EndUser\VehicleList.aspx" />
     <Content Include="UserRoles\Admin\VehiclePurchases.aspx" />
     <Content Include="UserRoles\Manager\BusinessInsights.aspx" />
+    <Content Include="UserRoles\Manager\WorkDone.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -381,11 +382,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\Admin\SalesResults.aspx.cs">
+    <Compile Include="UserRoles\Manager\SalesResults.aspx.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\Admin\SalesResults.aspx.designer.cs">
+    <Compile Include="UserRoles\Manager\SalesResults.aspx.designer.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\EndUser\ScheduleRepair.aspx.cs">
@@ -470,6 +471,13 @@
     </Compile>
     <Compile Include="UserRoles\Manager\BusinessInsights.aspx.designer.cs">
       <DependentUpon>BusinessInsights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\WorkDone.aspx.cs">
+      <DependentUpon>WorkDone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\WorkDone.aspx.designer.cs">
+      <DependentUpon>WorkDone.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

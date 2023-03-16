@@ -49,7 +49,9 @@
             
         </tr>
     </table>
-    <asp:GridView ID="VehicleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
+    <asp:GridView ID="VehicleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+        <EmptyDataTemplate>You have not selected a vehicle to display.</EmptyDataTemplate>
+    </asp:GridView>
 
 
     <h3>Work to be done</h3>
@@ -63,8 +65,8 @@
 
     <h4>Additions</h4>
     <br />
-    <asp:GridView
-        ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+    <asp:GridView ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
     </asp:GridView>
 
 
@@ -72,6 +74,7 @@
     <h4>Replacement Parts</h4>
     <br />
     <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
     </asp:GridView>
 
     <br /><br />

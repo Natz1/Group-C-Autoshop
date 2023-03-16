@@ -42,10 +42,10 @@
             <asp:BoundField DataField="CC_Ratings" HeaderText="CC_Ratings" SortExpression="CC_Ratings" />
             <asp:BoundField DataField="Mileage" HeaderText="Mileage" SortExpression="Mileage" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+        <HeaderStyle CssClass="header"></HeaderStyle>
 
-<HeaderStyle CssClass="header"></HeaderStyle>
-
-<RowStyle CssClass="rows"></RowStyle>
+        <RowStyle CssClass="rows"></RowStyle>
     </asp:GridView>
     <br /><br />
 

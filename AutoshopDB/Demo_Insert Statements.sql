@@ -163,12 +163,12 @@ VALUES (10007, 1);
 INSERT INTO Add_On(Job_Number,Radio_Installation,Car_Alarm,Tracking_Device)
 VALUES (1,'Yes','Yes','Yes');
 
-INSERT INTO Part_Changed(Job_Number,Part_Id,Part_Name,Quantity)
-VALUES (1,1,'Back Bumper',1);
-INSERT INTO Part_Changed(Job_Number,Part_Id,Part_Name,Quantity)
-VALUES (1,2,'Front Bumper',1);
-INSERT INTO Part_Changed(Job_Number,Part_Id,Part_Name,Quantity)
-VALUES (1,3,'Side Skirt',2);
+INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
+VALUES (1,'Back Bumper',1);
+INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
+VALUES (1,'Front Bumper',1);
+INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
+VALUES (1,'Side Skirt',2);
 
 INSERT INTO Repair VALUES (1, 25000, 'Installation Fee');
 

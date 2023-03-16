@@ -7,47 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.UserRoles.Admin
+namespace Group_C_Autoshop.UserRoles.Manager
 {
 
 
-    public partial class SalesResults
+    public partial class WorkDone
     {
 
         /// <summary>
-        /// VecSaleData control.
+        /// RepairData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource VecSaleData;
+        protected global::System.Web.UI.WebControls.SqlDataSource RepairData;
 
         /// <summary>
-        /// VecSaleList control.
+        /// RepairList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView VecSaleList;
+        protected global::System.Web.UI.WebControls.GridView RepairList;
 
         /// <summary>
-        /// ComData control.
+        /// MecID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ComData;
+        protected global::System.Web.UI.WebControls.TextBox MecID;
 
         /// <summary>
-        /// ComList control.
+        /// Search4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ComList;
+        protected global::System.Web.UI.WebControls.Button Search4;
+
+        /// <summary>
+        /// WorkData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource WorkData;
+
+        /// <summary>
+        /// WorkList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView WorkList;
     }
 }

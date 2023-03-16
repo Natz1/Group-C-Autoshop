@@ -27,10 +27,10 @@
             <asp:BoundField DataField="DOB" HeaderText="DOB" SortExpression="DOB" />
             <asp:BoundField DataField="Supervisor_ID" HeaderText="Supervisor_ID" SortExpression="Supervisor_ID" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+        <HeaderStyle CssClass="header"></HeaderStyle>
 
-<HeaderStyle CssClass="header"></HeaderStyle>
-
-<RowStyle CssClass="rows"></RowStyle>
+        <RowStyle CssClass="rows"></RowStyle>
     </asp:GridView>
     <br />
 
@@ -113,6 +113,7 @@
             <asp:BoundField DataField="DOB" HeaderText="DOB" SortExpression="DOB" />
             <asp:BoundField DataField="Supervisor_ID" HeaderText="Supervisor_ID" SortExpression="Supervisor_ID" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
         <HeaderStyle CssClass="header"></HeaderStyle>
 
         <RowStyle CssClass="rows"></RowStyle>
@@ -144,7 +145,7 @@
             <asp:BoundField DataField="Supervisor_ID" HeaderText="Supervisor_ID" SortExpression="Supervisor_ID" />
             <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary" />
         </Columns>
-
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
         <HeaderStyle CssClass="header"></HeaderStyle>
 
         <RowStyle CssClass="rows"></RowStyle>
@@ -169,6 +170,7 @@
             <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary" />
             <asp:BoundField DataField="Area_Of_Expertise" HeaderText="Area_Of_Expertise" SortExpression="Area_Of_Expertise" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
     </asp:GridView>
     <br />
 
@@ -188,6 +190,7 @@
             <asp:BoundField DataField="Supervisor_ID" HeaderText="Supervisor_ID" SortExpression="Supervisor_ID" />
             <asp:BoundField DataField="Travel_Subsistence" HeaderText="Travel_Subsistence" SortExpression="Travel_Subsistence" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
     </asp:GridView>
     <br />
 
