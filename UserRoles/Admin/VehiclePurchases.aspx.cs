@@ -27,23 +27,22 @@ namespace Group_C_Autoshop.UserRoles
 
         protected void Add_Click(object sender, EventArgs e)
         {
-            //Create a command to save values
+            PurchaseData.Insert();
+
+            //Adding salesman ID
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Exec Add_Salesman_Id @chassis, @salesman";
+            cmd.Parameters.Add("@chassis", SqlDbType.Char);
+            cmd.Parameters["@chassis"].Value = ChassisTxt.Text;
 
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText =
-                "Insert into Vehicle Values ('" + ChassisTxt.Text + "', '" + YrTxt.Text + "', '" + ColourTxt.Text + "', '" + MakeTxt.Text +
-                "','" + ModTxt.Text + "','" + TypeTxt.Text + "','" + ConTxt.Text + "','" + ImportTxt.Text + "','" + MarkUpTxt.Text +
-                "','" + EngineTxt.Text + "','" + CCTxt.Text + "','" + MileTxt.Text + "','" + SoldTxt.Text + "')";
+            cmd.Parameters.Add("@salesman", SqlDbType.Int);
+            cmd.Parameters["@salesman"].Value = SalesmanTxt.Text;
+
+            
             cmd.ExecuteNonQuery();
-
-            cmd.CommandText =
-                "Insert into Purchase (Date, Value, Cost, Salesman_ID, Chassis_Number) Values ('" + DateTxt.Text + "', '" + 
-                ValueTxt.Text + "', '" + CostTxt.Text + "','" + SalesmanTxt.Text + "','" + ChassisTxt.Text + "')";
-            cmd.ExecuteNonQuery();
-
             Response.Redirect("VehiclePurchases");
         }
+    
     }
 }

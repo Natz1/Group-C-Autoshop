@@ -41,45 +41,45 @@ Select * From Repair;
 --View Select Statements 
 
 --1
-Select * from Sales_Done;
+Select * from Sales_Done; --Manager
 --2
-Select * from Commission_Earned;
+Select * from Commission_Earned; --Manager
 --3
-Select * from Repair_Jobs;
+Select * from Repair_Jobs; --Manager
 --4
-Select * from Client_Additions;
+Select * from Client_Additions; --Admin************************
 --5
-Select * from Profit_Earned_From_Client_Purchases;
+Select * from Profit_Earned_From_Client_Purchases; --Manager
 --6
-Select * From Available_Vehicles;
+Select * From Available_Vehicles; --Manager
 
 --Stored Procedures Exec Statements
 
 --1
-Exec Sales_Done_By_Salesman [Salesman_ID];
+Exec Sales_Done_By_Salesman [Salesman_ID]; --Manager
 --2
-Exec Commission_Earned_By_Salesman [Salesman_ID];
+Exec Commission_Earned_By_Salesman [Salesman_ID]; --Manager
 --3
-Exec Repair_Jobs_By_Mechanic [Mechanic_Id];
+Exec Repair_Jobs_By_Mechanic [Mechanic_Id]; --Manager
 --4
-Exec Client_Additions_Checker 12;
+Exec Client_Additions_Checker 12; --Admin********************************
 --5
-Exec Profit_Earned_From_Client_Purchases_By_Year [Year];
+Exec Profit_Earned_From_Client_Purchases_By_Year [Year]; --Manager
 --6
-Exec Best_Selling_Car [Start_Date], [End_Date];
+Exec Best_Selling_Car [Start_Date], [End_Date]; --Manager
 --7
-Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id];
+Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin*************************
 
 --Function Select Statements
 
 --1
-Select * from dbo.Client_Invoice(53);
+Select * from dbo.Client_Invoice(53); --Admin, Enduser
 --2
-Select * from dbo.Assigned_Supervisor([Supervisor_Id]);
+Select * from dbo.Assigned_Supervisor([Supervisor_Id]); --Admin
 
 --Transaction Statements
 --1
-EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type];
+EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type]; --Admin
 
 
 --TABLE Drop Statements

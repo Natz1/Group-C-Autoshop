@@ -64,3 +64,17 @@ Select  V.Year, V.Colour, V.Make, V.Model, V.Type, V.Condition, P.Value, V.CC_Ra
 from (Vehicle V
 Left Join Purchase P on P.Chassis_Number = V.Chassis_Number)
 WHERE V.Sold = 'No';
+
+--Shows the client's sale details for view by an admin
+Create View Client_Sale as
+Select S.Sale_ID, S.Date, C.Client_ID, C.Name as Client,
+S.Chassis_Number, S.Price as Car_Price, S.Salesman_ID, 
+R.Mechanic_ID, R.Number_of_parts_Used, R.Parts_Cost, R.Repair_Cost, R.Repair_Job_Total
+from Sale S
+Left Join Client C on C.Client_ID = S.Client_ID
+Left Join Employee E on E.Employee_ID = S.Salesman_ID
+Left Join Work_Done W on W.Sale_ID = S.Sale_ID
+Left Join Repair_Jobs R on R.Mechanic_ID = W.Mechanic_ID
+
+
+Select * from Client_Sale

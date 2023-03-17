@@ -60,15 +60,6 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         protected global::System.Web.UI.WebControls.SqlDataSource ClientData;
 
         /// <summary>
-        /// salesman control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList salesman;
-
-        /// <summary>
         /// VehicleList control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace Group_C_Autoshop.UserRoles.EndUser
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView VehicleList;
-
-        /// <summary>
-        /// mechanic control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList mechanic;
 
         /// <summary>
         /// AdditionList control.

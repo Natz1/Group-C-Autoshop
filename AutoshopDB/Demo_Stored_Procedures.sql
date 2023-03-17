@@ -84,7 +84,7 @@ GO
 
 Create Procedure Add_Salesman_Id
 (
-	@Chassis_Number varchar(17),
+	@Chassis_Number char(17),
 	@Salesman_Id integer
 ) 
 AS

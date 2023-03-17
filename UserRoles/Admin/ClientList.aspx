@@ -18,10 +18,11 @@
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             <asp:BoundField DataField="Phone_Number" HeaderText="Phone_Number" SortExpression="Phone_Number" />
         </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
 
-<HeaderStyle CssClass="header"></HeaderStyle>
+        <HeaderStyle CssClass="header"></HeaderStyle>
 
-<RowStyle CssClass="rows"></RowStyle>
+        <RowStyle CssClass="rows"></RowStyle>
 </asp:GridView>
 
     <!--Search-->
@@ -53,9 +54,10 @@
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             <asp:BoundField DataField="Phone_Number" HeaderText="Phone_Number" SortExpression="Phone_Number" />
         </Columns>
-<HeaderStyle CssClass="header"></HeaderStyle>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+        <HeaderStyle CssClass="header"></HeaderStyle>
 
-<RowStyle CssClass="rows"></RowStyle>
+        <RowStyle CssClass="rows"></RowStyle>
     </asp:GridView>
 
 </asp:Content>

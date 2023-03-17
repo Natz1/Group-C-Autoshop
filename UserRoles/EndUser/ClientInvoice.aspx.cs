@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Group_C_Autoshop.EndUser
+namespace Group_C_Autoshop.UserRoles.EndUser
 {
     public partial class ClientInvoice : System.Web.UI.Page
     {

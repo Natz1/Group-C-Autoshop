@@ -23,7 +23,6 @@ namespace Group_C_Autoshop.EndUser
             Session["Track"] = "Yes";
             //convert the previous price to a double
             Session["APrice"] = Convert.ToDouble(Session["APrice"]) + 5000.00;
-            Response.Redirect("ClientOrder");
         }
 
         //Car Alarm
@@ -32,7 +31,6 @@ namespace Group_C_Autoshop.EndUser
             //Store in session variable
             Session["Alarm"] = "Yes";
             Session["APrice"] = Convert.ToDouble(Session["APrice"]) + 2500.00;
-            Response.Redirect("ClientOrder");
         }
 
         //Radio
@@ -41,7 +39,6 @@ namespace Group_C_Autoshop.EndUser
             //Store in session variable
             Session["Radio"] = "Yes";
             Session["APrice"] = Convert.ToDouble(Session["APrice"]) + 7500.00;
-            Response.Redirect("ClientOrder");
         }
     }
 }

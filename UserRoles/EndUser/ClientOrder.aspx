@@ -41,42 +41,29 @@
     <!---Selected Options-->
     <h3>Vehicle Information</h3>
     <br />
-    <!--Select Salesman for admin only-->
-    <table>
-        <tr>
-            <td hidden="hidden"><h4>Select Salesman: </h4></td>
-            <td hidden="hidden"><asp:DropDownList ID="salesman" runat="server" DataValueField="Salesman_ID"></asp:DropDownList></td>
-            
-        </tr>
-    </table>
-    <asp:GridView ID="VehicleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"></asp:GridView>
-
-
-    <h3>Work to be done</h3>
-    <table>
-        <tr>
-            <td><h4 hidden="hidden">Select Mechanic: </h4></td>
-            <td hidden="hidden"><asp:DropDownList ID="mechanic" DataValueField="Mechanic_ID" runat="server"></asp:DropDownList></td>
-        </tr>
-    </table>
-
-
-    <h4>Additions</h4>
-    <br />
-    <asp:GridView
-        ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+    <asp:GridView ID="VehicleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+        <EmptyDataTemplate>You have not selected a vehicle to display.</EmptyDataTemplate>
     </asp:GridView>
 
 
+    <h3>Work to be done</h3>
+    <h4>Additions</h4>
+    <br />
+    <asp:GridView ID="AdditionList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+    </asp:GridView>
 
+
+    <br />
     <h4>Replacement Parts</h4>
     <br />
     <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px">
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
     </asp:GridView>
 
     <br /><br />
     <asp:Button ID="Confirm" runat="server" Text="Confirm" OnClick="Confirm_Click" />
-    <!--Cancel runs a deletion operation from the Additions and Parts Changed tables-->
+    <!--Cancel clears all the data in the order-->
     <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
 
 </asp:Content>

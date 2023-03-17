@@ -7,56 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.UserRoles.EndUser
+namespace Group_C_Autoshop.UserRoles.Manager
 {
 
 
-    public partial class ScheduleRepair
+    public partial class WorkDone
     {
 
         /// <summary>
-        /// ChassisTxt control.
+        /// RepairData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ChassisTxt;
+        protected global::System.Web.UI.WebControls.SqlDataSource RepairData;
 
         /// <summary>
-        /// damageTxt control.
+        /// RepairList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox damageTxt;
+        protected global::System.Web.UI.WebControls.GridView RepairList;
 
         /// <summary>
-        /// mechanic control.
+        /// MecID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList mechanic;
+        protected global::System.Web.UI.WebControls.TextBox MecID;
 
         /// <summary>
-        /// Schedule control.
+        /// Search4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Schedule;
+        protected global::System.Web.UI.WebControls.Button Search4;
 
         /// <summary>
-        /// RepairOrder control.
+        /// WorkData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource RepairOrder;
+        protected global::System.Web.UI.WebControls.SqlDataSource WorkData;
+
+        /// <summary>
+        /// WorkList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView WorkList;
     }
 }

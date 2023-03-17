@@ -56,7 +56,7 @@ DECLARE
 	@Sold varchar(3),
 	@Value money;
 
-	--Storing the values in the variables from inserted
+	--Storing the values in the variables from inserted (from what?)
 	SELECT @Chassis_Number = Chassis_Number From inserted
 	SELECT @Year = Year From inserted
 	SELECT @Colour = Colour From inserted
@@ -92,7 +92,7 @@ DECLARE
 	@Quantity integer,
 	@Cost money;
 
-	--Storing the values in the variables from inserted
+	--Storing the values in the variables from inserted 
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Part_Name = Part_Name From inserted
 	SELECT @Quantity = Quantity From inserted
@@ -133,7 +133,7 @@ DECLARE
 	@Tracking_Device varchar(3),
 	@Cost money;
 
-	--Storing the values in the variables from inserted
+	--Storing the values in the variables from inserted 
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Radio_Installation = Radio_Installation From inserted
 	SELECT @Car_Alarm = Car_Alarm From inserted

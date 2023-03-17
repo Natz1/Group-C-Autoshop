@@ -7,164 +7,155 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.UserRoles
+namespace Group_C_Autoshop.UserRoles.Admin
 {
 
 
-    public partial class VehiclesPurchases
+    public partial class SalesResults
     {
 
         /// <summary>
-        /// PurchaseData control.
+        /// SalesData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PurchaseData;
+        protected global::System.Web.UI.WebControls.SqlDataSource SalesData;
 
         /// <summary>
-        /// PurchaseList control.
+        /// SalesList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PurchaseList;
+        protected global::System.Web.UI.WebControls.GridView SalesList;
 
         /// <summary>
-        /// SalesmanTxt control.
+        /// Specific control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SalesmanTxt;
+        protected global::System.Web.UI.WebControls.TextBox Specific;
 
         /// <summary>
-        /// ChassisTxt control.
+        /// Search control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ChassisTxt;
+        protected global::System.Web.UI.WebControls.Button Search;
 
         /// <summary>
-        /// YrTxt control.
+        /// SaleSearchData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox YrTxt;
+        protected global::System.Web.UI.WebControls.SqlDataSource SaleSearchData;
 
         /// <summary>
-        /// ColourTxt control.
+        /// SaleSearchList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ColourTxt;
+        protected global::System.Web.UI.WebControls.GridView SaleSearchList;
 
         /// <summary>
-        /// MakeTxt control.
+        /// AvailData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MakeTxt;
+        protected global::System.Web.UI.WebControls.SqlDataSource AvailData;
 
         /// <summary>
-        /// ModTxt control.
+        /// AvailList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ModTxt;
+        protected global::System.Web.UI.WebControls.GridView AvailList;
 
         /// <summary>
-        /// TypeTxt control.
+        /// VecSaleData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TypeTxt;
+        protected global::System.Web.UI.WebControls.SqlDataSource VecSaleData;
 
         /// <summary>
-        /// ConTxt control.
+        /// VecSaleList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConTxt;
+        protected global::System.Web.UI.WebControls.GridView VecSaleList;
 
         /// <summary>
-        /// ImportTxt control.
+        /// ComData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ImportTxt;
+        protected global::System.Web.UI.WebControls.SqlDataSource ComData;
 
         /// <summary>
-        /// MarkUpTxt control.
+        /// ComList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MarkUpTxt;
+        protected global::System.Web.UI.WebControls.GridView ComList;
 
         /// <summary>
-        /// EngineTxt control.
+        /// SaleID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EngineTxt;
+        protected global::System.Web.UI.WebControls.TextBox SaleID;
 
         /// <summary>
-        /// CCTxt control.
+        /// Search2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CCTxt;
+        protected global::System.Web.UI.WebControls.Button Search2;
 
         /// <summary>
-        /// MileTxt control.
+        /// SearchData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MileTxt;
+        protected global::System.Web.UI.WebControls.SqlDataSource SearchData;
 
         /// <summary>
-        /// SoldTxt control.
+        /// SearchList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SoldTxt;
-
-        /// <summary>
-        /// Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Add;
+        protected global::System.Web.UI.WebControls.GridView SearchList;
     }
 }
