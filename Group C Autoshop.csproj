@@ -184,6 +184,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
     <Content Include="UserRoles\Manager\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\ScheduleRepair.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
@@ -381,6 +382,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.cs">
+      <DependentUpon>ClientInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.designer.cs">
+      <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\Manager\SalesResults.aspx.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>

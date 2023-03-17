@@ -56,7 +56,7 @@ Select * From Available_Vehicles; --Admin
 --Stored Procedures Exec Statements
 
 --1
-Exec Sales_Done_By_Salesman [Salesman_ID]; --Manager**************************
+Exec Sales_Done_By_Salesman [Salesman_ID]; --Manager
 --2
 Exec Commission_Earned_By_Salesman [Salesman_ID]; --Manager
 --3

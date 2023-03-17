@@ -29,9 +29,20 @@ namespace Group_C_Autoshop.UserRoles
         {
             PurchaseData.Insert();
 
-            AddVData.Update();
+            //Adding salesman ID
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Exec Add_Salesman_Id @chassis, @salesman";
+            cmd.Parameters.Add("@chassis", SqlDbType.Char);
+            cmd.Parameters["@chassis"].Value = ChassisTxt.Text;
 
+            cmd.Parameters.Add("@salesman", SqlDbType.Int);
+            cmd.Parameters["@salesman"].Value = SalesmanTxt.Text;
+
+            
+            cmd.ExecuteNonQuery();
             Response.Redirect("VehiclePurchases");
         }
+    
     }
 }

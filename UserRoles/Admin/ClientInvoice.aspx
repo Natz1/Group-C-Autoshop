@@ -2,10 +2,74 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!--Generates invoice of client's purchases-->
-    <h1>Invoice</h1>
+    <h1>Adjust Client Purchases</h1>
+    <asp:SqlDataSource ID="SaleData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT * FROM [Client_Sale]">
+    </asp:SqlDataSource>
+    <asp:GridView ID="SaleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="800px" AllowPaging="True" DataSourceID="SaleData" AutoGenerateColumns="False" >
+        <Columns>
+            <asp:BoundField DataField="Sale_ID" HeaderText="Sale_ID" SortExpression="Sale_ID" />
+            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+            <asp:BoundField DataField="Client_ID" HeaderText="Client_ID" SortExpression="Client_ID" />
+            <asp:BoundField DataField="Client" HeaderText="Client" SortExpression="Client" />
+            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
+            <asp:BoundField DataField="Car_Price" HeaderText="Car_Price" SortExpression="Car_Price" />
+            <asp:BoundField DataField="Salesman_ID" HeaderText="Salesman_ID" SortExpression="Salesman_ID" />
+            <asp:BoundField DataField="Mechanic_ID" HeaderText="Mechanic_ID" SortExpression="Mechanic_ID" />
+            <asp:BoundField DataField="Number_of_parts_Used" HeaderText="Number_of_parts_Used" SortExpression="Number_of_parts_Used" />
+            <asp:BoundField DataField="Parts_Cost" HeaderText="Parts_Cost" SortExpression="Parts_Cost" />
+            <asp:BoundField DataField="Repair_Cost" HeaderText="Repair_Cost" SortExpression="Repair_Cost" />
+            <asp:BoundField DataField="Repair_Job_Total" HeaderText="Repair_Job_Total" ReadOnly="True" SortExpression="Repair_Job_Total" />
+        </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+
+        <HeaderStyle CssClass="header"></HeaderStyle>
+
+        <RowStyle CssClass="rows"></RowStyle>
+    </asp:GridView>
+    <br />
+
+
+    <!--Assigns a salesman and mechanic to order-->
+    <h3>Update Sales Data</h3>
+    <!--Form to enter info-->
+    <table>
+        <tr>
+            <td><h4>Sales ID: </h4></td>
+            <td><asp:TextBox ID="Sale" runat="server"></asp:TextBox></td>
+            
+        </tr>
+        <tr>
+            <td><h4>Select Salesman: </h4></td>
+            <td><asp:DropDownList ID="salesman" runat="server" DataValueField="Salesman_ID"></asp:DropDownList></td>
+            
+        </tr>
+        <tr>
+            <td><h4>Select Mechanic: </h4></td>
+            <td><asp:DropDownList ID="mechanic" DataValueField="Mechanic_ID" runat="server"></asp:DropDownList></td>
+        </tr>
+        <tr>
+            <td><h4>Repair Cost: </h4></td>
+            <td>
+                <asp:TextBox ID="Repair" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td><h4>Description: </h4></td>
+            <td>
+                <asp:TextBox ID="Desc" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click"/>
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <h3>Generate Client Invoice</h3>
     <asp:SqlDataSource ID="InvoiceData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Client_Invoice_1.* FROM dbo.Client_Invoice(@id) AS Client_Invoice_1">
         <SelectParameters>
-            <asp:SessionParameter Name="id" SessionField="ID" />
+            <asp:ControlParameter ControlID="Specific" Name="id" PropertyName="Text" />
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:ListView ID="ListView1" runat="server" DataSourceID="InvoiceData">
@@ -218,6 +282,11 @@
                 <li runat="server" id="itemPlaceholder" />
             </ul>
             <div style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;">
+                <asp:DataPager ID="DataPager1" runat="server">
+                    <Fields>
+                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                    </Fields>
+                </asp:DataPager>
             </div>
         </LayoutTemplate>
         <SelectedItemTemplate>
@@ -269,4 +338,24 @@
             </li>
         </SelectedItemTemplate>
     </asp:ListView>
+    <br />
+
+
+    <h3>Client Invoice Search</h3>
+    <table>
+        <tr>
+            <td>Client ID: </td>
+            <td>
+                <asp:TextBox ID="Specific" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="Search" runat="server" Text="Search" />
+            </td>
+        </tr>
+    </table>
+
+
+
+    
+
 </asp:Content>

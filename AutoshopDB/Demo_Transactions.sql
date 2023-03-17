@@ -180,3 +180,57 @@ BEGIN
 	Commit Transaction Add_Employee
 END 
 GO
+
+--To insert the sale and repair details for the sale of a vehicle
+--modification***********************
+Create Procedure Insert_Sale
+(
+	@Chassis_Number varchar(17),
+	@Radio_Installation varchar(3),
+	@Car_Alarm varchar(3),
+	@Tracking_Device varchar(3)
+)
+AS
+BEGIN
+	BEGIN TRANSACTION
+		INSERT INTO Sale(Date,Value,Chassis_Number,Client_ID)
+		VALUES (getdate(), (Select Value from Purchase where Chassis_Number = @Chassis_Number), @Chassis_Number, (Select Max(Client_ID) from Client));
+
+		INSERT INTO Work_Done(Sale_Id)
+		VALUES ((Select Max(Sale_ID) from Sale));
+
+		INSERT INTO Add_On(Job_Number,Radio_Installation,Car_Alarm,Tracking_Device)
+		VALUES ((Select Max(Job_Number) from Work_Done), @Radio_Installation, @Car_Alarm, @Tracking_Device);
+	COMMIT TRANSACTION
+END
+GO
+
+--To update the sale and repair details for the sale of a vehicle
+--modification***********************
+Create Procedure Update_Sale
+(
+	@SaleID int,
+	@SalesmanID int,
+	@MechanicID int,
+	@RepairCost money,
+	@Description varchar(50)
+)
+AS
+BEGIN
+	BEGIN TRANSACTION
+		Update Sale Set Salesman_ID = @SalesmanID Where Sale_ID = @SaleID;
+		Update Work_Done Set Mechanic_ID = @MechanicID Where Sale_ID = @SaleID;
+		
+		Declare @Job int;
+		Set @Job = (Select Job_Number from Work_Done Where Sale_ID = @SaleID);
+		If exists (Select Job_Number from Repair where Job_Number = @Job)
+		Begin
+			Update Repair Set Cost = @RepairCost, Description = @Description where Job_Number = @Job
+		End
+		Else
+		Begin
+			Insert into Repair Values (@Job, @RepairCost, @Description);
+		End
+	COMMIT TRANSACTION
+END
+GO

@@ -4,7 +4,9 @@
     <!--Contains data on vehicles purchased by autoshop-->
     <h1>Vehicles Purchased by Autoshop</h1>
     <!--connect to db-->
-    <asp:SqlDataSource ID="PurchaseData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Purchase.Purchase_ID, Purchase.Date, Purchase.Salesman_ID, Purchase.Value, Vehicle.Chassis_Number, Vehicle.Year, Vehicle.Colour, Vehicle.Make, Vehicle.Model, Vehicle.Type, Vehicle.Condition, Vehicle.Import_Price, Vehicle.Mark_Up_Percent, Vehicle.Engine_Number, Vehicle.CC_Ratings, Vehicle.Mileage FROM Purchase INNER JOIN Vehicle ON Purchase.Chassis_Number = Vehicle.Chassis_Number" InsertCommand="Add_Vehicle" InsertCommandType="StoredProcedure">
+    <asp:SqlDataSource ID="PurchaseData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
+        SelectCommand="SELECT Purchase_ID, Date, Value, Cost, Salesman_ID, Chassis_Number FROM Purchase" 
+        InsertCommand="Add_Vehicle" InsertCommandType="StoredProcedure">
         <InsertParameters>
             <asp:ControlParameter Name="Chassis_Number" Type="String" ControlID="ChassisTxt"/>
             <asp:ControlParameter Name="Year" Type="String" ControlID="YrTxt"/>
@@ -23,24 +25,14 @@
     </asp:SqlDataSource>
     <!--Grid View-->
     <asp:GridView ID="PurchaseList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="800px" PageSize="20" 
-        AllowPaging="True" DataSourceID="PurchaseData" AutoGenerateColumns="False" DataKeyNames="Purchase_ID,Chassis_Number">
+        AllowPaging="True" DataSourceID="PurchaseData" AutoGenerateColumns="False" DataKeyNames="Purchase_ID">
         <Columns>
-            <asp:BoundField DataField="Purchase_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Purchase_ID" />
+            <asp:BoundField DataField="Purchase_ID" HeaderText="Purchase_ID" InsertVisible="False" ReadOnly="True" SortExpression="Purchase_ID" />
             <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
-            <asp:BoundField DataField="Salesman_ID" HeaderText="Salesman" SortExpression="Salesman_ID" />
             <asp:BoundField DataField="Value" HeaderText="Value" SortExpression="Value" />
-            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis" SortExpression="Chassis_Number" ReadOnly="True" />
-            <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
-            <asp:BoundField DataField="Colour" HeaderText="Colour" SortExpression="Colour" />
-            <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />
-            <asp:BoundField DataField="Model" HeaderText="Model" SortExpression="Model" />
-            <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
-            <asp:BoundField DataField="Condition" HeaderText="Condition" SortExpression="Condition" />
-            <asp:BoundField DataField="Import_Price" HeaderText="Import_Price" SortExpression="Import_Price" />
-            <asp:BoundField DataField="Mark_Up_Percent" HeaderText="Mark_Up" SortExpression="Mark_Up_Percent" />
-            <asp:BoundField DataField="Engine_Number" HeaderText="Engine_Number" SortExpression="Engine_Number" />
-            <asp:BoundField DataField="CC_Ratings" HeaderText="CC_Ratings" SortExpression="CC_Ratings" />
-            <asp:BoundField DataField="Mileage" HeaderText="Mileage" SortExpression="Mileage" />
+            <asp:BoundField DataField="Cost" HeaderText="Cost" SortExpression="Cost" />
+            <asp:BoundField DataField="Salesman_ID" HeaderText="Salesman_ID" SortExpression="Salesman_ID" />
+            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
         </Columns>
         <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
         <HeaderStyle CssClass="header"></HeaderStyle>
@@ -49,15 +41,11 @@
     </asp:GridView>
     <br /><br />
 
+
+
+
     <!--Form to enter purchase info-->
     <h3>Add new vehicle</h3>
-    <asp:SqlDataSource ID="AddVData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
-        SelectCommand="SELECT Chassis_Number FROM Purchase" 
-        UpdateCommand="UPDATE Purchase SET Salesman_ID = @salesman WHERE (Chassis_Number = (SELECT TOP 1 (Chassis_Number) FROM Purchase ORDER BY Purchase_ID DESC))">
-        <UpdateParameters>
-            <asp:ControlParameter Name="salesman" ControlID="SalesmanTxt" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
     <table>
         <tr>
             <td><h4>Salesman ID: </h4></td>

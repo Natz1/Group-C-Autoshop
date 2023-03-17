@@ -8,6 +8,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity.Infrastructure;
 using Newtonsoft.Json.Linq;
+using System.Security.Claims;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using Group_C_Autoshop.UserRoles.Manager;
+using Microsoft.AspNet.Identity;
 
 namespace Group_C_Autoshop.UserRoles.EndUser
 {
@@ -26,17 +30,6 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             //If chassis session variable is not empty
             if (!string.IsNullOrEmpty(Session["chassis"] as string))
             {
-                //Creates salesman dropdown list!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //Admin purposes, will be changes so only admins can access it and alter it
-                string com = "Select Salesman_ID From Salesman";
-                SqlDataAdapter adpt = new SqlDataAdapter(com, con);
-                DataSet ds = new DataSet();
-                adpt.Fill(ds);
-                salesman.DataSource = ds;
-                salesman.DataValueField = "Salesman_ID";
-                salesman.DataBind();
-                ds.Dispose();
-
                 //Get chassis number from session variable
                 String chassis = Session["chassis"].ToString();
                 //Create a command to get the vehicle values from the database
@@ -102,41 +95,6 @@ namespace Group_C_Autoshop.UserRoles.EndUser
 
             PartsList.DataSource = table1;
             PartsList.DataBind();
-
-            //If addition session variables are not empty
-            /*if (!string.IsNullOrEmpty(Session["APrice"] as string))
-            {
-                //Creates mechanic dropdown list!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //Admin purposes, will be changes so only admins can access it and alter it
-                string com = "Select Mechanic_ID From Mechanic";
-                SqlDataAdapter adpt = new SqlDataAdapter(com, con);
-                DataSet ds = new DataSet();
-                adpt.Fill(ds);
-                mechanic.DataSource = ds;
-                mechanic.DataValueField = "Mechanic_ID";
-                mechanic.DataBind();
-
-                ds.Dispose();
-
-                
-            }*/
-
-            //If session variable is not empty
-            /*if (!string.IsNullOrEmpty(Session["PPrice"] as string))
-            {
-                //Creates mechanic dropdown list!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //Admin purposes, will be changes so only admins can access it and alter it
-                string com = "Select Mechanic_ID From Mechanic";
-                SqlDataAdapter adpt = new SqlDataAdapter(com, con);
-                DataSet ds = new DataSet();
-                adpt.Fill(ds);
-                mechanic.DataSource = ds;
-                mechanic.DataValueField = "Mechanic_ID";
-                mechanic.DataBind();
-
-                ds.Dispose();
-            }*/
-
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
@@ -146,85 +104,47 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
-            //*****************************Replace with stored procedure
-            DateTime today = DateTime.Today;
+            
             //Save client info
             ClientData.Insert();
 
-            /*cmd.CommandText =
-                "Insert into Client (Name, Residential_Address, Email) Values ('" + CNameTxt.Text + "', '" + CAddrTxt.Text + "', '" + CEmailTxt.Text + "')";
-            cmd.ExecuteNonQuery();
-            //Client Phone
-            cmd.CommandText = @"select max(Client_ID) from Client";
-            int id = (int)cmd.ExecuteScalar();
-            Session["ID"] = id;
-            String cphone = CPhoneTxt.Text;
-            cmd.CommandText =
-                "Insert into Client_Phone Values ('" + id + "','" + cphone + "')";
-            cmd.ExecuteNonQuery();*/
 
-
-
-            //Update vehicle sold to Yes
-            String chassis = Session["chassis"].ToString();
-            //Create a command to get the values from the database (Note, need to update purchase and assign salesman in admin)
-            cmd.CommandText =
-                "UPDATE Vehicle SET Sold = @sold WHERE Chassis_Number = @chassis";
-            //Chassis
+            //Inserting sale values using stored procedure****************************
+            cmd.CommandText = "Exec Insert_Sale @chassis, @radio, @alarm, @track";
+            
             cmd.Parameters.Add("@chassis", SqlDbType.Char);
-            cmd.Parameters["@chassis"].Value = chassis;
-            //Sold
-            cmd.Parameters.Add("@sold", SqlDbType.Char);
-            cmd.Parameters["@sold"].Value = "Yes";
+            cmd.Parameters["@chassis"].Value = Session["chassis"].ToString();
+            
+            cmd.Parameters.Add("@radio", SqlDbType.VarChar);
+            cmd.Parameters["@radio"].Value = Session["Radio"].ToString();
+            
+            cmd.Parameters.Add("@alarm", SqlDbType.VarChar);
+            cmd.Parameters["@alarm"].Value = Session["Alarm"].ToString();
+
+            cmd.Parameters.Add("@track", SqlDbType.VarChar);
+            cmd.Parameters["@track"].Value = Session["Track"].ToString();
             cmd.ExecuteNonQuery();
 
 
-            //************************************************Add Date
-            //Enter into Sales
-            /*cmd.CommandText =
-                "Insert into Sale (Date, Salesman_ID, Chassis_Number, Client_ID) Values ('" + today + "','" + salesman.Text + "', '" + chassis + "', '" + Session["ID"].ToString() + "')";
-            cmd.ExecuteNonQuery();*/
-            cmd.CommandText =
-                "Insert into Sale (Salesman_ID, Chassis_Number, Client_ID) Values ('" + salesman.Text + "', '" + chassis + "', '" + Session["ID"].ToString() + "')";
-            cmd.ExecuteNonQuery();
 
-            if (!string.IsNullOrEmpty(Session["PPrice"] as string) || !string.IsNullOrEmpty(Session["Price"] as string))
+            //Getting the job number for the sale
+            cmd.CommandText = "Select Max(Job_Number) from Work_Done";
+            int job = (int)cmd.ExecuteScalar();
+            //Get parts from session array and insert into part changed**********************
+            Parts[] listing = Session["Parts"] as Parts[];
+
+            if (listing.Length != 0)
             {
-                //Enter into Work Done
-                //Get sale id from db
-                cmd.CommandText = @"select max(Sale_ID) from Sale";
-                int sale = (int)cmd.ExecuteScalar();
-                cmd.CommandText =
-                    "Insert into Work_Done Values ('" + mechanic.Text + "', '" + sale + "')";
-                cmd.ExecuteNonQuery();
-
-                //********************************************************
-                //Addition
-                if (!string.IsNullOrEmpty(Session["Track"] as string) && !string.IsNullOrEmpty(Session["Alarm"] as string) &&
-                    !string.IsNullOrEmpty(Session["Radio"] as string) && !string.IsNullOrEmpty(Session["Price"] as string))
+                foreach (var item in listing)
                 {
-                    //Find last performed job
-                    cmd.CommandText = @"select max(Job_Number) from Work_Done";
-                    int job = (int)cmd.ExecuteScalar();
-                    //Insert add on
-                    cmd.CommandText =
-                        "Insert into Add_on Values ('" + job + "', '" + Session["Radio"].ToString() + "', '" + Session["Alarm"].ToString() + "', '"
-                        + Session["Track"].ToString() + "', '" + Session["Price"].ToString() + "')";
-                    cmd.ExecuteNonQuery();
-                }
-
-                //Spares
-                if (!string.IsNullOrEmpty(Session["Name"] as string) && !string.IsNullOrEmpty(Session["Quantity"] as string) &&
-                !string.IsNullOrEmpty(Session["PPrice"] as string))
-                {
-                    //Find last performed job
-                    cmd.CommandText = @"select max(Job_Number) from Work_Done";
-                    int job = (int)cmd.ExecuteScalar();
-                    //Insert parts
-                    cmd.CommandText =
-                    "Insert into Part_Changed (Job_Number,Part_Name,Quantity) Values ('" + job + "', '"
-                    + Session["Name"].ToString() + "', '" + Session["Quantity"].ToString() + "')";
-                    cmd.ExecuteNonQuery();
+                    if(item?.MyQuantity != null)
+                    {
+                        //Insert parts
+                        cmd.CommandText =
+                        "Insert into Part_Changed (Job_Number,Part_Name,Quantity) Values ('" + job + "','"
+                        + item?.MyName + "', '" + item?.MyQuantity + "')";
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
 

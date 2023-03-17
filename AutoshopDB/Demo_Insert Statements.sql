@@ -144,31 +144,3 @@ INSERT INTO Purchase VALUES
 ('05/10/2020',6210000.00,5400000.00,10009,'1KGFH89JXAK705352'),
 ('05/10/2020',6210000.00,5400000.00,10009,'1KGFH89JXAK705353');
 
-
---Sale Insert Statements
-INSERT INTO Sale(Date,Value,Salesman_ID,Chassis_Number,Client_ID)
-VALUES ('02/25/2020',3200000,10009,'1HGBH41JXMN109186',12);
-INSERT INTO Sale (Date,Value,Salesman_ID,Chassis_Number,Client_ID)
-VALUES ('03/27/2020',8000000,10010,'1LGDH61JXTW503410',2);
-INSERT INTO Sale (Date,Value,Salesman_ID,Chassis_Number,Client_ID) 
-VALUES ('03/29/2020',8000000,10010,'1LGDH61JXTW503411',11);
-INSERT INTO Sale (Date,Value,Salesman_ID,Chassis_Number,Client_ID)
-VALUES ('04/10/2020',5400000,10009,'1KGFH71JXAJ705192',14);
-INSERT INTO Sale (Date,Value,Salesman_ID,Chassis_Number,Client_ID)
-VALUES ('04/25/2020',5400000,10009,'1KGFH71JXAJ705193',10);
-
-INSERT INTO Work_Done(Mechanic_Id, Sale_Id)
-VALUES (10007, 1);
-
-INSERT INTO Add_On(Job_Number,Radio_Installation,Car_Alarm,Tracking_Device)
-VALUES (1,'Yes','Yes','Yes');
-
-INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
-VALUES (1,'Back Bumper',1);
-INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
-VALUES (1,'Front Bumper',1);
-INSERT INTO Part_Changed(Job_Number,Part_Name,Quantity)
-VALUES (1,'Side Skirt',2);
-
-INSERT INTO Repair VALUES (1, 25000, 'Installation Fee');
-
