@@ -69,6 +69,24 @@ namespace Group_C_Autoshop.UserRoles.Admin
         protected global::System.Web.UI.WebControls.GridView SaleSearchList;
 
         /// <summary>
+        /// AvailData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AvailData;
+
+        /// <summary>
+        /// AvailList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView AvailList;
+
+        /// <summary>
         /// VecSaleData control.
         /// </summary>
         /// <remarks>

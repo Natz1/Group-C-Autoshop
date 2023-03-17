@@ -50,7 +50,7 @@ namespace Group_C_Autoshop.EndUser
             //Create a command to insert the values into the database
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            //Inserting sale values using stored procedure****************************
+            //Inserting sale values using stored procedure
             cmd.CommandText = "Exec Update_Sale @sale, @salesman, @mechanic, @cost, @desc";
 
             cmd.Parameters.Add("@sale", SqlDbType.Int);

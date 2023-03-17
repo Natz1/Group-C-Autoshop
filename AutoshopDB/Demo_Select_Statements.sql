@@ -51,7 +51,7 @@ Select * from Client_Additions; --Admin************************
 --5
 Select * from Profit_Earned_From_Client_Purchases; --Manager
 --6
-Select * From Available_Vehicles; --Admin
+Select * From Available_Vehicles; --Manager
 
 --Stored Procedures Exec Statements
 

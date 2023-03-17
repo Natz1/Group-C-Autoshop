@@ -63,7 +63,7 @@
 
     <br /><br />
     <asp:Button ID="Confirm" runat="server" Text="Confirm" OnClick="Confirm_Click" />
-    <!--Cancel runs a deletion operation from the Additions and Parts Changed tables-->
+    <!--Cancel clears all the data in the order-->
     <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
 
 </asp:Content>
