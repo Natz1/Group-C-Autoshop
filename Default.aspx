@@ -3,39 +3,39 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
         <h1>Welcome to D&R's Autoshop</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     
 
     <div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
+            <img src="/Images/driving.jpg" width="300" height="250" />
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
+                At D&R Autoshop, all it takes is just a few steps to complete your purchase and you can be on the road,
+                on your way.
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
+            <h2>Browse our varied cars</h2>
+            <img src="/Images/cars.jpg" width="300" height="250" />
             <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
+                Here at D&R, we have a wide array of car selection from you to choose from. 
+                Click here to start browsing them today:
             </p>
+            <br />
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="/UserRoles/EndUser/VehicleList">Click Here! &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Request special additions</h2>
+            <img src="/Images/fix.jpg" width="300" height="250" />
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                When completing a purchase, you can also request one of our special additions such as tracking devices,
+                car alarms, and radio installations. Click here to start browsing them today:
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="/UserRoles/EndUser/Additions">Click Here! &raquo;</a>
             </p>
         </div>
     </div>
-
 </asp:Content>

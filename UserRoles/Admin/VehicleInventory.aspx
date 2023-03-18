@@ -50,7 +50,25 @@
                 <asp:TextBox ID="Wheel1" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="Add1" runat="server" Text="Add" OnClick="Add1_Click" />
+                <asp:Button ID="Add1" runat="server" Text="Add" OnClick="Add1_Click" ValidationGroup="Val1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="Chassis is required." ControlToValidate="Chassis1" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="Seating Capacity is required." ControlToValidate="Seat1" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="Wheel Drive is required." ControlToValidate="Wheel1" ValidationGroup="Val1"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table><br />
@@ -111,7 +129,31 @@
                 <asp:TextBox ID="Size2" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="Add2" runat="server" Text="Add" OnClick="Add2_Click" />
+                <asp:Button ID="Add2" runat="server" Text="Add" OnClick="Add2_Click" ValidationGroup="Val2" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="Chassis is required." ControlToValidate="Chassis2" ValidationGroup="Val2"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ErrorMessage="Seating Capacity is required." ControlToValidate="Seat2" ValidationGroup="Val2"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ErrorMessage="Fuel is required." ControlToValidate="Fuel2" ValidationGroup="Val2"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ErrorMessage="Vehicle Size is required." ControlToValidate="Size2" ValidationGroup="Val2"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table><br />
@@ -169,7 +211,25 @@
                 <asp:TextBox ID="Max3" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="Add3" runat="server" Text="Add" OnClick="Add3_Click" />
+                <asp:Button ID="Add3" runat="server" Text="Add" OnClick="Add3_Click" ValidationGroup="Val3" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ErrorMessage="Chassis is required." ControlToValidate="Chassis3" ValidationGroup="Val3"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ErrorMessage="Haulage Size is required." ControlToValidate="Haulage3" ValidationGroup="Val3"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ErrorMessage="Max Clearance is required." ControlToValidate="Max3" ValidationGroup="Val3"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table><br />

@@ -164,7 +164,6 @@ namespace Group_C_Autoshop
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;
-                enduser6.Visible = false;
             }
 
             if (Context.User.IsInRole("manager"))
@@ -177,7 +176,6 @@ namespace Group_C_Autoshop
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;
-                enduser6.Visible = false;
             }
 
         }

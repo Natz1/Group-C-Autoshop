@@ -144,7 +144,6 @@ END
 GO
 
 --Allows user to add a new employee and sorts them into the employee type selected
---To check if a vehicle exists before adding to list
 
 Create Procedure Add_Employee_and_Sort
 (

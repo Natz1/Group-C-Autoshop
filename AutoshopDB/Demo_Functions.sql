@@ -3,7 +3,7 @@
 Use Car_Mart_Web_App
 --Generates an invoice of a specified client's expenses
 
-Alter function Client_Invoice(@ID int)
+Create function Client_Invoice(@ID int)
 	returns table
 as
 Return

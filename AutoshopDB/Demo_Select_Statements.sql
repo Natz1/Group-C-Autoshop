@@ -47,7 +47,7 @@ Select * from Commission_Earned; --Manager
 --3
 Select * from Repair_Jobs; --Manager
 --4
-Select * from Client_Additions; --Admin************************
+Select * from Client_Additions; --Admin
 --5
 Select * from Profit_Earned_From_Client_Purchases; --Manager
 --6
@@ -68,7 +68,7 @@ Exec Profit_Earned_From_Client_Purchases_By_Year [Year]; --Manager
 --6
 Exec Best_Selling_Car [Start_Date], [End_Date]; --Manager
 --7
-Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin*************************
+Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin
 
 --Function Select Statements
 

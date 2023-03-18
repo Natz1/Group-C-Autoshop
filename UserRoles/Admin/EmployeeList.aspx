@@ -42,18 +42,24 @@
             <td>
                 <asp:TextBox ID="DateTxt" runat="server"></asp:TextBox>
             </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Date is required." 
+                ControlToValidate="DateTxt" ValidationGroup="Val1"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
             <td><h4>Name: </h4></td>
             <td>
                 <asp:TextBox ID="NameTxt" runat="server"></asp:TextBox>
             </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Name is required." 
+                ControlToValidate="NameTxt" ValidationGroup="Val1"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
             <td><h4>DOB (YYYY/MM/DD): </h4></td>
             <td>
                 <asp:TextBox ID="DOBTxt" runat="server"></asp:TextBox>
             </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Date is required." 
+                ControlToValidate="DOBTxt" ValidationGroup="Val1"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
             <td><h4>Supervisor ID: </h4></td>
@@ -72,7 +78,7 @@
             </td>
             <td>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click"/>
+                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" ValidationGroup="Val1" />
             </td>
         </tr>
     </table>
@@ -204,12 +210,17 @@
             <td>
                 <asp:TextBox ID="Emp1ID" runat="server"></asp:TextBox>
             </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" ID is required." 
+                ControlToValidate="Emp1ID" ValidationGroup="Val2"></asp:RequiredFieldValidator></td>
+
         </tr>
         <tr>
             <td><h4>Salary $: </h4></td>
             <td>
                 <asp:TextBox ID="Sal" runat="server"></asp:TextBox>
             </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Salary is required." 
+                ControlToValidate="Sal" ValidationGroup="Val2"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
             <td><h4>Employee Type: </h4></td>
@@ -222,7 +233,7 @@
             </td>
             <td>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click"/>
+                <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click" ValidationGroup="Val2" />
             </td>
         </tr>
     </table>

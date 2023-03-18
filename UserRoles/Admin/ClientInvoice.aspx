@@ -60,7 +60,26 @@
             </td>
             <td>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click"/>
+                <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click" ValidationGroup="Val1" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ErrorMessage="Sales ID is required." ControlToValidate="Sale" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ErrorMessage="Repair Cost is required." ControlToValidate="Repair" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ErrorMessage="Description is required." ControlToValidate="Desc" ValidationGroup="Val1"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>

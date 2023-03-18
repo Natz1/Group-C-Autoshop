@@ -14,18 +14,26 @@
         <tr>
             <td><h4>Name: </h4></td>
             <td><asp:TextBox ID="CNameTxt" runat="server"></asp:TextBox></td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Name is required." ControlToValidate="CNameTxt"></asp:RequiredFieldValidator></td>
+
         </tr>
         <tr>
             <td><h4>Home Address: </h4></td>
             <td><asp:TextBox ID="CAddrTxt" runat="server"></asp:TextBox></td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Address is required." ControlToValidate="CAddrTxt"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
             <td><h4>Email: </h4></td>
             <td><asp:TextBox ID="CEmailTxt" runat="server"></asp:TextBox></td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Email is required." ControlToValidate="CEmailTxt"></asp:RequiredFieldValidator></td>
+            <td>&nbsp;&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Must be an email." 
+                ControlToValidate="CEmailTxt" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator></td>
+            
         </tr>
         <tr>
             <td><h4>Phone Number (###)-###-####: </h4></td>
             <td><asp:TextBox ID="CPhoneTxt" runat="server" MaxLength="14"></asp:TextBox></td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Phone is required." ControlToValidate="CPhoneTxt"></asp:RequiredFieldValidator></td>
         </tr>
     </table>
     <!--Insert into client and phone number-->

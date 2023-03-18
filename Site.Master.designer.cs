@@ -96,15 +96,6 @@ namespace Group_C_Autoshop
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser1;
 
         /// <summary>
-        /// enduser6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser6;
-
-        /// <summary>
         /// manager1 control.
         /// </summary>
         /// <remarks>
