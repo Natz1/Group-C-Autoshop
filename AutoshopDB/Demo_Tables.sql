@@ -246,3 +246,4 @@ Create Table Employee_Audit_Log
 
 	Constraint fk_emp8 foreign key (Employee_Id) references Employee (Employee_ID)
 );
+

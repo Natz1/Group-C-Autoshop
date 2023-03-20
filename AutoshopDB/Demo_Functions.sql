@@ -29,3 +29,28 @@ Create Function Assigned_Supervisor(@Supervisor_Id int)
 As
 Return
 	Select * From Employee Where Supervisor_ID = @Supervisor_Id;
+
+--============================================================================
+--Function to validate Client and Employee Login
+Create Function Validate_Client_Employee_Login(@username varchar(35), @password varchar(256))
+RETURNS varchar(256)
+AS
+BEGIN
+DECLARE
+	@Validated varchar(256),
+	@Password_Hash varchar(256);
+
+	SET @Validated = 'No';
+	SET @username = CAST(@username AS varchar(35));
+	SET @Password_Hash = HASHBYTES('SHA2_256',@password);
+
+	IF EXISTS (Select * From Client_Login_Details Where Username = @username AND Password_Hash = @Password_Hash)
+		BEGIN
+			SET @Validated = 'Yes'
+		END
+	IF EXISTS (Select * From Employee_Login_Details Where CAST(Employee_Id AS varchar(35)) = @username AND Password_Hash = @Password_Hash)
+		BEGIN
+			SET @Validated = 'Yes'
+		END
+RETURN @Validated
+END

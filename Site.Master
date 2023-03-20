@@ -70,13 +70,16 @@
                         <li id="manager1" runat="server"><a runat="server" href="~/UserRoles/Manager/BusinessInsights">Business Insights</a></li>
                         <li id="manager2" runat="server"><a runat="server" href="~/UserRoles/Manager/SalesResults">Sales Results</a></li>
                         <li id="manager3" runat="server"><a runat="server" href="~/UserRoles/Manager/WorkDone">Work Done</a></li>
+                        <li id="manager4" runat="server"><a runat="server" href="~/UserRoles/Manager/Clients">Clients</a></li>
+                        <li id="manager5" runat="server"><a runat="server" href="~/UserRoles/Manager/Employees">Employees</a></li>
+                        <li id="manager6" runat="server"><a runat="server" href="~/UserRoles/Manager/Purchases">Purchases</a></li>
 
-                        <!--Super User-->
-                        <!--<li id="superuser" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
+                        <!--Salesman-->
+                        <!--<li id="salesman" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
 
                         <!--General-->
-                        <li><a runat="server" href="~/About">About Us</a></li>
-                        <li><a runat="server" href="~/Contact">Contact Us</a></li>
+                        <li id="general1" runat="server"><a runat="server" href="~/About">About Us</a></li>
+                        <li id="general2" runat="server"><a runat="server" href="~/Contact">Contact Us</a></li>
 
                         
                     </ul>

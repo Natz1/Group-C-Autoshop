@@ -107,3 +107,10 @@ Drop Trigger Vehicle_Sales
 Drop Trigger Vehicle_Purchases
 Drop Trigger Part_Changed_Insert
 Drop Trigger Add_On_Insert
+
+
+--===============================================================
+--SECURITY
+Select * from Client_Login_Details
+Select * from Employee_Login_Details
+Select * from Employee_Audit_Log

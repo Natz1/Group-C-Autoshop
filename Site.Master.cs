@@ -147,9 +147,13 @@ namespace Group_C_Autoshop
             admin2.Visible = false;
             admin3.Visible = false;
             admin5.Visible = false;
+
             manager1.Visible = false;
             manager2.Visible = false;
             manager3.Visible = false;
+            manager4.Visible = false;
+            manager5.Visible = false;
+            manager6.Visible = false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -164,6 +168,9 @@ namespace Group_C_Autoshop
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;
+
+                general1.Visible = false;
+                general2.Visible = false;
             }
 
             if (Context.User.IsInRole("manager"))
@@ -171,11 +178,17 @@ namespace Group_C_Autoshop
                 manager1.Visible = true;
                 manager2.Visible = true;
                 manager3.Visible = true;
+                manager4.Visible = true;
+                manager5.Visible = true;
+                manager6.Visible = true;
 
                 enduser1.Visible = false;
                 enduser3.Visible = false;
                 enduser4.Visible = false;
                 enduser5.Visible = false;
+
+                general1.Visible = false;
+                general2.Visible = false;
             }
 
         }

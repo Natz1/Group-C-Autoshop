@@ -186,6 +186,9 @@
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
     <Content Include="UserRoles\EndUser\OrderError.aspx" />
+    <Content Include="UserRoles\Manager\Clients.aspx" />
+    <Content Include="UserRoles\Manager\Employees.aspx" />
+    <Content Include="UserRoles\Manager\Purchases.aspx" />
     <Content Include="UserRoles\Manager\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
@@ -397,6 +400,27 @@
     <Compile Include="UserRoles\EndUser\OrderError.aspx.designer.cs">
       <DependentUpon>OrderError.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserRoles\Manager\Clients.aspx.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Clients.aspx.designer.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Purchases.aspx.cs">
+      <DependentUpon>Purchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Purchases.aspx.designer.cs">
+      <DependentUpon>Purchases.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\Manager\SalesResults.aspx.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -497,6 +521,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UserRoles\Mechanic\" />
+    <Folder Include="UserRoles\Salesman\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

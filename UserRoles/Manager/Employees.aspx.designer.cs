@@ -7,182 +7,209 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop
+namespace Group_C_Autoshop.UserRoles.Manager
 {
 
 
-    public partial class SiteMaster
+    public partial class Employees
     {
 
         /// <summary>
-        /// admin control.
+        /// EmpData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin;
+        protected global::System.Web.UI.WebControls.SqlDataSource EmpData;
 
         /// <summary>
-        /// admin1 control.
+        /// EmpList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin1;
+        protected global::System.Web.UI.WebControls.GridView EmpList;
 
         /// <summary>
-        /// admin2 control.
+        /// DateTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin2;
+        protected global::System.Web.UI.WebControls.TextBox DateTxt;
 
         /// <summary>
-        /// admin3 control.
+        /// NameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin3;
+        protected global::System.Web.UI.WebControls.TextBox NameTxt;
 
         /// <summary>
-        /// admin5 control.
+        /// DOBTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl admin5;
+        protected global::System.Web.UI.WebControls.TextBox DOBTxt;
 
         /// <summary>
-        /// enduser3 control.
+        /// Sup1Txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser3;
+        protected global::System.Web.UI.WebControls.TextBox Sup1Txt;
 
         /// <summary>
-        /// enduser4 control.
+        /// TypeTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser4;
+        protected global::System.Web.UI.WebControls.DropDownList TypeTxt;
 
         /// <summary>
-        /// enduser5 control.
+        /// Add control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser5;
+        protected global::System.Web.UI.WebControls.Button Add;
 
         /// <summary>
-        /// enduser1 control.
+        /// ID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enduser1;
+        protected global::System.Web.UI.WebControls.TextBox ID;
 
         /// <summary>
-        /// manager1 control.
+        /// Search1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager1;
+        protected global::System.Web.UI.WebControls.Button Search1;
 
         /// <summary>
-        /// manager2 control.
+        /// SupervisorData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager2;
+        protected global::System.Web.UI.WebControls.SqlDataSource SupervisorData;
 
         /// <summary>
-        /// manager3 control.
+        /// SupervisorList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager3;
+        protected global::System.Web.UI.WebControls.GridView SupervisorList;
 
         /// <summary>
-        /// manager4 control.
+        /// AdminData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager4;
+        protected global::System.Web.UI.WebControls.SqlDataSource AdminData;
 
         /// <summary>
-        /// manager5 control.
+        /// AdminList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager5;
+        protected global::System.Web.UI.WebControls.GridView AdminList;
 
         /// <summary>
-        /// manager6 control.
+        /// MecData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager6;
+        protected global::System.Web.UI.WebControls.SqlDataSource MecData;
 
         /// <summary>
-        /// salesman control.
+        /// MecList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salesman;
+        protected global::System.Web.UI.WebControls.GridView MecList;
 
         /// <summary>
-        /// general1 control.
+        /// SalesmanData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl general1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SalesmanData;
 
         /// <summary>
-        /// general2 control.
+        /// SalesmanList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl general2;
+        protected global::System.Web.UI.WebControls.GridView SalesmanList;
 
         /// <summary>
-        /// MainContent control.
+        /// Emp1ID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.TextBox Emp1ID;
+
+        /// <summary>
+        /// Sal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Sal;
+
+        /// <summary>
+        /// SalType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SalType;
+
+        /// <summary>
+        /// Update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Update;
     }
 }
