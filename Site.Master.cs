@@ -108,6 +108,32 @@ namespace Group_C_Autoshop
                 IdentityResult result = roleManager.Create(roles);
             }
 
+            name = "salesman";
+            //***********************Checking if the role is already present
+            search = roleManager.FindByName(name);
+            if (search == null)
+            {
+                IdentityRole roles = new IdentityRole();
+                roles.Id = "4";
+                roles.Name = "salesman";
+                IdentityResult result = roleManager.Create(roles);
+            }
+
+            name = "mechanic";
+            //***********************Checking if the role is already present
+            search = roleManager.FindByName(name);
+            if (search == null)
+            {
+                IdentityRole roles = new IdentityRole();
+                roles.Id = "5";
+                roles.Name = "mechanic";
+                IdentityResult result = roleManager.Create(roles);
+            }
+
+
+
+
+
             //***********************Creating admin user
             var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
             string email = "admin@gmail.com";
@@ -125,10 +151,10 @@ namespace Group_C_Autoshop
             }
 
             //***********************Creating admin user
-            var userManager1 = Context.GetOwinContext().Get<ApplicationUserManager>();
-            string email1 = "manager@gmail.com";
+            userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
+            email = "manager@gmail.com";
             //***********************Check if user is already present
-            var search2 = userManager.FindByEmail(email1);
+            search1 = userManager.FindByEmail(email);
             if (search1 == null)
             {
                 var user = new ApplicationUser()
@@ -139,6 +165,37 @@ namespace Group_C_Autoshop
                 IdentityResult result = userManager.Create(user, "Man123!"); //Password
                 userManager.AddToRole(user.Id, "manager");
             }
+
+            //***********************Creating admin user
+            email = "salesman@gmail.com";
+            //***********************Check if user is already present
+            search1 = userManager.FindByEmail(email);
+            if (search1 == null)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = "salesman@gmail.com",
+                    Email = "salesman@gmail.com"
+                };
+                IdentityResult result = userManager.Create(user, "Sale123!"); //Password
+                userManager.AddToRole(user.Id, "salesman");
+            }
+
+            //***********************Creating admin user
+            email = "mechanic@gmail.com";
+            //***********************Check if user is already present
+            search1 = userManager.FindByEmail(email);
+            if (search1 == null)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = "mechanic@gmail.com",
+                    Email = "mechanic@gmail.com"
+                };
+                IdentityResult result = userManager.Create(user, "Mec123!"); //Password
+                userManager.AddToRole(user.Id, "mechanic");
+            }
+
 
 
             //***********************Make navigation invisible
@@ -154,6 +211,10 @@ namespace Group_C_Autoshop
             manager4.Visible = false;
             manager5.Visible = false;
             manager6.Visible = false;
+
+            salesman1.Visible = false;
+            salesman2.Visible = false;
+            salesman3.Visible = false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -181,6 +242,21 @@ namespace Group_C_Autoshop
                 manager4.Visible = true;
                 manager5.Visible = true;
                 manager6.Visible = true;
+
+                enduser1.Visible = false;
+                enduser3.Visible = false;
+                enduser4.Visible = false;
+                enduser5.Visible = false;
+
+                general1.Visible = false;
+                general2.Visible = false;
+            }
+
+            if (Context.User.IsInRole("salesman"))
+            {
+                salesman1.Visible = true;
+                salesman2.Visible = true;
+                salesman3.Visible = true;
 
                 enduser1.Visible = false;
                 enduser3.Visible = false;

@@ -150,13 +150,31 @@ namespace Group_C_Autoshop
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager6;
 
         /// <summary>
-        /// salesman control.
+        /// salesman1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salesman;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salesman1;
+
+        /// <summary>
+        /// salesman2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salesman2;
+
+        /// <summary>
+        /// salesman3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl salesman3;
 
         /// <summary>
         /// general1 control.

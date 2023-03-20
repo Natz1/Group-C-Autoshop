@@ -33,6 +33,24 @@ namespace Group_C_Autoshop.EndUser
         protected global::System.Web.UI.WebControls.GridView SaleList;
 
         /// <summary>
+        /// AdditionData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AdditionData;
+
+        /// <summary>
+        /// AdditionList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView AdditionList;
+
+        /// <summary>
         /// Sale control.
         /// </summary>
         /// <remarks>

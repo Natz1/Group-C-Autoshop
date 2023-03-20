@@ -3,7 +3,9 @@
 
     <!--Generates invoice of client's purchases-->
     <h1>Adjust Client Purchases</h1>
-    <asp:SqlDataSource ID="SaleData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT * FROM [Client_Sale]">
+    <h3>View Sales Data</h3>
+    <asp:SqlDataSource ID="SaleData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
+        SelectCommand="SELECT * FROM [Client_Sale]">
     </asp:SqlDataSource>
     <asp:GridView ID="SaleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="800px" AllowPaging="True" DataSourceID="SaleData" AutoGenerateColumns="False" >
         <Columns>
@@ -28,6 +30,25 @@
     </asp:GridView>
     <br />
 
+    <h3>View Client Additions</h3>
+    <asp:SqlDataSource ID="AdditionData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT * FROM [Client_Additions]"></asp:SqlDataSource>
+    <asp:GridView ID="AdditionList"  HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px" AllowPaging="True" 
+        runat="server" AutoGenerateColumns="False" DataSourceID="AdditionData">
+        <Columns>
+            <asp:BoundField DataField="Client_ID" HeaderText="Client_ID" SortExpression="Client_ID" />
+            <asp:BoundField DataField="Client" HeaderText="Client" SortExpression="Client" />
+            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
+            <asp:BoundField DataField="Car_Alarm" HeaderText="Car_Alarm" SortExpression="Car_Alarm" />
+            <asp:BoundField DataField="Radio_Installation" HeaderText="Radio_Installation" SortExpression="Radio_Installation" />
+            <asp:BoundField DataField="Tracking_Device" HeaderText="Tracking_Device" SortExpression="Tracking_Device" />
+            <asp:BoundField DataField="Addition_Cost" HeaderText="Addition_Cost" SortExpression="Addition_Cost" />
+        </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+        <HeaderStyle CssClass="header"></HeaderStyle>
+
+        <RowStyle CssClass="rows"></RowStyle>
+    </asp:GridView>
+    <br />
 
     <!--Assigns a salesman and mechanic to order-->
     <h3>Update Sales Data</h3>
@@ -86,7 +107,8 @@
     <br />
 
     <h3>Generate Client Invoice</h3>
-    <asp:SqlDataSource ID="InvoiceData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Client_Invoice_1.* FROM dbo.Client_Invoice(@id) AS Client_Invoice_1">
+    <asp:SqlDataSource ID="InvoiceData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
+        SelectCommand="SELECT Client_Invoice_1.* FROM dbo.Client_Invoice(@id) AS Client_Invoice_1">
         <SelectParameters>
             <asp:ControlParameter ControlID="Specific" Name="id" PropertyName="Text" />
         </SelectParameters>

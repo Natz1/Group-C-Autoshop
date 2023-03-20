@@ -75,7 +75,11 @@
                         <li id="manager6" runat="server"><a runat="server" href="~/UserRoles/Manager/Purchases">Purchases</a></li>
 
                         <!--Salesman-->
-                        <!--<li id="salesman" runat="server"><a runat="server" href="~/UserRoles/Manager/ManageUsers">Manage Users</a></li>-->
+                        <li id="salesman1" runat="server"><a runat="server" href="~/UserRoles/Salesman/AvailableVehicles">Available Vehicles</a></li>
+                        <li id="salesman2" runat="server"><a runat="server" href="~/UserRoles/Salesman/PurchasesPerformed">My Purchases</a></li>
+                        <li id="salesman3" runat="server"><a runat="server" href="~/UserRoles/Salesman/SalesPerformed">My Sales</a></li>
+
+                        <!--Mechanic-->
 
                         <!--General-->
                         <li id="general1" runat="server"><a runat="server" href="~/About">About Us</a></li>
