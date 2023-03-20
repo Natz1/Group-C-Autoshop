@@ -250,6 +250,7 @@ DECLARE
 	SET User_Role = 'Admin_Personnel'
 	WHERE Employee_Id = @Admin_Id;
 
+--Mechanic
 Create Trigger New_Mechanic
 ON Mechanic INSTEAD OF INSERT
 AS
@@ -279,6 +280,7 @@ DECLARE
 	SET User_Role = 'Mechanic'
 	WHERE Employee_Id = @Mechanic_Id;
 
+--Salesman
 Create Trigger New_Salesman
 ON Salesman INSTEAD OF INSERT
 AS

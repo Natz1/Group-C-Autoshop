@@ -30,10 +30,23 @@ email: dandrautoshop876@outlook.com
 Create INSERT Trigger for updating the Client_Login_Details Table when a client is added (DONE)
 ---------------------------------------------------------------------------------------
 
-Create a stored procedure Add_Password_Pin_Client to update a Client's Password and Pin when registering (DONE)
+***Create a stored procedure Add_Password_Pin_Client to update a Client's Password and 
+Pin when registering (DONE)
+---------------------------------------------------------------------------------------
 
-Create a stored procedure Send_Verification_Code that sends a temporary 6 digit code to a client's email and update the Client_Login_Details table accordingly (DONE)
+***Create a stored procedure Send_Verification_Code that sends a temporary 6 digit 
+code to a client's email and update the Client_Login_Details table accordingly (DONE)
+---------------------------------------------------------------------------------------
 
+***Create a stored procedure Add_Password_Employee to update a Employee's password 
+when added to the system (DONE)
+---------------------------------------------------------------------------------------
+
+***Create a Function Validate_Client_Employee_Login to validate a client or employee 
+logging in(DONE)
+---------------------------------------------------------------------------------------
+
+***Create a stored procedure Logging_On to log in a user after being validated(DONE)
 ---------------------------------------------------------------------------------------
 
 Create INSERT Trigger for updating the Employee_Login_Details Table when a employee is added (DONE)
@@ -42,15 +55,6 @@ Create INSERT Triggers for updating the Employee_Login_Details accordingly Table
 	Administrative_Personnel
 	Salesman
 	Mechanic
----------------------------------------------------------------------------------------
-
-Create a stored procedure Add_Password_Employee to update a Employee's password when added to the system (DONE)
----------------------------------------------------------------------------------------
-
-Create a Function Validate_Client_Employee_Login to validate a client or employee logging in(DONE)
----------------------------------------------------------------------------------------
-
-Create a stored procedure Logging_On to log in a user after being validated(DONE)
 ---------------------------------------------------------------------------------------
 
 *********TO BE DONE*********
