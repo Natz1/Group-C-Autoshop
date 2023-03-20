@@ -177,6 +177,24 @@ namespace Group_C_Autoshop
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl salesman3;
 
         /// <summary>
+        /// mechanic1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mechanic1;
+
+        /// <summary>
+        /// mechanic2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mechanic2;
+
+        /// <summary>
         /// general1 control.
         /// </summary>
         /// <remarks>

@@ -242,6 +242,8 @@
     <Content Include="UserRoles\Admin\VehiclePurchases.aspx" />
     <Content Include="UserRoles\Manager\BusinessInsights.aspx" />
     <Content Include="UserRoles\Manager\WorkDone.aspx" />
+    <Content Include="UserRoles\Mechanic\ClientAdditions.aspx" />
+    <Content Include="UserRoles\Mechanic\RepairJobs.aspx" />
     <Content Include="UserRoles\Salesman\AvailableVehicles.aspx" />
     <Content Include="UserRoles\Salesman\PurchasesPerformed.aspx" />
     <Content Include="UserRoles\Salesman\SalesPerformed.aspx" />
@@ -514,6 +516,20 @@
     <Compile Include="UserRoles\Manager\WorkDone.aspx.designer.cs">
       <DependentUpon>WorkDone.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserRoles\Mechanic\ClientAdditions.aspx.cs">
+      <DependentUpon>ClientAdditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\ClientAdditions.aspx.designer.cs">
+      <DependentUpon>ClientAdditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\RepairJobs.aspx.cs">
+      <DependentUpon>RepairJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\RepairJobs.aspx.designer.cs">
+      <DependentUpon>RepairJobs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\Salesman\AvailableVehicles.aspx.cs">
       <DependentUpon>AvailableVehicles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -545,7 +561,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UserRoles\Mechanic\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
