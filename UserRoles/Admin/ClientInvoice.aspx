@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientInvoice.aspx.cs" Inherits="Group_C_Autoshop.EndUser.ClientInvoice" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientInvoice.aspx.cs" Inherits="Group_C_Autoshop.UserRoles.Admin.ClientInvoice" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!--Generates invoice of client's purchases-->
@@ -7,20 +7,19 @@
     <asp:SqlDataSource ID="SaleData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
         SelectCommand="SELECT * FROM [Client_Sale]">
     </asp:SqlDataSource>
-    <asp:GridView ID="SaleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="800px" AllowPaging="True" DataSourceID="SaleData" AutoGenerateColumns="False" >
+    <asp:GridView ID="SaleList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px" AllowPaging="True" 
+        DataSourceID="SaleData" AutoGenerateColumns="False" DataKeyNames="Sale_ID" >
         <Columns>
-            <asp:BoundField DataField="Sale_ID" HeaderText="Sale_ID" SortExpression="Sale_ID" />
+            <asp:BoundField DataField="Sale_ID" HeaderText="Sale_ID" SortExpression="Sale_ID" ReadOnly="True" />
             <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
             <asp:BoundField DataField="Client_ID" HeaderText="Client_ID" SortExpression="Client_ID" />
-            <asp:BoundField DataField="Client" HeaderText="Client" SortExpression="Client" />
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
             <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
             <asp:BoundField DataField="Car_Price" HeaderText="Car_Price" SortExpression="Car_Price" />
             <asp:BoundField DataField="Salesman_ID" HeaderText="Salesman_ID" SortExpression="Salesman_ID" />
             <asp:BoundField DataField="Mechanic_ID" HeaderText="Mechanic_ID" SortExpression="Mechanic_ID" />
-            <asp:BoundField DataField="Number_of_parts_Used" HeaderText="Number_of_parts_Used" SortExpression="Number_of_parts_Used" />
-            <asp:BoundField DataField="Parts_Cost" HeaderText="Parts_Cost" SortExpression="Parts_Cost" />
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
             <asp:BoundField DataField="Repair_Cost" HeaderText="Repair_Cost" SortExpression="Repair_Cost" />
-            <asp:BoundField DataField="Repair_Job_Total" HeaderText="Repair_Job_Total" ReadOnly="True" SortExpression="Repair_Job_Total" />
         </Columns>
         <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
 
@@ -50,6 +49,24 @@
     </asp:GridView>
     <br />
 
+    <h3>View Parts to be Changed</h3>
+    <asp:SqlDataSource ID="PartsData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Sale.Sale_ID, Client.Client_ID, Client.Name, Sale.Chassis_Number, Part_Changed.Job_Number, Part_Changed.Part_Id, Part_Changed.Part_Name, Part_Changed.Quantity FROM Client INNER JOIN Sale ON Client.Client_ID = Sale.Client_ID INNER JOIN Work_Done ON Sale.Sale_ID = Work_Done.Sale_ID INNER JOIN Part_Changed ON Work_Done.Job_Number = Part_Changed.Job_Number"></asp:SqlDataSource>
+    <asp:GridView ID="PartsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="1000px"
+        AllowPaging="True" AutoGenerateColumns="False" DataSourceID="PartsData">
+        <Columns>
+            <asp:BoundField DataField="Sale_ID" HeaderText="Sale_ID" InsertVisible="False" ReadOnly="True" SortExpression="Sale_ID" />
+            <asp:BoundField DataField="Client_ID" HeaderText="Client_ID" InsertVisible="False" ReadOnly="True" SortExpression="Client_ID" />
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
+            <asp:BoundField DataField="Job_Number" HeaderText="Job_Number" SortExpression="Job_Number" />
+            <asp:BoundField DataField="Part_Id" HeaderText="Part_Id" SortExpression="Part_Id" />
+            <asp:BoundField DataField="Part_Name" HeaderText="Part_Name" SortExpression="Part_Name" />
+            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+        </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+    </asp:GridView>
+    <br />
+
     <!--Assigns a salesman and mechanic to order-->
     <h3>Update Sales Data</h3>
     <!--Form to enter info-->
@@ -61,12 +78,12 @@
         </tr>
         <tr>
             <td><h4>Select Salesman: </h4></td>
-            <td><asp:DropDownList ID="salesman" runat="server" DataValueField="Salesman_ID"></asp:DropDownList></td>
+            <td><asp:TextBox ID="salesm" runat="server"></asp:TextBox></td>
             
         </tr>
         <tr>
             <td><h4>Select Mechanic: </h4></td>
-            <td><asp:DropDownList ID="mechanic" DataValueField="Mechanic_ID" runat="server"></asp:DropDownList></td>
+            <td><asp:TextBox ID="mechan" runat="server"></asp:TextBox></td>
         </tr>
         <tr>
             <td><h4>Repair Cost: </h4></td>
@@ -394,9 +411,4 @@
             </td>
         </tr>
     </table>
-
-
-
-    
-
 </asp:Content>

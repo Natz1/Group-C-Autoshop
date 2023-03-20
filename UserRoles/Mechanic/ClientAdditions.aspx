@@ -17,7 +17,8 @@
     </table>
     <br />
 
-    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="Client_Additions_Checker" SelectCommandType="StoredProcedure">
+    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
+        SelectCommand="Client_Additions_Checker" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:ControlParameter ControlID="ID" Name="Client_Id" PropertyName="Text" Type="Int32" />
         </SelectParameters>

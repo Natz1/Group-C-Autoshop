@@ -218,6 +218,7 @@ namespace Group_C_Autoshop
 
             mechanic1.Visible= false;
             mechanic2.Visible= false;
+            mechanic3.Visible= false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("admin"))
@@ -274,6 +275,7 @@ namespace Group_C_Autoshop
             {
                 mechanic1.Visible = true;
                 mechanic2.Visible = true;   
+                mechanic3.Visible = true;
 
                 enduser1.Visible = false;
                 enduser3.Visible = false;

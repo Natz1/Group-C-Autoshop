@@ -82,6 +82,7 @@
                         <!--Mechanic-->
                         <li id="mechanic1" runat="server"><a runat="server" href="~/UserRoles/Mechanic/RepairJobs">My Repair Jobs</a></li>
                         <li id="mechanic2" runat="server"><a runat="server" href="~/UserRoles/Mechanic/ClientAdditions">Client Additions</a></li>
+                        <li id="mechanic3" runat="server"><a runat="server" href="~/UserRoles/Mechanic/PartsChanges">Part Changes</a></li>
 
                         <!--General-->
                         <li id="general1" runat="server"><a runat="server" href="~/About">About Us</a></li>

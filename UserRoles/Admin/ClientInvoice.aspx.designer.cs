@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.EndUser
+namespace Group_C_Autoshop.UserRoles.Admin
 {
 
 
@@ -51,6 +51,24 @@ namespace Group_C_Autoshop.EndUser
         protected global::System.Web.UI.WebControls.GridView AdditionList;
 
         /// <summary>
+        /// PartsData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource PartsData;
+
+        /// <summary>
+        /// PartsList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PartsList;
+
+        /// <summary>
         /// Sale control.
         /// </summary>
         /// <remarks>
@@ -60,22 +78,22 @@ namespace Group_C_Autoshop.EndUser
         protected global::System.Web.UI.WebControls.TextBox Sale;
 
         /// <summary>
-        /// salesman control.
+        /// salesm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList salesman;
+        protected global::System.Web.UI.WebControls.TextBox salesm;
 
         /// <summary>
-        /// mechanic control.
+        /// mechan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList mechanic;
+        protected global::System.Web.UI.WebControls.TextBox mechan;
 
         /// <summary>
         /// Repair control.

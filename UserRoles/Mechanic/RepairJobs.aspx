@@ -22,7 +22,7 @@
         <SelectParameters>
             <asp:ControlParameter ControlID="ID" Name="Mechanic_Id" PropertyName="Text" Type="Int32" />
         </SelectParameters>
-    </asp:SqlDataSource>
+</asp:SqlDataSource>
     <asp:ListView ID="RepairList" runat="server" DataKeyNames="Mechanic_ID,Job_Number" DataSourceID="RepairData">
         <AlternatingItemTemplate>
             <li style="background-color: #FFFFFF;color: #284775;">Mechanic_ID:
@@ -188,7 +188,7 @@
                 <br />
             </li>
         </SelectedItemTemplate>
-    </asp:ListView>
+</asp:ListView>
 
 
 
