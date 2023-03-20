@@ -63,7 +63,7 @@
                         <li id="enduser3" runat="server"><a runat="server" href="~/UserRoles/EndUser/VehicleList">Vehicles</a></li>
                         <li id="enduser4" runat="server"><a runat="server" href="~/UserRoles/EndUser/Additions">Additions</a></li>
                         <li id="enduser5" runat="server"><a runat="server" href="~/UserRoles/EndUser/SpareParts">Replace Parts</a></li>
-                        <li id="enduser1" runat="server"><a runat="server" href="~/UserRoles/EndUser/ClientOrder">Order Now</a></li>
+                        <li id="enduser1" runat="server"><a runat="server" href="~/UserRoles/Client/ClientOrder">Order Now</a></li>
                         
 
                         <!--Manager-->

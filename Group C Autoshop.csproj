@@ -166,15 +166,20 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AutoshopDB\Demo-Modifications.sql" />
+    <Content Include="AutoshopDB\Demo-Seccurity.sql" />
     <Content Include="AutoshopDB\Demo-Triggers.sql" />
+    <Content Include="AutoshopDB\Demo_Access_Control.sql" />
+    <Content Include="AutoshopDB\Demo_Database_Mail.sql" />
     <Content Include="AutoshopDB\Demo_Functions.sql" />
     <Content Include="AutoshopDB\Demo_Insert Statements.sql" />
     <Content Include="AutoshopDB\Demo_Select_Statements.sql" />
+    <Content Include="AutoshopDB\Demo_Statistical_Method.sql" />
     <Content Include="AutoshopDB\Demo_Stored_Procedures.sql" />
     <Content Include="AutoshopDB\Demo_Tables.sql" />
     <Content Include="AutoshopDB\Demo_Transactions.sql" />
     <Content Include="AutoshopDB\Demo_Views.sql" />
-    <Content Include="AutoshopDB\Updates.txt" />
+    <Content Include="AutoshopDB\Security Updates.txt" />
     <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
     <Content Include="UserRoles\Admin\ClientList.aspx" />
     <Content Include="UserRoles\Admin\EmployeeList.aspx" />
@@ -185,14 +190,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
-    <Content Include="UserRoles\EndUser\OrderError.aspx" />
+    <Content Include="UserRoles\Client\ClientInvoice.aspx" />
+    <Content Include="UserRoles\Client\OrderError.aspx" />
     <Content Include="UserRoles\Manager\Clients.aspx" />
     <Content Include="UserRoles\Manager\Employees.aspx" />
     <Content Include="UserRoles\Manager\Purchases.aspx" />
     <Content Include="UserRoles\Manager\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
-    <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
+    <Content Include="UserRoles\Client\ClientOrder.aspx" />
     <Content Include="UserRoles\EndUser\SpareParts.aspx" />
     <Content Include="UserRoles\Admin\VehicleInventory.aspx" />
     <Content Include="favicon.ico" />
@@ -399,18 +404,18 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.cs">
+    <Compile Include="UserRoles\Client\ClientInvoice.aspx.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.designer.cs">
+    <Compile Include="UserRoles\Client\ClientInvoice.aspx.designer.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\EndUser\OrderError.aspx.cs">
+    <Compile Include="UserRoles\Client\OrderError.aspx.cs">
       <DependentUpon>OrderError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\EndUser\OrderError.aspx.designer.cs">
+    <Compile Include="UserRoles\Client\OrderError.aspx.designer.cs">
       <DependentUpon>OrderError.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\Manager\Clients.aspx.cs">
@@ -448,11 +453,11 @@
     <Compile Include="UserRoles\EndUser\Additions.aspx.designer.cs">
       <DependentUpon>Additions.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ClientOrder.aspx.cs">
+    <Compile Include="UserRoles\Client\ClientOrder.aspx.cs">
       <DependentUpon>ClientOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserRoles\EndUser\ClientOrder.aspx.designer.cs">
+    <Compile Include="UserRoles\Client\ClientOrder.aspx.designer.cs">
       <DependentUpon>ClientOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\EndUser\SpareParts.aspx.cs">

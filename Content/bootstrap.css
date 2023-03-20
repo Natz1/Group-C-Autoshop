@@ -5088,8 +5088,8 @@ a.badge:focus {
 /*formatting registration box*/
 .register-box {
     background-color: #0B4851;
-    width: 350px;
-    height: 550px;
+    width: 450px;
+    height: 650px;
     padding: 30px;
     margin: 20px;
     color: #fff;
@@ -5102,7 +5102,7 @@ a.badge:focus {
     background-color: #0B4851;
     width: 380px;
     height: 450px;
-    padding: 30px;
+    padding: 20px;
     margin: 20px;
     color: #fff;
     position: absolute;
@@ -5132,7 +5132,7 @@ a.badge:focus {
   color: #0B4851;
 }
 .jumbotron p {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   font-size: 14px;
   font-weight: 200;
   color: #0B4851;

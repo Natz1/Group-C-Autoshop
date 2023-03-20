@@ -15,12 +15,16 @@ namespace Group_C_Autoshop.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
+            var user = new ApplicationUser() { UserName = CEmailTxt.Text, Email = CEmailTxt.Text };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
+                //Save client info
+                ClientData.Insert();
+
                 //************************When user registers assign the role user to them
                 manager.AddToRole(user.Id, "enduser");
+                
 
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
@@ -34,6 +38,8 @@ namespace Group_C_Autoshop.Account
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
+
+            
         }
     }
 }
