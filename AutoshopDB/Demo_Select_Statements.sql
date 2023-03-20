@@ -62,7 +62,7 @@ Exec Commission_Earned_By_Salesman [Salesman_ID]; --Manager
 --3
 Exec Repair_Jobs_By_Mechanic [Mechanic_Id]; --Manager
 --4
-Exec Client_Additions_Checker 12; --Admin********************************
+Exec Client_Additions_Checker 12; --Admin
 --5
 Exec Profit_Earned_From_Client_Purchases_By_Year [Year]; --Manager
 --6
@@ -73,7 +73,7 @@ Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin
 --Function Select Statements
 
 --1
-Select * from dbo.Client_Invoice(53); --Admin, Enduser
+Select * from dbo.Client_Invoice([Client_Id]); --Admin, Enduser
 --2
 Select * from dbo.Assigned_Supervisor([Supervisor_Id]); --Admin
 
