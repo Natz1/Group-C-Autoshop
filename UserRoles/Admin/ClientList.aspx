@@ -6,7 +6,8 @@
     <!--Client List-->
     <h1>D&R Autoshop's Client List</h1>
     <!--Link to database-->
-    <asp:SqlDataSource ID="ClientData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT C.Client_ID, C.Name, C.Residential_Address, C.Email, CP.Phone_Number FROM Client AS C INNER JOIN Client_Phone AS CP ON CP.Client_ID = C.Client_ID"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="ClientData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" 
+        SelectCommand="SELECT C.Client_ID, C.Name, C.Residential_Address, C.Email, CP.Phone_Number FROM Client AS C INNER JOIN Client_Phone AS CP ON CP.Client_ID = C.Client_ID"></asp:SqlDataSource>
 
     <!--Grid View of client list-->
     <asp:GridView ID="ClientsList" runat="server" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" Width="700px" PageSize="20" 

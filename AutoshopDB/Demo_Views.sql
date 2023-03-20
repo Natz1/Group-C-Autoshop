@@ -67,14 +67,18 @@ WHERE V.Sold = 'No';
 
 --Shows the client's sale details for view by an admin
 Create View Client_Sale as
-Select S.Sale_ID, S.Date, C.Client_ID, C.Name as Client,
+Select S.Sale_ID, S.Date, S.Client_ID, C.Name as Client,
 S.Chassis_Number, S.Price as Car_Price, S.Salesman_ID, 
-R.Mechanic_ID, R.Number_of_parts_Used, R.Parts_Cost, R.Repair_Cost, R.Repair_Job_Total
+W.Mechanic_ID, W.Job_Number, SUM(P.Quantity) as 'Number_of_parts_Used', SUM(P.Cost) as Parts_Cost, R.Description, R.Cost as Repair_Cost
 from Sale S
 Left Join Client C on C.Client_ID = S.Client_ID
 Left Join Employee E on E.Employee_ID = S.Salesman_ID
 Left Join Work_Done W on W.Sale_ID = S.Sale_ID
-Left Join Repair_Jobs R on R.Mechanic_ID = W.Mechanic_ID
+Left Join Repair R on R.Job_Number = W.Job_Number
+Left Join Part_Changed P on P.Job_Number = W.Job_Number
+GROUP BY S.Sale_ID, S.Date, S.Client_ID, C.Name,
+S.Chassis_Number, S.Price, S.Salesman_ID, 
+W.Mechanic_ID, W.Job_Number, R.Description, R.Cost;
 
 
 Select * from Client_Sale

@@ -208,3 +208,42 @@ Create table Repair
 	Description		varchar(100), 
 	Constraint fk_job3 foreign key (Job_Number) references Work_Done (Job_Number)
 );
+
+
+--==========================================================================
+--SECURITY TABLES
+--Stores the Client information for Login, Authentication and Authorization.
+Create table Client_Login_Details
+(
+	Client_Id			integer NOT NULL,
+	Username			varchar(35) NOT NULL,
+	User_Role			varchar(15) NOT NULL,
+	Password_Hash		varchar(256),
+	Pin_Hash			varchar(256),
+	Temporary_code_Hash	varchar(256)
+
+	Constraint fk_client_id_1 foreign key (Client_ID) references Client (Client_ID)
+);
+
+--Stores Employee information for Login and Authorization.
+Create table Employee_Login_Details
+(
+	Employee_Id			integer NOT NULL,
+	User_Role			varchar(30),
+	Password_Hash		varchar(256)
+
+	Constraint fk_emp7 foreign key (Employee_Id) references Employee (Employee_ID)
+);
+
+--Audit log
+--Stores the actions taken by employees on the Purchase, Sale, Vehicle, 
+
+Create Table Employee_Audit_Log
+(
+	Employee_Id		integer NOT NULL,
+	Action			varchar(50) NOT NULL,
+	Time			Date NOT NULL
+
+	Constraint fk_emp8 foreign key (Employee_Id) references Employee (Employee_ID)
+);
+

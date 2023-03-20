@@ -144,7 +144,6 @@ END
 GO
 
 --Allows user to add a new employee and sorts them into the employee type selected
---To check if a vehicle exists before adding to list
 
 Create Procedure Add_Employee_and_Sort
 (
@@ -218,18 +217,22 @@ Create Procedure Update_Sale
 AS
 BEGIN
 	BEGIN TRANSACTION
-		Update Sale Set Salesman_ID = @SalesmanID Where Sale_ID = @SaleID;
-		Update Work_Done Set Mechanic_ID = @MechanicID Where Sale_ID = @SaleID;
+		--If the sales id exists in the database
+		If exists (Select Sale_ID from Sale where Sale_ID = @SaleID)
+		Begin
+			Update Sale Set Salesman_ID = @SalesmanID Where Sale_ID = @SaleID;
+			Update Work_Done Set Mechanic_ID = @MechanicID Where Sale_ID = @SaleID;
 		
-		Declare @Job int;
-		Set @Job = (Select Job_Number from Work_Done Where Sale_ID = @SaleID);
-		If exists (Select Job_Number from Repair where Job_Number = @Job)
-		Begin
-			Update Repair Set Cost = @RepairCost, Description = @Description where Job_Number = @Job
-		End
-		Else
-		Begin
-			Insert into Repair Values (@Job, @RepairCost, @Description);
+			Declare @Job int;
+			Set @Job = (Select Job_Number from Work_Done Where Sale_ID = @SaleID);
+			If exists (Select Job_Number from Repair where Job_Number = @Job)
+			Begin
+				Update Repair Set Cost = @RepairCost, Description = @Description where Job_Number = @Job
+			End
+			Else
+			Begin
+				Insert into Repair Values (@Job, @RepairCost, @Description);
+			End
 		End
 	COMMIT TRANSACTION
 END

@@ -47,7 +47,7 @@ Select * from Commission_Earned; --Manager
 --3
 Select * from Repair_Jobs; --Manager
 --4
-Select * from Client_Additions; --Admin************************
+Select * from Client_Additions; --Admin
 --5
 Select * from Profit_Earned_From_Client_Purchases; --Manager
 --6
@@ -62,18 +62,18 @@ Exec Commission_Earned_By_Salesman [Salesman_ID]; --Manager
 --3
 Exec Repair_Jobs_By_Mechanic [Mechanic_Id]; --Manager
 --4
-Exec Client_Additions_Checker 12; --Admin********************************
+Exec Client_Additions_Checker 12; --Admin
 --5
 Exec Profit_Earned_From_Client_Purchases_By_Year [Year]; --Manager
 --6
 Exec Best_Selling_Car [Start_Date], [End_Date]; --Manager
 --7
-Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin*************************
+Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin
 
 --Function Select Statements
 
 --1
-Select * from dbo.Client_Invoice(53); --Admin, Enduser
+Select * from dbo.Client_Invoice([Client_Id]); --Admin, Enduser
 --2
 Select * from dbo.Assigned_Supervisor([Supervisor_Id]); --Admin
 
@@ -107,3 +107,10 @@ Drop Trigger Vehicle_Sales
 Drop Trigger Vehicle_Purchases
 Drop Trigger Part_Changed_Insert
 Drop Trigger Add_On_Insert
+
+
+--===============================================================
+--SECURITY
+Select * from Client_Login_Details
+Select * from Employee_Login_Details
+Select * from Employee_Audit_Log

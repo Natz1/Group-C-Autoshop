@@ -154,3 +154,154 @@ DECLARE
 		END
 
 	Insert into Add_On values (@Job_Number,@Radio_Installation,@Car_Alarm,@Tracking_Device,@Cost)
+
+--===========================================================================
+--Trigger for adding new Clients to the Client Table and updating the Client_Login_Details Table Accordingly
+Create Trigger New_Client
+ON Client INSTEAD OF INSERT
+AS
+DECLARE
+	
+	@Client_ID	integer,
+	@Name		varchar(35),
+	@Address	varchar(50),
+	@Email		varchar(35),
+	@Username	varchar(30),
+	@User_Role	varchar(30);
+	
+	--Storing the values in the variables from inserted
+	SELECT @Name = Name From inserted;
+	SELECT @Address = Residential_Address From inserted;
+	SELECT @Email = Email From inserted;
+	SELECT @Username = Email From inserted;
+	SELECT @User_Role = 'Client'
+
+
+	IF NOT EXISTS (SELECT * From Client WHERE Email = @Email)
+		BEGIN
+			INSERT INTO Client 
+			VALUES (@Name,@Address,@Email);
+
+			SELECT @Client_ID = Client_ID From Client Where Email = @Email;
+
+			INSERT INTO Client_Login_Details 
+			VALUES (@Client_ID,@Username,@User_Role,NULL,NULL,NULL);
+		END
+
+--EMPLOYEE TRIGGERS
+
+--Trigger for adding New Employees to update the Employee_Login_Details table
+Create Trigger New_Employee
+ON Employee INSTEAD OF INSERT
+AS
+DECLARE
+	
+	@Employee_ID	integer,
+	@Name			varchar(50),
+	@Date_Employed	DATE,
+	@DOB			DATE,
+	@Supervisor_ID	integer;
+	
+	--Storing the values in the variables from inserted
+	SELECT @Name = Name From inserted;
+	SELECT @Date_Employed = Date_Employed From inserted;
+	SELECT @DOB = DOB From inserted;
+	SELECT @Supervisor_ID = Supervisor_ID From inserted;
+
+
+	IF NOT EXISTS (SELECT * From Employee Where Name = @Name AND Date_Employed = @Date_Employed AND DOB = @DOB)
+		BEGIN
+			INSERT INTO Employee
+			VALUES (@Name,@Date_Employed,@DOB,@Supervisor_ID);
+		END
+
+	SELECT @Employee_ID = Employee_ID From Employee Where Name = @Name AND Date_Employed = @Date_Employed AND DOB = @DOB;
+
+	INSERT INTO Employee_Login_Details 
+	VALUES (@Employee_ID,NULL,NULL);
+
+
+--INSERT Triggers for Admin_Personnel, Mechanic and Salesman to update the Employee_Login_Details table
+
+Create Trigger New_Admin_Personnel
+ON Administrative_Personnel INSTEAD OF INSERT
+AS
+DECLARE
+	@Admin_Id integer,
+	@Salary money;
+
+	--Storing the values in the variables from inserted
+	SELECT @Admin_Id = Admin_Id from inserted
+	SELECT @Salary = salary from inserted
+
+	--Add an employee to the Admin_Personnel table
+	IF NOT EXISTS (SELECT * From Administrative_Personnel Where Admin_ID = @Admin_Id)
+		BEGIN
+			INSERT INTO Administrative_Personnel
+			VALUES (@Admin_Id,@Salary);
+		END
+	ELSE
+		BEGIN
+			SELECT 'User already exist'
+		END
+
+	--Update the role of the employee in Employee_Login_Details table accordingly
+	UPDATE Employee_Login_Details
+	SET User_Role = 'Admin_Personnel'
+	WHERE Employee_Id = @Admin_Id;
+
+Create Trigger New_Mechanic
+ON Mechanic INSTEAD OF INSERT
+AS
+DECLARE
+	@Mechanic_Id integer,
+	@Salary money,
+	@Aera_Of_Expertise varchar(50);
+
+	--Storing the values in the variables from inserted
+	SELECT @Mechanic_Id = Mechanic_Id from inserted
+	SELECT @Salary = salary from inserted
+	SELECT @Aera_Of_Expertise = Area_Of_Expertise from inserted
+
+	--Add an employee to the mechanic table
+	IF NOT EXISTS (SELECT * From Mechanic Where Mechanic_ID = @Mechanic_Id)
+		BEGIN
+			INSERT INTO Mechanic
+			VALUES (@Mechanic_Id,@Salary,@Aera_Of_Expertise);
+		END
+	ELSE
+		BEGIN
+			SELECT 'User already exist'
+		END
+
+	--Update the role of the employee in Employee_Login_Details table accordingly
+	UPDATE Employee_Login_Details
+	SET User_Role = 'Mechanic'
+	WHERE Employee_Id = @Mechanic_Id;
+
+Create Trigger New_Salesman
+ON Salesman INSTEAD OF INSERT
+AS
+DECLARE
+	@Salesman_Id integer,
+	@Subsistence money;
+
+	--Storing the values in the variables from inserted
+	SELECT @Salesman_Id = Salesman_Id from inserted
+	SELECT @Subsistence = Travel_Subsistence from inserted
+
+	--Add an employee to the mechanic table
+	IF NOT EXISTS (SELECT * From Salesman Where Salesman_Id = @Salesman_Id)
+		BEGIN
+			INSERT INTO Salesman
+			VALUES (@Salesman_Id,@Subsistence);
+		END
+	ELSE
+		BEGIN
+			SELECT 'User already exist'
+		END
+
+	--Update the role of the employee in Employee_Login_Details table accordingly
+	UPDATE Employee_Login_Details
+	SET User_Role = 'Salesman'
+	WHERE Employee_Id = @Salesman_Id;

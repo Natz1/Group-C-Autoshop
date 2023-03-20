@@ -52,11 +52,19 @@
             <td>
                 <asp:TextBox ID="SalesmanTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="SalesmanTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>Chassis Number: </h4></td>
             <td>
                 <asp:TextBox ID="ChassisTxt" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="ChassisTxt"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -64,11 +72,19 @@
             <td>
                 <asp:TextBox ID="YrTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="YrTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>Colour: </h4></td>
             <td>
                 <asp:TextBox ID="ColourTxt" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="ColourTxt"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -76,11 +92,19 @@
             <td>
                 <asp:TextBox ID="MakeTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="MakeTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>Model: </h4></td>
             <td>
                 <asp:TextBox ID="ModTxt" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="ModTxt"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -88,11 +112,19 @@
             <td>
                 <asp:TextBox ID="TypeTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="TypeTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>Condition: </h4></td>
             <td>
                 <asp:TextBox ID="ConTxt" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="ConTxt"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -100,11 +132,19 @@
             <td>
                 <asp:TextBox ID="ImportTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="ImportTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>Mark Up Percent: </h4></td>
             <td>
                 <asp:TextBox ID="MarkUpTxt" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="MarkUpTxt"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -112,17 +152,29 @@
             <td>
                 <asp:TextBox ID="EngineTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="EngineTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>CC_Ratings</h4></td>
             <td>
                 <asp:TextBox ID="CCTxt" runat="server"></asp:TextBox>
             </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="CCTxt"></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td><h4>Mileage</h4></td>
             <td>
                 <asp:TextBox ID="MileTxt" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" 
+                    ErrorMessage="Input is required." ControlToValidate="MileTxt"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

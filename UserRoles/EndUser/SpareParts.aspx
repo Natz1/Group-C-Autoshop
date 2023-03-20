@@ -14,15 +14,6 @@
             <td>Quantity: </td>
             <td><asp:DropDownList ID="DropDownList1" runat="server">
                 <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -44,15 +35,6 @@
             <td>Quantity: </td>
             <td><asp:DropDownList ID="DropDownList2" runat="server">
                 <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -75,14 +57,6 @@
             <td><asp:DropDownList ID="DropDownList3" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -104,15 +78,6 @@
             <td>Quantity: </td>
             <td><asp:DropDownList ID="DropDownList4" runat="server">
                 <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -137,12 +102,6 @@
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
                 <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -167,12 +126,6 @@
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
                 <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -195,14 +148,6 @@
             <td><asp:DropDownList ID="DropDownList7" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -224,14 +169,6 @@
             <td><asp:DropDownList ID="DropDownList8" runat="server">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -255,12 +192,6 @@
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
                 <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -270,7 +201,7 @@
     </table>
     <br /><br />
 
-    <img src="" width="300" height="250"/>
+    <img src="/Images/cover.jpeg" width="300" height="250"/>
     <h3>Haulage Bay Cover</h3>
     <table>
         <tr>
@@ -281,15 +212,6 @@
             <td>Quantity: </td>
             <td><asp:DropDownList ID="DropDownList10" runat="server">
                 <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>
@@ -310,15 +232,6 @@
             <td>Quantity: </td>
             <td><asp:DropDownList ID="DropDownList11" runat="server">
                 <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
-                <asp:ListItem>6</asp:ListItem>
-                <asp:ListItem>7</asp:ListItem>
-                <asp:ListItem>8</asp:ListItem>
-                <asp:ListItem>9</asp:ListItem>
-                <asp:ListItem>10</asp:ListItem>
                 </asp:DropDownList></td>
         </tr>
         <tr>

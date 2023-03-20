@@ -8,7 +8,7 @@
     <asp:SqlDataSource ID="ToyotaData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Chassis_Number, Year, Colour, Make, Model, Type, Condition, Engine_Number, CC_Ratings, Mileage FROM Vehicle WHERE (Make = 'Toyota') AND (Model = 'Tacoma') AND (Sold = 'No')">
     </asp:SqlDataSource>
     <!--Grid view-->
-    <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataSourceID="ToyotaData" DataKeyNames="Chassis_Number">
+    <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataSourceID="ToyotaData" DataKeyNames="Chassis_Number" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
         <EditItemTemplate>
             Chassis_Number:
             <asp:Label ID="Chassis_NumberLabel1" runat="server" Text='<%# Eval("Chassis_Number") %>' />
@@ -43,6 +43,8 @@
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
+        <FooterStyle BackColor="White" ForeColor="#333333" />
+        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
             Chassis_Number:
             <asp:TextBox ID="Chassis_NumberTextBox" runat="server" Text='<%# Bind("Chassis_Number") %>' />
@@ -109,7 +111,14 @@
             <asp:Label ID="MileageLabel" runat="server" Text='<%# Bind("Mileage") %>' />
             <br />
         </ItemTemplate>
+        <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <EmptyDataTemplate>None currently left in stock.</EmptyDataTemplate>
+        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#333333" />
     </asp:FormView>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Buy1" runat="server" Text="Buy" OnClick="Buy1_Click" />
     <br />
     <br />
@@ -125,7 +134,7 @@
     <asp:SqlDataSource ID="HondaData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Chassis_Number, Year, Colour, Make, Model, Type, Condition, Engine_Number, CC_Ratings, Mileage FROM Vehicle WHERE (Make = 'Honda') AND (Model = 'City') AND (Sold = 'No')">
     </asp:SqlDataSource>
     <!--Grid view-->
-    <asp:FormView ID="FormView2" runat="server" AllowPaging="True" DataSourceID="HondaData" DataKeyNames="Chassis_Number">
+    <asp:FormView ID="FormView2" runat="server" AllowPaging="True" DataSourceID="HondaData" DataKeyNames="Chassis_Number" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
         <EditItemTemplate>
             Chassis_Number:
             <asp:Label ID="Chassis_NumberLabel1" runat="server" Text='<%# Eval("Chassis_Number") %>' />
@@ -160,6 +169,8 @@
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
+        <FooterStyle BackColor="White" ForeColor="#333333" />
+        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
             Chassis_Number:
             <asp:TextBox ID="Chassis_NumberTextBox" runat="server" Text='<%# Bind("Chassis_Number") %>' />
@@ -226,7 +237,14 @@
             <asp:Label ID="MileageLabel" runat="server" Text='<%# Bind("Mileage") %>' />
             <br />
         </ItemTemplate>
+        <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <EmptyDataTemplate>None currently left in stock.</EmptyDataTemplate>
+        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#333333" />
     </asp:FormView>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Buy2" runat="server" Text="Buy" OnClick="Buy2_Click" />
     <br />
     <br />
@@ -242,7 +260,7 @@
     <asp:SqlDataSource ID="SubaruData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Chassis_Number, Year, Colour, Make, Model, Type, Condition, Engine_Number, CC_Ratings, Mileage FROM Vehicle WHERE (Make = 'Subaru') AND (Model = 'WRX') AND (Sold = 'No')">
     </asp:SqlDataSource>
     <!--Grid view-->
-    <asp:FormView ID="FormView3" runat="server" AllowPaging="True" DataSourceID="SubaruData" DataKeyNames="Chassis_Number">
+    <asp:FormView ID="FormView3" runat="server" AllowPaging="True" DataSourceID="SubaruData" DataKeyNames="Chassis_Number" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
         <EditItemTemplate>
             Chassis_Number:
             <asp:Label ID="Chassis_NumberLabel1" runat="server" Text='<%# Eval("Chassis_Number") %>' />
@@ -277,6 +295,8 @@
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
+        <FooterStyle BackColor="White" ForeColor="#333333" />
+        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
             Chassis_Number:
             <asp:TextBox ID="Chassis_NumberTextBox" runat="server" Text='<%# Bind("Chassis_Number") %>' />
@@ -343,7 +363,14 @@
             <asp:Label ID="MileageLabel" runat="server" Text='<%# Bind("Mileage") %>' />
             <br />
         </ItemTemplate>
+        <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <EmptyDataTemplate>None currently left in stock.</EmptyDataTemplate>
+        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#333333" />
     </asp:FormView>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Buy3" runat="server" Text="Buy" OnClick="Buy3_Click" />
     <br />
     <br />
@@ -358,7 +385,7 @@
     <asp:SqlDataSource ID="BMWData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT Chassis_Number, Year, Colour, Make, Model, Type, Condition, Engine_Number, CC_Ratings, Mileage FROM Vehicle WHERE (Make = 'BMW') AND (Model = 'X6') AND (Sold = 'No')">
     </asp:SqlDataSource>
     <!--Grid view-->
-    <asp:FormView ID="FormView4" runat="server" AllowPaging="True" DataSourceID="BMWData" DataKeyNames="Chassis_Number">
+    <asp:FormView ID="FormView4" runat="server" AllowPaging="True" DataSourceID="BMWData" DataKeyNames="Chassis_Number" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
         <EditItemTemplate>
             Chassis_Number:
             <asp:Label ID="Chassis_NumberLabel1" runat="server" Text='<%# Eval("Chassis_Number") %>' />
@@ -393,6 +420,8 @@
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
+        <FooterStyle BackColor="White" ForeColor="#333333" />
+        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
             Chassis_Number:
             <asp:TextBox ID="Chassis_NumberTextBox" runat="server" Text='<%# Bind("Chassis_Number") %>' />
@@ -459,7 +488,14 @@
             <asp:Label ID="MileageLabel" runat="server" Text='<%# Bind("Mileage") %>' />
             <br />
         </ItemTemplate>
+        <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+        <EmptyDataTemplate>None currently left in stock.</EmptyDataTemplate>
+        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="White" ForeColor="#333333" />
     </asp:FormView>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Buy4" runat="server" Text="Buy" OnClick="Buy4_Click" />
     <br />
     <br />

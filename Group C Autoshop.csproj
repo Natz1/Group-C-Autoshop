@@ -175,6 +175,7 @@
     <Content Include="AutoshopDB\Demo_Transactions.sql" />
     <Content Include="AutoshopDB\Demo_Views.sql" />
     <Content Include="AutoshopDB\Updates.txt" />
+    <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
     <Content Include="UserRoles\Admin\ClientList.aspx" />
     <Content Include="UserRoles\Admin\EmployeeList.aspx" />
     <Content Include="Contact.aspx" />
@@ -185,9 +186,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
+    <Content Include="UserRoles\EndUser\OrderError.aspx" />
+    <Content Include="UserRoles\Manager\Clients.aspx" />
+    <Content Include="UserRoles\Manager\Employees.aspx" />
+    <Content Include="UserRoles\Manager\Purchases.aspx" />
     <Content Include="UserRoles\Manager\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
-    <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
     <Content Include="UserRoles\EndUser\ClientOrder.aspx" />
     <Content Include="UserRoles\EndUser\SpareParts.aspx" />
     <Content Include="UserRoles\Admin\VehicleInventory.aspx" />
@@ -238,6 +242,12 @@
     <Content Include="UserRoles\Admin\VehiclePurchases.aspx" />
     <Content Include="UserRoles\Manager\BusinessInsights.aspx" />
     <Content Include="UserRoles\Manager\WorkDone.aspx" />
+    <Content Include="UserRoles\Mechanic\ClientAdditions.aspx" />
+    <Content Include="UserRoles\Mechanic\PartsChanges.aspx" />
+    <Content Include="UserRoles\Mechanic\RepairJobs.aspx" />
+    <Content Include="UserRoles\Salesman\AvailableVehicles.aspx" />
+    <Content Include="UserRoles\Salesman\PurchasesPerformed.aspx" />
+    <Content Include="UserRoles\Salesman\SalesPerformed.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -343,6 +353,13 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Parts.cs" />
+    <Compile Include="UserRoles\Admin\ClientInvoice.aspx.cs">
+      <DependentUpon>ClientInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Admin\ClientInvoice.aspx.designer.cs">
+      <DependentUpon>ClientInvoice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\Admin\ClientList.aspx.cs">
       <DependentUpon>ClientList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -389,6 +406,34 @@
     <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.designer.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserRoles\EndUser\OrderError.aspx.cs">
+      <DependentUpon>OrderError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\EndUser\OrderError.aspx.designer.cs">
+      <DependentUpon>OrderError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Clients.aspx.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Clients.aspx.designer.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Purchases.aspx.cs">
+      <DependentUpon>Purchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Manager\Purchases.aspx.designer.cs">
+      <DependentUpon>Purchases.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\Manager\SalesResults.aspx.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,13 +447,6 @@
     </Compile>
     <Compile Include="UserRoles\EndUser\Additions.aspx.designer.cs">
       <DependentUpon>Additions.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserRoles\Admin\ClientInvoice.aspx.cs">
-      <DependentUpon>ClientInvoice.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserRoles\Admin\ClientInvoice.aspx.designer.cs">
-      <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\EndUser\ClientOrder.aspx.cs">
       <DependentUpon>ClientOrder.aspx</DependentUpon>
@@ -478,6 +516,48 @@
     </Compile>
     <Compile Include="UserRoles\Manager\WorkDone.aspx.designer.cs">
       <DependentUpon>WorkDone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\ClientAdditions.aspx.cs">
+      <DependentUpon>ClientAdditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\ClientAdditions.aspx.designer.cs">
+      <DependentUpon>ClientAdditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\PartsChanges.aspx.cs">
+      <DependentUpon>PartsChanges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\PartsChanges.aspx.designer.cs">
+      <DependentUpon>PartsChanges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\RepairJobs.aspx.cs">
+      <DependentUpon>RepairJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Mechanic\RepairJobs.aspx.designer.cs">
+      <DependentUpon>RepairJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Salesman\AvailableVehicles.aspx.cs">
+      <DependentUpon>AvailableVehicles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Salesman\AvailableVehicles.aspx.designer.cs">
+      <DependentUpon>AvailableVehicles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Salesman\PurchasesPerformed.aspx.cs">
+      <DependentUpon>PurchasesPerformed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Salesman\PurchasesPerformed.aspx.designer.cs">
+      <DependentUpon>PurchasesPerformed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\Salesman\SalesPerformed.aspx.cs">
+      <DependentUpon>SalesPerformed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\Salesman\SalesPerformed.aspx.designer.cs">
+      <DependentUpon>SalesPerformed.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
