@@ -1,6 +1,6 @@
 --Demo Documentation Tables
 --Version 1 updated Feb 25, 2023
-Use Car_Mart_Web_App
+
 --Stores data on all employees in the autoshop
 
 --Create Database Car_Mart_Web_App;
@@ -9,8 +9,8 @@ Create table Employee
 (
 	Employee_ID		integer		primary key		IDENTITY(10001, 1),
 	Name			varchar(50)	not null,
-	Date_Employed	datetime		not null,
-	DOB				datetime		not null,
+	Date_Employed	date		not null,
+	DOB			date		not null,
 	Supervisor_ID		integer,
 	Constraint fk_supv1 foreign key (Supervisor_ID) references Employee (Employee_ID),
 	--Ensures date of birth is older than the date employed and the employee is 18 
@@ -23,7 +23,7 @@ Create table Employee
 Create table Supervises
 (
 	Employee_ID		integer		not null,
-	Date_Assigned	datetime		not null,
+	Date_Assigned	date		not null,
 	Supervisor_ID		integer		not null,
 	Constraint fk_supv2 foreign key (Supervisor_ID) references Employee (Employee_ID),
 	Constraint fk_employ foreign key (Employee_ID) references Employee (Employee_ID),
@@ -94,7 +94,7 @@ Create table Vehicle
 	Engine_Number	varchar(17),
 	CC_Ratings		varchar(6),
 	Mileage			integer,
-	Sold			varchar(3)		DEFAULT 'No',
+	Sold			varchar(3)
 	Constraint ck_add check (Sold in('Yes','No'))
 );
 
@@ -134,7 +134,7 @@ Create table Van
 Create table Purchase
 (
 	Purchase_ID		integer		primary key		IDENTITY(1,1),	
-	Date			datetime,
+	Date			date,
 	Value			money,
 	Cost			money,
 	Salesman_ID		integer,
@@ -148,7 +148,7 @@ Create table Purchase
 Create table Sale
 (
 	Sale_ID		integer		primary key		IDENTITY(1,1),	
-	Date			datetime,
+	Date			Date,
 	Value			money,
 	Price			money,
 	Commission		money,
@@ -176,9 +176,9 @@ Create table Work_Done
 Create table Add_on
 (
 	Job_Number		integer		primary key,
-	Radio_Installation	varchar(3) default 'No',
-	Car_Alarm		varchar(3)  default 'No',
-	Tracking_Device	varchar(3)  default 'No',
+	Radio_Installation	varchar(3),
+	Car_Alarm		varchar(3),
+	Tracking_Device	varchar(3),
 	Cost			money,
 	Constraint fk_job1 foreign key (Job_Number) references Work_Done (Job_Number),
 	Constraint ck_add0 check (Radio_Installation in('Yes','No')),
@@ -209,9 +209,9 @@ Create table Repair
 	Constraint fk_job3 foreign key (Job_Number) references Work_Done (Job_Number)
 );
 
-
---==========================================================================
 --SECURITY TABLES
+
+
 --Stores the Client information for Login, Authentication and Authorization.
 Create table Client_Login_Details
 (
@@ -236,7 +236,7 @@ Create table Employee_Login_Details
 );
 
 --Audit log
---Stores the actions taken by employees on the Purchase, Sale, Vehicle, 
+--Srores the actions taken by employees on the Purchase, Sale, Vehicle, 
 
 Create Table Employee_Audit_Log
 (

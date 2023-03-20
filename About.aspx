@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h1><%: Title %>.</h1>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
+    <h3>D&R Autoshop</h3>
+    <p>Here at D&R Autoshop we offer a variety of vehicles for you to choose from. With our reliable system and affordable prices we ensure our
+        vehicle purchases can come smoothly and efficiently to you.</p>
 </asp:Content>

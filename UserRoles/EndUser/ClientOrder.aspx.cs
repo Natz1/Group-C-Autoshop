@@ -104,53 +104,61 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
-            
-            //Save client info
-            ClientData.Insert();
-
-
-            //Inserting sale values using stored procedure****************************
-            cmd.CommandText = "Exec Insert_Sale @chassis, @radio, @alarm, @track";
-            
-            cmd.Parameters.Add("@chassis", SqlDbType.Char);
-            cmd.Parameters["@chassis"].Value = Session["chassis"].ToString();
-            
-            cmd.Parameters.Add("@radio", SqlDbType.VarChar);
-            cmd.Parameters["@radio"].Value = Session["Radio"].ToString();
-            
-            cmd.Parameters.Add("@alarm", SqlDbType.VarChar);
-            cmd.Parameters["@alarm"].Value = Session["Alarm"].ToString();
-
-            cmd.Parameters.Add("@track", SqlDbType.VarChar);
-            cmd.Parameters["@track"].Value = Session["Track"].ToString();
-            cmd.ExecuteNonQuery();
-
-
-
-            //Getting the job number for the sale
-            cmd.CommandText = "Select Max(Job_Number) from Work_Done";
-            int job = (int)cmd.ExecuteScalar();
-            //Get parts from session array and insert into part changed**********************
-            Parts[] listing = Session["Parts"] as Parts[];
-
-            if (listing.Length != 0)
+            //If chassis session variable is not empty
+            if (!string.IsNullOrEmpty(Session["chassis"] as string))
             {
-                foreach (var item in listing)
+
+                //Save client info
+                ClientData.Insert();
+
+
+                //Inserting sale values using stored procedure****************************
+                cmd.CommandText = "Exec Insert_Sale @chassis, @radio, @alarm, @track";
+
+                cmd.Parameters.Add("@chassis", SqlDbType.Char);
+                cmd.Parameters["@chassis"].Value = Session["chassis"].ToString();
+
+                cmd.Parameters.Add("@radio", SqlDbType.VarChar);
+                cmd.Parameters["@radio"].Value = Session["Radio"].ToString();
+
+                cmd.Parameters.Add("@alarm", SqlDbType.VarChar);
+                cmd.Parameters["@alarm"].Value = Session["Alarm"].ToString();
+
+                cmd.Parameters.Add("@track", SqlDbType.VarChar);
+                cmd.Parameters["@track"].Value = Session["Track"].ToString();
+                cmd.ExecuteNonQuery();
+
+
+
+                //Getting the job number for the sale
+                cmd.CommandText = "Select Max(Job_Number) from Work_Done";
+                int job = (int)cmd.ExecuteScalar();
+                //Get parts from session array and insert into part changed**********************
+                Parts[] listing = Session["Parts"] as Parts[];
+
+                if (listing.Length != 0)
                 {
-                    if(item?.MyQuantity != null)
+                    foreach (var item in listing)
                     {
-                        //Insert parts
-                        cmd.CommandText =
-                        "Insert into Part_Changed (Job_Number,Part_Name,Quantity) Values ('" + job + "','"
-                        + item?.MyName + "', '" + item?.MyQuantity + "')";
-                        cmd.ExecuteNonQuery();
+                        if (item?.MyQuantity != null)
+                        {
+                            //Insert parts
+                            cmd.CommandText =
+                            "Insert into Part_Changed (Job_Number,Part_Name,Quantity) Values ('" + job + "','"
+                            + item?.MyName + "', '" + item?.MyQuantity + "')";
+                            cmd.ExecuteNonQuery();
+                        }
                     }
                 }
+
+
+                //Redirect to Invoice Page
+                Response.Redirect("ClientInvoice");
             }
-
-
-            //Redirect to Invoice Page
-            Response.Redirect("ClientInvoice");
+            else
+            {
+                Response.Redirect("OrderError");
+            }
         }
 
         protected void Cancel_Click(object sender, EventArgs e)

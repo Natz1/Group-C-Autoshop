@@ -185,6 +185,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\EndUser\ClientInvoice.aspx" />
+    <Content Include="UserRoles\EndUser\OrderError.aspx" />
     <Content Include="UserRoles\Manager\SalesResults.aspx" />
     <Content Include="UserRoles\EndUser\Additions.aspx" />
     <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
@@ -389,6 +390,13 @@
     <Compile Include="UserRoles\EndUser\ClientInvoice.aspx.designer.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserRoles\EndUser\OrderError.aspx.cs">
+      <DependentUpon>OrderError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\EndUser\OrderError.aspx.designer.cs">
+      <DependentUpon>OrderError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\Manager\SalesResults.aspx.cs">
       <DependentUpon>SalesResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -489,7 +497,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UserRoles\SuperUser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

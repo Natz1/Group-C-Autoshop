@@ -3,7 +3,7 @@
 
     <!--Contains List of all vehicles available-->
     <h1>D&R Autoshop Vehicles</h1>
-    <h3>Vehicles Left In Stock</h3>
+    <h3>All Vehicles</h3>
     <!--Link to database-->
     <asp:SqlDataSource ID="OwnedData" runat="server" ConnectionString="<%$ ConnectionStrings:Car_Mart_Web_AppConnectionString %>" SelectCommand="SELECT * FROM [Vehicle]"></asp:SqlDataSource>
     <!--Grid View of supervisor list-->
