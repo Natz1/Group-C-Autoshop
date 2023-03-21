@@ -18,7 +18,7 @@ Go
 
 
 --Attempt
-Alter procedure ELogin(@username int, @password varchar(30))
+Create procedure ELogin(@username int, @password varchar(30))
 As
 Begin
 	Declare @result varchar(100)
@@ -42,8 +42,6 @@ Begin
 		END
 End
 Go
-
-Exec ELogin '10011','Password123!'
 
 --Authenticating Client
 IF EXISTS (Select * From Client_Login_Details Where Username = @username AND Pin_Hash = HASHBYTES('SHA2_256',@pin) AND Temporary_Code_Hash = HASHBYTES('SHA2_256',@temporary_verification_code))
