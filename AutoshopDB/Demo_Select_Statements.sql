@@ -37,53 +37,18 @@ Select * From Add_on;
 Select * From Part_Changed;
 --17
 Select * From Repair;
-
---View Select Statements 
-
---1
-Select * from Sales_Done; --Manager
---2
-Select * from Commission_Earned; --Manager
---3
-Select * from Repair_Jobs; --Manager
---4
-Select * from Client_Additions; --Admin
---5
-Select * from Profit_Earned_From_Client_Purchases; --Manager
---6
-Select * From Available_Vehicles; --Manager
-
---Stored Procedures Exec Statements
-
---1
-Exec Sales_Done_By_Salesman [Salesman_ID]; --Manager
---2
-Exec Commission_Earned_By_Salesman [Salesman_ID]; --Manager
---3
-Exec Repair_Jobs_By_Mechanic [Mechanic_Id]; --Manager
---4
-Exec Client_Additions_Checker 12; --Admin
---5
-Exec Profit_Earned_From_Client_Purchases_By_Year [Year]; --Manager
---6
-Exec Best_Selling_Car [Start_Date], [End_Date]; --Manager
---7
-Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin
-
---Function Select Statements
-
---1
-Select * from dbo.Client_Invoice([Client_Id]); --Admin, Enduser
---2
-Select * from dbo.Assigned_Supervisor([Supervisor_Id]); --Admin
-
---Transaction Statements
---1
-EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type]; --Admin
-
+--18
+Select * From Client_Login_Details
+--19
+Select * From Employee_Login_Details
+--20
+Select * From Employee_Audit_Log
 
 --TABLE Drop Statements
 
+DROP TABLE Employee_Audit_Log;
+DROP TABLE Employee_Login_Details;
+DROP TABLE Client_Login_Details;
 DROP TABLE Repair;
 DROP TABLE Part_Changed;
 DROP TABLE Add_on;
@@ -101,6 +66,61 @@ DROP TABLE Mechanic;
 DROP TABLE Administrative_Personnel;
 DROP TABLE Supervises;
 DROP TABLE Employee;
+
+--View Select Statements 
+
+--1
+Select * from Sales_Done;
+--2
+Select * from Commission_Earned;
+--3
+Select * from Repair_Jobs;
+--4
+Select * from Client_Additions;
+--5
+Select * from Profit_Earned_From_Client_Purchases;
+--6
+Select * From Available_Vehicles;
+
+--Stored Procedures Exec Statements
+
+--1
+Exec Sales_Done_By_Salesman [Salesman_ID];
+--2
+Exec Commission_Earned_By_Salesman [Salesman_ID];
+--3
+Exec Repair_Jobs_By_Mechanic [Mechanic_Id];
+--4
+Exec Client_Additions_Checker 12;
+--5
+Exec Profit_Earned_From_Client_Purchases_By_Year [Year];
+--6
+Exec Best_Selling_Car [Start_Date], [End_Date];
+--7
+Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id];
+--8
+Exec Update_Salary_Or_Subsistence [Employee_Id], [Salary], [Employee Type (Option: Admin/Mechanic/Salesman)];
+--9
+Exec Add_Password_Pin_Client [Username], [Password], [Pin];
+--10
+Exec Send_Verification_Code [Username];
+--11
+Exec Add_Password_Employee [Username], [Password];
+--12
+Exec Logging_On [Username], [Password];
+
+--Function Select Statements
+
+--1
+Select * from dbo.Client_Invoice([Client_id]);
+--2
+Select * from dbo.Assigned_Supervisor([Supervisor_Id]);
+--3
+Select * from dbo.Validate_Client_Employee_Login([Username],[Password])
+
+--Transaction Statements
+--1
+EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type];
 
 --Trigger drop statements
 Drop Trigger Vehicle_Sales

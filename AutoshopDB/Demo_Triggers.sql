@@ -15,7 +15,9 @@ DECLARE
 	@Commission money,
 	@Salesman_ID integer,
 	@Chassis_Number varchar(17),
-	@Client_Id integer;
+	@Client_Id integer,
+	@Action char(6),
+	@Description varchar(150);
 
 	--Storing the values in the variables from inserted
 	SELECT @Date = Date From inserted
@@ -29,9 +31,17 @@ DECLARE
 	INSERT INTO Sale VALUES
 	(@Date,@Value,@Price,@Commission,@Salesman_ID,@Chassis_Number,@Client_Id);
 
+	SELECT @Description = 'Insert vehicle: ' + CAST(@Chassis_Number AS VARCHAR(17)) + ', price: ' + CAST(@price AS VARCHAR(20)) + ' into the Sale Table'
+	INSERT INTO Employee_Audit_Log VALUES
+	('Admin_Personnel','INSERT',@Description,@Salesman_ID,@Chassis_Number,GETDATE());
+
 	UPDATE Vehicle
 	SET Sold = 'Yes'
 	Where Chassis_Number = @Chassis_Number;
+
+	SELECT @Description = 'vehicle: ' + CAST(@Chassis_Number AS VARCHAR(17)) + ' as Sold in the Vehicle Table'
+	INSERT INTO Employee_Audit_Log VALUES
+	('Admin_Personnel','UPDATE',@Description,@Salesman_ID,@Chassis_Number,GETDATE());
 
 --Creating a trigger to add a vehicle to the vehicle table when a insert statement is completed on the Purchase Table
 
@@ -54,9 +64,11 @@ DECLARE
 	@CC_Ratings varchar(6),
 	@Mileage integer,
 	@Sold varchar(3),
-	@Value money;
+	@Value money,
+	@Action char(6),
+	@Description varchar(150);
 
-	--Storing the values in the variables from inserted (from what?)
+	--Storing the values in the variables from inserted
 	SELECT @Chassis_Number = Chassis_Number From inserted
 	SELECT @Year = Year From inserted
 	SELECT @Colour = Colour From inserted
@@ -76,8 +88,16 @@ DECLARE
 
 	SET @Value = @Import_Price * (1 + @Mark_Up_Percent)
 
+	SELECT @Description = 'Insert vehicle: ' + CAST(@Chassis_Number AS VARCHAR(17)) + ', value: ' + CAST(@value AS VARCHAR(20)) + ' into the Vehicle Table'
+	INSERT INTO Employee_Audit_Log VALUES
+	('Admin_Personnel','INSERT',@Description,NULL,@Chassis_Number,GETDATE());
+
 	INSERT INTO Purchase VALUES
 	(GETDATE(),@Value,@Import_Price,NULL,@Chassis_Number);
+
+	SELECT @Description = 'Insert vehicle: ' + CAST(@Chassis_Number AS VARCHAR(17)) + ', value: ' + CAST(@value AS VARCHAR(20)) + ' into the Purchase Table'
+	INSERT INTO Employee_Audit_Log VALUES
+	('Admin_Personnel','INSERT',@Description,NULL,@Chassis_Number,GETDATE());
 
 --Creating a trigger to add a part_changed records to the part table when a insert statement is executed on the Part_Changed Table
 
@@ -92,7 +112,7 @@ DECLARE
 	@Quantity integer,
 	@Cost money;
 
-	--Storing the values in the variables from inserted 
+	--Storing the values in the variables from inserted
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Part_Name = Part_Name From inserted
 	SELECT @Quantity = Quantity From inserted
@@ -133,7 +153,7 @@ DECLARE
 	@Tracking_Device varchar(3),
 	@Cost money;
 
-	--Storing the values in the variables from inserted 
+	--Storing the values in the variables from inserted
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Radio_Installation = Radio_Installation From inserted
 	SELECT @Car_Alarm = Car_Alarm From inserted
@@ -155,7 +175,6 @@ DECLARE
 
 	Insert into Add_On values (@Job_Number,@Radio_Installation,@Car_Alarm,@Tracking_Device,@Cost)
 
---===========================================================================
 --Trigger for adding new Clients to the Client Table and updating the Client_Login_Details Table Accordingly
 Create Trigger New_Client
 ON Client INSTEAD OF INSERT
@@ -200,7 +219,9 @@ DECLARE
 	@Name			varchar(50),
 	@Date_Employed	DATE,
 	@DOB			DATE,
-	@Supervisor_ID	integer;
+	@Supervisor_ID	integer,
+	@Action			char(6),
+	@Description	varchar(150);
 	
 	--Storing the values in the variables from inserted
 	SELECT @Name = Name From inserted;
@@ -213,13 +234,24 @@ DECLARE
 		BEGIN
 			INSERT INTO Employee
 			VALUES (@Name,@Date_Employed,@DOB,@Supervisor_ID);
+
+			SELECT @Employee_ID = Employee_ID From Employee Where Name = @Name AND Date_Employed = @Date_Employed AND DOB = @DOB;
+
+			SELECT @Description = 'Added employee: ' + @Name + 'Id: ' + CAST(@Employee_ID AS Varchar(10)) + ' into the Employee Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','INSERT',@Description,@Employee_ID,NULL,GETDATE());
+
+			INSERT INTO Employee_Login_Details 
+			VALUES (@Employee_ID,NULL,NULL,'Yes');
+
+			SELECT @Description = 'Added employee Id: ' + CAST(@Employee_ID AS Varchar(10)) + ' into the Employee_Login_Details Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','INSERT',@Description,@Employee_ID,NULL,GETDATE());
 		END
-
-	SELECT @Employee_ID = Employee_ID From Employee Where Name = @Name AND Date_Employed = @Date_Employed AND DOB = @DOB;
-
-	INSERT INTO Employee_Login_Details 
-	VALUES (@Employee_ID,NULL,NULL);
-
+	ELSE
+		BEGIN
+			SELECT 'User already exist'
+		END
 
 --INSERT Triggers for Admin_Personnel, Mechanic and Salesman to update the Employee_Login_Details table
 
@@ -228,7 +260,10 @@ ON Administrative_Personnel INSTEAD OF INSERT
 AS
 DECLARE
 	@Admin_Id integer,
-	@Salary money;
+	@Salary money,
+	@Name varchar(50),
+	@Action char(6),
+	@Description varchar(150);
 
 	--Storing the values in the variables from inserted
 	SELECT @Admin_Id = Admin_Id from inserted
@@ -239,16 +274,26 @@ DECLARE
 		BEGIN
 			INSERT INTO Administrative_Personnel
 			VALUES (@Admin_Id,@Salary);
+
+			SELECT @Name = Name from Employee Where Employee_ID = @Admin_Id
+
+			SELECT @Description = 'Added an employee: ' + @Name + 'Id: ' + CAST(@Admin_ID AS VARCHAR(10)) + ' into the Administrative_Personnel Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','INSERT',@Description,@Admin_Id,NULL,GETDATE());
+
+			--Update the role of the employee in Employee_Login_Details table accordingly
+			UPDATE Employee_Login_Details
+			SET User_Role = 'Admin_Personnel'
+			WHERE Employee_Id = @Admin_Id;
+
+			SELECT @Description = 'Updated employee id: ' + CAST(@Admin_ID AS VARCHAR(10)) + ' user role in the Employee_Login_Details Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','UPDATE',@Description,@Admin_Id,NULL,GETDATE());
 		END
 	ELSE
 		BEGIN
 			SELECT 'User already exist'
 		END
-
-	--Update the role of the employee in Employee_Login_Details table accordingly
-	UPDATE Employee_Login_Details
-	SET User_Role = 'Admin_Personnel'
-	WHERE Employee_Id = @Admin_Id;
 
 Create Trigger New_Mechanic
 ON Mechanic INSTEAD OF INSERT
@@ -256,7 +301,10 @@ AS
 DECLARE
 	@Mechanic_Id integer,
 	@Salary money,
-	@Aera_Of_Expertise varchar(50);
+	@Aera_Of_Expertise varchar(50),
+	@Name varchar(50),
+	@Action char(6),
+	@Description varchar(150);
 
 	--Storing the values in the variables from inserted
 	SELECT @Mechanic_Id = Mechanic_Id from inserted
@@ -268,23 +316,36 @@ DECLARE
 		BEGIN
 			INSERT INTO Mechanic
 			VALUES (@Mechanic_Id,@Salary,@Aera_Of_Expertise);
+
+			SELECT @Name = Name from Employee Where Employee_ID = @Mechanic_Id;
+
+			SELECT @Description = 'Added an employee: ' + @Name + 'Id: ' + CAST(@Mechanic_Id AS VARCHAR(10)) + ' into the Mechanic Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','INSERT',@Description,@Mechanic_Id,NULL,GETDATE());
+
+			--Update the role of the employee in Employee_Login_Details table accordingly
+			UPDATE Employee_Login_Details
+			SET User_Role = 'Mechanic'
+			WHERE Employee_Id = @Mechanic_Id;
+
+			SELECT @Description = 'Updated employee id: ' + CAST(@Mechanic_Id AS VARCHAR(10)) + ' user role in the Employee_Login_Details Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','UPDATE',@Description,@Mechanic_Id,NULL,GETDATE());
 		END
 	ELSE
 		BEGIN
 			SELECT 'User already exist'
 		END
 
-	--Update the role of the employee in Employee_Login_Details table accordingly
-	UPDATE Employee_Login_Details
-	SET User_Role = 'Mechanic'
-	WHERE Employee_Id = @Mechanic_Id;
-
 Create Trigger New_Salesman
 ON Salesman INSTEAD OF INSERT
 AS
 DECLARE
 	@Salesman_Id integer,
-	@Subsistence money;
+	@Subsistence money,
+	@Name varchar(50),
+	@Action char(6),
+	@Description varchar(150);
 
 	--Storing the values in the variables from inserted
 	SELECT @Salesman_Id = Salesman_Id from inserted
@@ -295,13 +356,24 @@ DECLARE
 		BEGIN
 			INSERT INTO Salesman
 			VALUES (@Salesman_Id,@Subsistence);
+
+			SELECT @Name = Name from Employee Where Employee_ID = @Salesman_Id;
+
+			SELECT @Description = 'Added an employee: ' + @Name + 'Id: ' + CAST(@Salesman_Id AS VARCHAR(10)) + ' into the Salesman Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','INSERT',@Description,@Salesman_Id,NULL,GETDATE());
+
+			--Update the role of the employee in Employee_Login_Details table accordingly
+			UPDATE Employee_Login_Details
+			SET User_Role = 'Salesman'
+			WHERE Employee_Id = @Salesman_Id;
+
+			SELECT @Description = 'Updated employee id: ' + CAST(@Salesman_Id AS VARCHAR(10)) + ' user role in the Employee_Login_Details Table'
+			INSERT INTO Employee_Audit_Log VALUES
+			('Manager','UPDATE',@Description,@Salesman_Id,NULL,GETDATE());
 		END
 	ELSE
 		BEGIN
 			SELECT 'User already exist'
 		END
 
-	--Update the role of the employee in Employee_Login_Details table accordingly
-	UPDATE Employee_Login_Details
-	SET User_Role = 'Salesman'
-	WHERE Employee_Id = @Salesman_Id;

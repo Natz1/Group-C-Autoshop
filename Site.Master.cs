@@ -8,9 +8,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Group_C_Autoshop.Account;
 using Group_C_Autoshop.Models;
+using Group_C_Autoshop.UserRoles.Admin;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Win32;
 
 namespace Group_C_Autoshop
 {
@@ -73,6 +75,24 @@ namespace Group_C_Autoshop
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String currentUser = HttpContext.Current.User.Identity.Name.ToString();
+            //Saving username to session
+            Session["User"] = currentUser;
+
+            if (Session["User"].ToString() == "")
+            {
+                NotIn.Visible = true;
+                In.Visible = false;
+                EmpIn.Visible = false;
+            }
+            else 
+            {
+                NotIn.Visible = false;
+                In.Visible = true;
+                EmpIn.Visible = false;
+            }
+
+
             //***********************Creating roles
             var roleManager = Context.GetOwinContext().Get<ApplicationRoleManager>();
             string name = "admin";
@@ -221,8 +241,12 @@ namespace Group_C_Autoshop
             mechanic3.Visible= false;
 
             //***********************Make navigation visible depending on user role
-            if (Context.User.IsInRole("admin"))
+            if (Context.User.IsInRole("admin") || Session["ERole"].ToString() == "Admin_Personnel")
             {
+                NotIn.Visible = false;
+                EmpIn.Visible = true;
+                In.Visible = false;
+
                 admin.Visible = true;
                 admin1.Visible = true;
                 admin2.Visible = true;
@@ -240,6 +264,7 @@ namespace Group_C_Autoshop
 
             if (Context.User.IsInRole("manager"))
             {
+
                 manager1.Visible = true;
                 manager2.Visible = true;
                 manager3.Visible = true;
@@ -256,8 +281,12 @@ namespace Group_C_Autoshop
                 general2.Visible = false;
             }
 
-            if (Context.User.IsInRole("salesman"))
+            if (Context.User.IsInRole("salesman") || Session["ERole"].ToString() == "Salesman")
             {
+                NotIn.Visible = false;
+                EmpIn.Visible = true;
+                In.Visible = false;
+
                 salesman1.Visible = true;
                 salesman2.Visible = true;
                 salesman3.Visible = true;
@@ -271,8 +300,12 @@ namespace Group_C_Autoshop
                 general2.Visible = false;
             }
 
-            if (Context.User.IsInRole("mechanic"))
+            if (Context.User.IsInRole("mechanic") || Session["ERole"].ToString() == "Mechanic")
             {
+                NotIn.Visible = false;
+                EmpIn.Visible = true;
+                In.Visible = false;
+
                 mechanic1.Visible = true;
                 mechanic2.Visible = true;   
                 mechanic3.Visible = true;
@@ -291,6 +324,16 @@ namespace Group_C_Autoshop
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Abandon();
+            Request.Cookies.Clear();
+        }
+
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Abandon();
+            Request.Cookies.Clear();
+            Response.Redirect("/Default");
         }
     }
 

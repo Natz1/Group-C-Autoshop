@@ -107,13 +107,8 @@ namespace Group_C_Autoshop.UserRoles.EndUser
             //If chassis session variable is not empty
             if (!string.IsNullOrEmpty(Session["chassis"] as string))
             {
-
-                //Save client info
-                ClientData.Insert();
-
-
                 //Inserting sale values using stored procedure****************************
-                cmd.CommandText = "Exec Insert_Sale @chassis, @radio, @alarm, @track";
+                cmd.CommandText = "Exec Insert_Sale @chassis, @radio, @alarm, @track, @email";
 
                 cmd.Parameters.Add("@chassis", SqlDbType.Char);
                 cmd.Parameters["@chassis"].Value = Session["chassis"].ToString();
@@ -126,6 +121,9 @@ namespace Group_C_Autoshop.UserRoles.EndUser
 
                 cmd.Parameters.Add("@track", SqlDbType.VarChar);
                 cmd.Parameters["@track"].Value = Session["Track"].ToString();
+
+                cmd.Parameters.Add("@email", SqlDbType.VarChar);
+                cmd.Parameters["@email"].Value = Session["User"].ToString();
                 cmd.ExecuteNonQuery();
 
 

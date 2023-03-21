@@ -57,8 +57,6 @@ namespace Group_C_Autoshop.EndUser
             Parts part = new Parts("Rims", Convert.ToInt32(DropDownList5.Text), Convert.ToInt32(TextBox5.Text));
             list[4] = part;
             Session["Parts"] = list;
-
-            Response.Redirect("ClientOrder");
         }
 
         protected void Buy5_Click(object sender, EventArgs e)

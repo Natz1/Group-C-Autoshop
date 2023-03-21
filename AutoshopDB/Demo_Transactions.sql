@@ -69,7 +69,8 @@ BEGIN
 END
 GO
 
- --To check if a client exist before being added to the existing list
+
+--To check if a client exist before being added to the existing list
  --***********Adjusted to stored procedure to work with website
 Create Procedure Add_Client
 (
@@ -187,13 +188,15 @@ Create Procedure Insert_Sale
 	@Chassis_Number varchar(17),
 	@Radio_Installation varchar(3),
 	@Car_Alarm varchar(3),
-	@Tracking_Device varchar(3)
+	@Tracking_Device varchar(3),
+	@Email varchar(30)
 )
 AS
 BEGIN
 	BEGIN TRANSACTION
 		INSERT INTO Sale(Date,Value,Chassis_Number,Client_ID)
-		VALUES (getdate(), (Select Value from Purchase where Chassis_Number = @Chassis_Number), @Chassis_Number, (Select Max(Client_ID) from Client));
+		VALUES (getdate(), (Select Value from Purchase where Chassis_Number = @Chassis_Number), @Chassis_Number, 
+		(Select Client_ID from Client where Email = @Email));
 
 		INSERT INTO Work_Done(Sale_Id)
 		VALUES ((Select Max(Sale_ID) from Sale));
@@ -222,7 +225,7 @@ BEGIN
 		Begin
 			Update Sale Set Salesman_ID = @SalesmanID Where Sale_ID = @SaleID;
 			Update Work_Done Set Mechanic_ID = @MechanicID Where Sale_ID = @SaleID;
-		
+
 			Declare @Job int;
 			Set @Job = (Select Job_Number from Work_Done Where Sale_ID = @SaleID);
 			If exists (Select Job_Number from Repair where Job_Number = @Job)
@@ -237,3 +240,4 @@ BEGIN
 	COMMIT TRANSACTION
 END
 GO
+

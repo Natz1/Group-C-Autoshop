@@ -1,7 +1,6 @@
 --Demo Documentation Views
 --Version 1 updated Feb 25, 2023
 Use Car_Mart_Web_App
-
 --Shows the sales made by the salesmen and their respective client and the vehicles that were sold.
 
 Create View Sales_Done as
@@ -79,6 +78,3 @@ Left Join Part_Changed P on P.Job_Number = W.Job_Number
 GROUP BY S.Sale_ID, S.Date, S.Client_ID, C.Name,
 S.Chassis_Number, S.Price, S.Salesman_ID, 
 W.Mechanic_ID, W.Job_Number, R.Description, R.Cost;
-
-
-Select * from Client_Sale
