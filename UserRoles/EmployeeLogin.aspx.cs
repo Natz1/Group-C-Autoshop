@@ -38,11 +38,11 @@ namespace Group_C_Autoshop.UserRoles
 
             if (result == "First Time Login: Please change your password")
             {
-                Response.Redirect("/Default");
                 Response.Write("<script>alert('Employee successfully logged in.')</script");
                 Session["User"] = EmpIDTxt.Text;
                 //Get the role of the employee
                 Session["ERole"] = cmd.ExecuteScalar().ToString();
+                Response.Redirect("/Default");
                 
             }
             else if (result == "Admin_Personnel")
@@ -50,18 +50,21 @@ namespace Group_C_Autoshop.UserRoles
                 Session["User"] = EmpIDTxt.Text;
                 Session["ERole"] = "Admin_Personnel";
                 Response.Write("<script>alert('Admin successfully logged in.')</script");
+                Response.Redirect("/Default");
             }
             else if(result == "Mechanic")
             {
                 Session["User"] = EmpIDTxt.Text;
                 Session["ERole"] = "Mechanic";
                 Response.Write("<script>alert('Mechanic successfully logged in.')</script");
+                Response.Redirect("/Default");
             }
             else if(result == "Salesman")
             {
                 Session["User"] = EmpIDTxt.Text;
                 Session["ERole"] = "Salesman";
                 Response.Write("<script>alert('Salesman successfully logged in.')</script");
+                Response.Redirect("/Default");
             }
             else
             {

@@ -38,6 +38,7 @@ namespace Group_C_Autoshop.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        Session["ERole"] = "";
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
                     /*case SignInStatus.LockedOut:
