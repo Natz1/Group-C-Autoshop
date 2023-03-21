@@ -27,7 +27,10 @@ namespace Group_C_Autoshop
             //Getting the current client's email username
             String currentUser = HttpContext.Current.User.Identity.Name.ToString();
             //Saving username to session
-            Session["Email"] = currentUser;
+            Session["User"] = currentUser;
+
+            //Role
+            Session["ERole"] = "";
             //Vehicle
             Session["chassis"] = "";
 

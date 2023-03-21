@@ -40,7 +40,7 @@ namespace Group_C_Autoshop.Account
                     case SignInStatus.Success:
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
-                    case SignInStatus.LockedOut:
+                    /*case SignInStatus.LockedOut:
                         Response.Redirect("/Account/Lockout");
                         break;
                     case SignInStatus.RequiresVerification:
@@ -48,7 +48,7 @@ namespace Group_C_Autoshop.Account
                                                         Request.QueryString["ReturnUrl"],
                                                         RememberMe.Checked),
                                           true);
-                        break;
+                        break;*/
                     case SignInStatus.Failure:
                     default:
                         FailureText.Text = "Invalid login attempt";

@@ -43,7 +43,7 @@
         <!--Registration Button-->
         <div class="form-group">
             <div class="col-md-offset-7 col-md-10">
-                <asp:Button ID="Login" runat="server" Text="Log in" CssClass="btn btn-default" />
+                <asp:Button ID="Login" runat="server" Text="Log in" CssClass="btn btn-default" OnClick="Login_Click" />
             </div>
         </div>
     </div>

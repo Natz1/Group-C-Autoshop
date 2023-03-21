@@ -123,7 +123,7 @@ namespace Group_C_Autoshop.UserRoles.EndUser
                 cmd.Parameters["@track"].Value = Session["Track"].ToString();
 
                 cmd.Parameters.Add("@email", SqlDbType.VarChar);
-                cmd.Parameters["@email"].Value = Session["Email"].ToString();
+                cmd.Parameters["@email"].Value = Session["User"].ToString();
                 cmd.ExecuteNonQuery();
 
 
