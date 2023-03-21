@@ -69,6 +69,15 @@ namespace Group_C_Autoshop.Account
         protected global::System.Web.UI.WebControls.TextBox CPhoneTxt;
 
         /// <summary>
+        /// PIN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PIN;
+
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>

@@ -106,7 +106,7 @@ GO
 
 --==========================================================================
 --Stored Procedure to add a Client Password and Pin to the Login_Client_Details table
-Create Procedure Add_Password_Pin_Client
+Alter Procedure Add_Password_Pin_Client
 (
 	@Username varchar(35), 
 	@Password varchar(30), 
@@ -114,7 +114,7 @@ Create Procedure Add_Password_Pin_Client
 )
 AS
 BEGIN
-BEGIN TRANSACTION
+	BEGIN TRANSACTION
 
 	UPDATE Client_Login_Details
 	SET Password_Hash = HASHBYTES('SHA2_256',@Password), Pin_Hash = HASHBYTES('SHA2_256',@Pin)
@@ -124,16 +124,18 @@ BEGIN TRANSACTION
 	WHERE Password_Hash = HASHBYTES('SHA2_256', @Password) AND  Pin_Hash = HASHBYTES('SHA2_256', @Pin) AND Username = @Username)
 		BEGIN
 			SELECT 'Password and Pin was added Successfuly'
+			COMMIT TRANSACTION
 		END
 	ELSE
 		BEGIN
 			SELECT @Username + ' does not exist'
 			ROLLBACK TRANSACTION
 		END
-
-COMMIT TRANSACTION
 END
 GO
+
+Select * from Client_Login_Details;
+Exec Add_Password_Pin_Client 'bscott@gmail.com', 'Bob123!', '1234';
 
 --Procedure to Send a verification code a client when logging in
 Create Procedure Send_Verification_Code_Client

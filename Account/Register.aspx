@@ -69,6 +69,16 @@
             </tr>
 
 
+            <tr>
+                <td><h4>PIN: </h4></td>
+                <td><asp:TextBox runat="server" ID="PIN" MaxLength="4" TextMode="Password" ForeColor="Black"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                    CssClass="text-danger" ErrorMessage="*The PIN is required." ForeColor="#2779E7"/>
+                </td>
+            </tr>
 
 
             <tr>
@@ -119,4 +129,5 @@
             <asp:ControlParameter Name="Phone" Type="String" ControlID="CPhoneTxt" PropertyName="Text" />
         </InsertParameters>
     </asp:SqlDataSource>
+
 </asp:Content>
