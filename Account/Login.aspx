@@ -30,10 +30,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td>
                         <!--Prompt user to enter-->
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                        CssClass="text-danger" ErrorMessage="The email field is required." ForeColor="#2779E7"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                        CssClass="text-danger" ErrorMessage="*The email field is required." ForeColor="#2779E7"/>
                     </td>
                 </tr>
 
@@ -49,10 +50,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td>
                         <!--Prompt user to enter-->
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" 
-                        ErrorMessage="The password field is required." ForeColor="#2779E7"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" 
+                        ErrorMessage="*The password field is required." ForeColor="#2779E7"/>
                     </td>
                 </tr>
             </table>
