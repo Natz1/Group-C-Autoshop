@@ -245,10 +245,10 @@ Create table Employee_Login_Details
 	Employee_Id			integer NOT NULL,
 	User_Role			varchar(30),
 	Password_Hash		varchar(256),
-	First_Time_Log		varchar(3)
+	First_Time_Login	varchar(3)
 
 	Constraint fk_emp7 foreign key (Employee_Id) references Employee (Employee_ID),
-	Constraint ck_add3 check (First_Time_Log in('Yes','No'))
+	Constraint ck_add3 check (First_Time_Login in('Yes','No'))
 );
 
 --Audit log

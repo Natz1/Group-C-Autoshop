@@ -6,24 +6,32 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 namespace Group_C_Autoshop.UserRoles.Admin
 {
     public partial class ClientInvoice : System.Web.UI.Page
     {
-        //Make new SQL Connection
-        SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Update_Click(object sender, EventArgs e)
+        {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-        }
 
-        protected void Update_Click(object sender, EventArgs e)
-        {
+
+
             //Create a command to insert the values into the database
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;

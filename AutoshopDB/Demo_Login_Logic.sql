@@ -17,16 +17,14 @@ End
 Go
 
 
---Attempt
 Create procedure ELogin(@username int, @password varchar(30))
 As
 Begin
 	Declare @result varchar(100)
 	IF EXISTS (Select * From Employee_Login_Details Where Employee_Id = @username AND Password_Hash = HASHBYTES('SHA2_256',@password))
 		BEGIN
-			IF EXISTS (Select * From Employee_Login_Details Where Employee_Id = @username AND First_Time_Log = 'Yes')
+			IF EXISTS (Select * From Employee_Login_Details Where Employee_Id = @username AND First_Time_Login = 'Yes')
 				BEGIN
-					--Select 'First Time Login: Please change your password'
 					Select 'First Time Login: Please change your password';
 				END
 			ELSE

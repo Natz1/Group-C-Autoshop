@@ -239,7 +239,7 @@ END
 GO
 
 --Stored Procedure to add a Employee Password to the system
-Create Procedure Add_Password_Employee
+Alter Procedure Add_Password_Employee
 (
 	@Employee_Id integer, 
 	@Password varchar(30)
@@ -252,12 +252,14 @@ BEGIN TRANSACTION
 	SET Password_Hash = HASHBYTES('SHA2_256',@Password)
 	WHERE Employee_Id = @Employee_Id;
 
+	UPDATE Employee_Login_Details
+	SET First_Time_login = 'No'
+	WHERE Employee_Id = @Employee_Id
+
 	IF EXISTS (SELECT * FROM Employee_Login_Details 
 	WHERE Password_Hash = HASHBYTES('SHA2_256', @Password) AND Employee_Id = @Employee_Id)
 		BEGIN
 			SELECT 'Password was added Successfuly'
-			COMMIT TRANSACTION
-
 		END
 	ELSE
 		BEGIN
@@ -265,5 +267,6 @@ BEGIN TRANSACTION
 			ROLLBACK TRANSACTION
 		END
 
+COMMIT TRANSACTION
 END
-GO;
+GO
