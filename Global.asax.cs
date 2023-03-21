@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,8 +24,10 @@ namespace Group_C_Autoshop
         {
             Response.Redirect("/Default.aspx");
             //Initializing the session's variables
-            //Client
-            Session["ID"] = "";
+            //Getting the current client's email username
+            String currentUser = HttpContext.Current.User.Identity.Name.ToString();
+            //Saving username to session
+            Session["Email"] = currentUser;
             //Vehicle
             Session["chassis"] = "";
 

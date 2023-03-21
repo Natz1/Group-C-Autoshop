@@ -187,13 +187,15 @@ Create Procedure Insert_Sale
 	@Chassis_Number varchar(17),
 	@Radio_Installation varchar(3),
 	@Car_Alarm varchar(3),
-	@Tracking_Device varchar(3)
+	@Tracking_Device varchar(3),
+	@Email varchar(30)
 )
 AS
 BEGIN
 	BEGIN TRANSACTION
 		INSERT INTO Sale(Date,Value,Chassis_Number,Client_ID)
-		VALUES (getdate(), (Select Value from Purchase where Chassis_Number = @Chassis_Number), @Chassis_Number, (Select Max(Client_ID) from Client));
+		VALUES (getdate(), (Select Value from Purchase where Chassis_Number = @Chassis_Number), @Chassis_Number, 
+		(Select Client_ID from Client where Email = @Email));
 
 		INSERT INTO Work_Done(Sale_Id)
 		VALUES ((Select Max(Sale_ID) from Sale));
