@@ -1,6 +1,10 @@
+Use Car_Mart_Web_App
+
+
+--Logging In
 IF EXISTS (Select * From Client_Login_Details Where Username = @username AND Password_Hash = HASHBYTES('SHA2_256',@password))
 	BEGIN
-		EXECUTE AS LOGIN = 'Client';
+		Select 'Yes';
 	END
 ELSE
 	BEGIN
@@ -18,6 +22,16 @@ IF EXISTS (Select * From Employee_Login_Details Where Employee_Id = @username AN
 				SELECT @user_role = User_Role From Employee_Login_Details Where Employee_Id = 10005;
 				EXECUTE AS LOGIN = @user_role;
 			END
+	END
+ELSE
+	BEGIN
+		Select 'Incorrect Username or Password';
+	END
+
+--Authenticating Client
+IF EXISTS (Select * From Client_Login_Details Where Username = @username AND Pin_Hash = HASHBYTES('SHA2_256',@pin) AND Temporary_Code_Hash = HASHBYTES('SHA2_256',@temporary_verification_code))
+	BEGIN
+		EXECUTE AS LOGIN = 'Client';
 	END
 ELSE
 	BEGIN

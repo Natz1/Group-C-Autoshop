@@ -69,7 +69,8 @@ BEGIN
 END
 GO
 
- --To check if a client exist before being added to the existing list
+
+--To check if a client exist before being added to the existing list
  --***********Adjusted to stored procedure to work with website
 Create Procedure Add_Client
 (
@@ -224,7 +225,7 @@ BEGIN
 		Begin
 			Update Sale Set Salesman_ID = @SalesmanID Where Sale_ID = @SaleID;
 			Update Work_Done Set Mechanic_ID = @MechanicID Where Sale_ID = @SaleID;
-		
+
 			Declare @Job int;
 			Set @Job = (Select Job_Number from Work_Done Where Sale_ID = @SaleID);
 			If exists (Select Job_Number from Repair where Job_Number = @Job)
@@ -238,4 +239,19 @@ BEGIN
 		End
 	COMMIT TRANSACTION
 END
-GO
+GO;
+
+ --To check if a client exist before being added to the existing list
+
+Begin Transaction Add_Client
+	Declare @Client_Id int = [Client_Id]
+	If  Exists (Select * From Client Where Client_Id = @Client_Id)
+		Begin
+		Select 'Client already exists'
+		End
+	Else
+		Begin
+		Insert into Client values ([Client_Id], [Name], [Residential_Address], [Email])
+		Select * From Client Where Client_Id = @Client_Id
+		End
+Commit Transaction Add_Client

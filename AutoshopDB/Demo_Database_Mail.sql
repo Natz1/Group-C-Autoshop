@@ -1,5 +1,5 @@
 --DATABASE MAILING FUNCTIONALITY
-
+Use Car_Mart_Web_App
 --Enable Database Mail
 sp_configure 'show advanced options', 1;
 GO
@@ -45,15 +45,14 @@ GO
 
 --Test Database Mail Configuration
 EXEC msdb.dbo.sp_send_dbmail
-     @profile_name = 'DandR_Notifications',
-     @recipients = 'kristoffsamuda1@gmail.com',
-     @body = 'Hi Kristoff,
+@profile_name = 'DandR_Notifications',
+@recipients = 'kristoffsamuda1@gmail.com',
+@body = 'Hi Kristoff,
 
-	 The database mail configuration was completed successfully.
-	 
-	 Regards,
-	 DandR Autoshop',
-     @subject = 'Your Verification Code';
+The database mail configuration was completed successfully.
+Regards,
+DandR Autoshop',
+@subject = 'Your Verification Code';
 GO
 
 --TO ROLLBACK CHANGES MADE FOR THE DATABASE MAIL PROFILE AND ACCOUNT SETUP

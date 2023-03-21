@@ -1,4 +1,4 @@
-*********Demo_Table File*********
+Demo_Table File
 Create Client_Login_Details and Employee_Login_Details tables for 
 Login, Authentication and Authorization (DONE)
 	Client_Login_Details Table to stores:(DONE)
@@ -6,8 +6,8 @@ Login, Authentication and Authorization (DONE)
 
 	Employee_Login_Details Table to store:(DONE)
 	Client_Id, User_Role, Password_Hash
----------------------------------------------------------------------------------------
-*********Demo_Access_Control File*********
+
+Demo_Access_Control File
 Create login for the: (DONE)
 Clients, Admin_Personnel, Mechanic, Salesman and Manager Users
 
@@ -16,38 +16,20 @@ Clients, Admin_Personnel, Mechanic, Salesman and Manager
 
 Create Roles for: (DONE)
 Clients, Admin_Personnel, Mechanic, Salesman and Manager 
----------------------------------------------------------------------------------------
 
-*********Demo_Database_Mail File*********
+Demo_Database_Mail File
 Create a Database Mail Profile and Account (DONE)
 password: D&Rauto876
 email: dandrautoshop876@outlook.com
----------------------------------------------------------------------------------------
 
-*********LOG ON, AUTHENTICATION AND AUTHORIZATION*********
+LOG ON, AUTHENTICATION AND AUTHORIZATION
 --AUTHENTICATION (Clients use Pins and a Temp_Verification_Code) and ENCRYPTION (Password, Pin and Temporary Verification Code hashed using -> SHA2_256)
 
 Create INSERT Trigger for updating the Client_Login_Details Table when a client is added (DONE)
----------------------------------------------------------------------------------------
 
-***Create a stored procedure Add_Password_Pin_Client to update a Client's Password and 
-Pin when registering (DONE)
----------------------------------------------------------------------------------------
+Create a stored procedure Add_Password_Pin_Client to update a Client's Password and Pin when registering (DONE)
 
-***Create a stored procedure Send_Verification_Code that sends a temporary 6 digit 
-code to a client's email and update the Client_Login_Details table accordingly (DONE)
----------------------------------------------------------------------------------------
-
-***Create a stored procedure Add_Password_Employee to update a Employee's password 
-when added to the system (DONE)
----------------------------------------------------------------------------------------
-
-***Create a Function Validate_Client_Employee_Login to validate a client or employee 
-logging in(DONE)
----------------------------------------------------------------------------------------
-
-***Create a stored procedure Logging_On to log in a user after being validated(DONE)
----------------------------------------------------------------------------------------
+Create a stored procedure Send_Verification_Code that sends a temporary 6 digit code to a client's email and update the Client_Login_Details table accordingly (DONE)
 
 Create INSERT Trigger for updating the Employee_Login_Details Table when a employee is added (DONE)
 
@@ -55,16 +37,25 @@ Create INSERT Triggers for updating the Employee_Login_Details accordingly Table
 	Administrative_Personnel
 	Salesman
 	Mechanic
----------------------------------------------------------------------------------------
 
-*********TO BE DONE*********
-Update or Create INSERT Triggers for Purchase, Sale, Vehicle, Administrative_Personnel, Mechanic and Salesman (To Do)
+Create a stored procedure Add_Password_Employee to update a Employee's password when added to the system (DONE)
 
-Create DELETE Triggers for Purchase, Sale, Vehicle, Administrative_Personnel, Mechanic and Salesman (To Do)
+Create a Function Validate_Client_Employee_Login to validate a client or employee logging in(DONE)
 
-Create Statistical_Method to find unusual login time (To Do)
+Create a stored procedure Logging_On to log in a user after being validated(DONE)
 
+--NEW--NEW--NEW----------------------------------------------------------------------------------------
+Update the Employee_Audit_Log Table to include an incrementing Primary Key (DONE)
+ and the user role that executed the action
 
+Update INSERT Triggers to add records to the audit_log table for the following tables: (DONE)
+INSERT: Purchase, Sale, Employee, Administrative_Personnel, Mechanic, Salesman
+
+Confirm Password logic to the Add_Password_Pin_Client (DONE)
+
+Figure out how login with each role (DONE)
+
+Figure out how to give sql server access to the email address or create Statistical_Method to find unusual login time (DONE)
 
 
 

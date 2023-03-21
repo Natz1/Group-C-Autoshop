@@ -112,7 +112,7 @@ DECLARE
 	@Quantity integer,
 	@Cost money;
 
-	--Storing the values in the variables from inserted 
+	--Storing the values in the variables from inserted
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Part_Name = Part_Name From inserted
 	SELECT @Quantity = Quantity From inserted
@@ -153,7 +153,7 @@ DECLARE
 	@Tracking_Device varchar(3),
 	@Cost money;
 
-	--Storing the values in the variables from inserted 
+	--Storing the values in the variables from inserted
 	SELECT @Job_Number = Job_Number From inserted
 	SELECT @Radio_Installation = Radio_Installation From inserted
 	SELECT @Car_Alarm = Car_Alarm From inserted
@@ -175,7 +175,6 @@ DECLARE
 
 	Insert into Add_On values (@Job_Number,@Radio_Installation,@Car_Alarm,@Tracking_Device,@Cost)
 
---===========================================================================
 --Trigger for adding new Clients to the Client Table and updating the Client_Login_Details Table Accordingly
 Create Trigger New_Client
 ON Client INSTEAD OF INSERT
@@ -207,7 +206,7 @@ DECLARE
 			INSERT INTO Client_Login_Details 
 			VALUES (@Client_ID,@Username,@User_Role,NULL,NULL,NULL);
 		END
---==========================================================================================
+
 --EMPLOYEE TRIGGERS
 
 --Trigger for adding New Employees to update the Employee_Login_Details table
@@ -254,7 +253,6 @@ DECLARE
 			SELECT 'User already exist'
 		END
 
---==========================================================================================
 --INSERT Triggers for Admin_Personnel, Mechanic and Salesman to update the Employee_Login_Details table
 
 Create Trigger New_Admin_Personnel
@@ -297,7 +295,6 @@ DECLARE
 			SELECT 'User already exist'
 		END
 
---==========================================================================================
 Create Trigger New_Mechanic
 ON Mechanic INSTEAD OF INSERT
 AS
@@ -339,7 +336,6 @@ DECLARE
 		BEGIN
 			SELECT 'User already exist'
 		END
---==========================================================================================
 
 Create Trigger New_Salesman
 ON Salesman INSTEAD OF INSERT
@@ -380,3 +376,4 @@ DECLARE
 		BEGIN
 			SELECT 'User already exist'
 		END
+

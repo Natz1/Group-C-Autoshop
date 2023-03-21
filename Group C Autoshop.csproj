@@ -166,8 +166,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="AutoshopDB\Demo-Modifications.sql" />
-    <Content Include="AutoshopDB\Demo-Triggers.sql" />
     <Content Include="AutoshopDB\Demo_Access_Control.sql" />
     <Content Include="AutoshopDB\Demo_Database_Mail.sql" />
     <Content Include="AutoshopDB\Demo_Functions.sql" />
@@ -178,6 +176,7 @@
     <Content Include="AutoshopDB\Demo_Stored_Procedures.sql" />
     <Content Include="AutoshopDB\Demo_Tables.sql" />
     <Content Include="AutoshopDB\Demo_Transactions.sql" />
+    <Content Include="AutoshopDB\Demo_Triggers.sql" />
     <Content Include="AutoshopDB\Demo_Views.sql" />
     <Content Include="AutoshopDB\Security Updates.txt" />
     <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
