@@ -47,12 +47,12 @@ EXEC sp_addrolemember 'Client_Role', 'Client';
 
 --Configuring the Client Role functionalities
 GRANT SELECT ON dbo.Vehicle TO Client_Role;
-/*GRANT SELECT, INSERT ON dbo.Sale TO Client_Role;
+GRANT SELECT, INSERT ON dbo.Sale TO Client_Role;
 GRANT SELECT, INSERT ON dbo.Client TO Client_Role;
 GRANT SELECT, INSERT ON dbo.Client_Phone TO Client_Role;
 GRANT SELECT, INSERT ON dbo.Work_Done TO Client_Role;
 GRANT SELECT, INSERT ON dbo.Part_Changed TO Client_Role;
-GRANT SELECT, INSERT ON dbo.Add_On TO Client_Role;*/
+GRANT SELECT, INSERT ON dbo.Add_On TO Client_Role;
 
 
 --ADMIN_PERSONNEL-----------------------------
