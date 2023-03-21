@@ -80,6 +80,9 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Work_Done TO Admin_Personnel_Role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Part_Changed TO Admin_Personnel_Role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Add_On TO Admin_Personnel_Role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Repair TO Admin_Personnel_Role;
+GRANT INSERT ON dbo.Employee_Login_Details TO Admin_Personnel_Role;
+GRANT INSERT ON dbo.Client_Login_Details TO Admin_Personnel_Role;
+GRANT INSERT ON dbo.Employee_Audit_Log TO Admin_Personnel_Role;
 
 
 --MECHANIC------------------------------------
@@ -134,4 +137,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Supervises TO Manager_Role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Administrative_Personnel TO Manager_Role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Mechanic TO Manager_Role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.Salesman TO Manager_Role;
-
+GRANT INSERT ON dbo.Employee_Login_Details TO Manager_Role;
+GRANT INSERT ON dbo.Client_Login_Details TO Manager_Role;
+GRANT INSERT ON dbo.Employee_Audit_Log TO Manager_Role;

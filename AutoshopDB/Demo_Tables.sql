@@ -230,20 +230,28 @@ Create table Employee_Login_Details
 (
 	Employee_Id			integer NOT NULL,
 	User_Role			varchar(30),
-	Password_Hash		varchar(256)
+	Password_Hash		varchar(256),
+	First_Time_Log		varchar(3)
 
-	Constraint fk_emp7 foreign key (Employee_Id) references Employee (Employee_ID)
+	Constraint fk_emp7 foreign key (Employee_Id) references Employee (Employee_ID),
+	Constraint ck_add3 check (First_Time_Log in('Yes','No'))
 );
+
+Drop table Employee_Login_Details
 
 --Audit log
 --Stores the actions taken by employees on the Purchase, Sale, Vehicle, 
 
 Create Table Employee_Audit_Log
 (
-	Employee_Id		integer NOT NULL,
-	Action			varchar(50) NOT NULL,
-	Time			Date NOT NULL
-
-	Constraint fk_emp8 foreign key (Employee_Id) references Employee (Employee_ID)
+	Audit_Record_No		integer		primary key		IDENTITY(1,1),	
+	User_Role			varchar(30) NOT NULL,
+	Action				char(6),
+	Description			varchar(150) NOT NULL,
+	Employee_affected	integer,
+	Vehicle_affected	char(17),
+	Time				Datetime NOT NULL,
 );
 
+
+Drop table Employee_Audit_Log

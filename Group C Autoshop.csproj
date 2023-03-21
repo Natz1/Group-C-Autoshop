@@ -167,12 +167,12 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="AutoshopDB\Demo-Modifications.sql" />
-    <Content Include="AutoshopDB\Demo-Seccurity.sql" />
     <Content Include="AutoshopDB\Demo-Triggers.sql" />
     <Content Include="AutoshopDB\Demo_Access_Control.sql" />
     <Content Include="AutoshopDB\Demo_Database_Mail.sql" />
     <Content Include="AutoshopDB\Demo_Functions.sql" />
     <Content Include="AutoshopDB\Demo_Insert Statements.sql" />
+    <Content Include="AutoshopDB\Demo_Login_Logic.sql" />
     <Content Include="AutoshopDB\Demo_Select_Statements.sql" />
     <Content Include="AutoshopDB\Demo_Statistical_Method.sql" />
     <Content Include="AutoshopDB\Demo_Stored_Procedures.sql" />
@@ -192,6 +192,7 @@
     <Content Include="Default.aspx" />
     <Content Include="UserRoles\Client\ClientInvoice.aspx" />
     <Content Include="UserRoles\Client\OrderError.aspx" />
+    <Content Include="UserRoles\EmployeeLogin.aspx" />
     <Content Include="UserRoles\Manager\Clients.aspx" />
     <Content Include="UserRoles\Manager\Employees.aspx" />
     <Content Include="UserRoles\Manager\Purchases.aspx" />
@@ -417,6 +418,13 @@
     </Compile>
     <Compile Include="UserRoles\Client\OrderError.aspx.designer.cs">
       <DependentUpon>OrderError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\EmployeeLogin.aspx.cs">
+      <DependentUpon>EmployeeLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\EmployeeLogin.aspx.designer.cs">
+      <DependentUpon>EmployeeLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\Manager\Clients.aspx.cs">
       <DependentUpon>Clients.aspx</DependentUpon>

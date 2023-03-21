@@ -1,6 +1,6 @@
 --Demo Documentation Stored Procedures
 --Version 1 updated Feb 25, 2023
-
+Use Car_Mart_Web_App
 --Shows the sales made by a salesman or saleswoman and his or her respective clients and the vehicles that were sold.
 
 Create Procedure Sales_Done_By_Salesman
@@ -106,7 +106,7 @@ GO
 
 --==========================================================================
 --Stored Procedure to add a Client Password and Pin to the Login_Client_Details table
-Alter Procedure Add_Password_Pin_Client
+Create Procedure Add_Password_Pin_Client
 (
 	@Username varchar(35), 
 	@Password varchar(30), 
@@ -135,7 +135,6 @@ END
 GO
 
 Select * from Client_Login_Details;
-Exec Add_Password_Pin_Client 'bscott@gmail.com', 'Bob123!', '1234';
 
 --Procedure to Send a verification code a client when logging in
 Create Procedure Send_Verification_Code_Client
@@ -192,6 +191,7 @@ BEGIN TRANSACTION
 	WHERE Password_Hash = HASHBYTES('SHA2_256', @Password) AND Employee_Id = @Employee_Id)
 		BEGIN
 			SELECT 'Password was added Successfuly'
+			COMMIT TRANSACTION
 		END
 	ELSE
 		BEGIN
@@ -199,31 +199,5 @@ BEGIN TRANSACTION
 			ROLLBACK TRANSACTION
 		END
 
-COMMIT TRANSACTION
-END
-GO
-
---Stored Procedure to log a client or employee in after being validated
-Create Procedure Logging_On
-(
-	@username varchar(35),
-	@password varchar(256)
-)
-AS
-BEGIN
-	DECLARE
-		@user_role varchar(30);
-	IF (SELECT dbo.Validate_Client_Employee_Login(@username,@password)) = 'Yes'
-		BEGIN
-			IF EXISTS (Select * From Client_Login_Details Where Username = @username)
-				BEGIN
-					EXECUTE AS LOGIN = 'Client';
-				END
-			IF EXISTS (Select * From Employee_Login_Details Where CAST(Employee_Id AS varchar(35)) = @username)
-				BEGIN
-					SELECT @user_role = User_Role From Employee_Login_Details Where CAST(Employee_Id AS varchar(35)) = @username;
-					EXECUTE AS LOGIN = @user_role;
-				END
-		END
 END
 GO

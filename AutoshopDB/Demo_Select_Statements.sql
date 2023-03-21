@@ -69,6 +69,16 @@ Exec Profit_Earned_From_Client_Purchases_By_Year [Year]; --Manager
 Exec Best_Selling_Car [Start_Date], [End_Date]; --Manager
 --7
 Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin
+--8
+Exec Update_Salary_Or_Subsistence [Employee_Id], [Salary], [Employee Type (Option: Admin/Mechanic/Salesman)];
+--9
+Exec Add_Password_Pin_Client [Username], [Password], [Pin];
+--10
+Exec Send_Verification_Code [Username];
+--11
+Exec Add_Password_Employee [Username], [Password];
+--12
+Exec Logging_On [Username], [Password];
 
 --Function Select Statements
 
@@ -76,6 +86,8 @@ Exec Add_Salesman_Id [Chassis_Number],[Salesman_Id]; --Admin
 Select * from dbo.Client_Invoice([Client_Id]); --Admin, Enduser
 --2
 Select * from dbo.Assigned_Supervisor([Supervisor_Id]); --Admin
+--3
+Select * from dbo.Validate_Client_Employee_Login([Username],[Password])
 
 --Transaction Statements
 --1
@@ -114,3 +126,17 @@ Drop Trigger Add_On_Insert
 Select * from Client_Login_Details
 Select * from Employee_Login_Details
 Select * from Employee_Audit_Log
+
+
+
+--Function Select Statements
+
+--1
+Select * from dbo.Client_Invoice([Client_id]);
+--2
+Select * from dbo.Assigned_Supervisor([Supervisor_Id]);
+
+
+--Transaction Statements
+--1
+EXEC Update_Salary_Or_Subsistence [Employee_Id],[Salary or Subsistence],[Employee Type];
