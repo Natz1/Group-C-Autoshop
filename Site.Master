@@ -92,23 +92,24 @@
                     </ul>
 
                     <!--Register and Login-->
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li id="register" runat="server"><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li id="login" runat="server"><a runat="server" href="~/Account/Login">Log in</a></li>
-                                <li id="elogin" runat="server"><a runat="server" href="~/UserRoles/EmployeeLogin">Employee Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%:Session["User"].ToString() %>!</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                    <ul class="nav navbar-nav navbar-right">
+                        <asp:PlaceHolder ID="NotIn" runat="server">
+                            <li id="cregister" runat="server"><a runat="server" href="~/Account/Register">Register</a></li>
+                            <li id="clogin" runat="server"><a runat="server" href="~/Account/Login">Log in</a></li>
+                            <li id="elogin" runat="server"><a runat="server" href="~/UserRoles/EmployeeLogin">Employees Only</a></li>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="In" runat="server">
+                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello <%:Session["User"].ToString() %>!</a></li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log Off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </li>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="EmpIn" runat="server">
+                            <li>
+                                <asp:LinkButton ID="Logout" runat="server" OnClick="Logout_Click">Log Out</asp:LinkButton>
+                            </li>
+                        </asp:PlaceHolder>
+                    </ul>
                 </div>
             </div>
         </div>

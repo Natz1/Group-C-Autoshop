@@ -24,10 +24,9 @@ namespace Group_C_Autoshop
         {
             Response.Redirect("/Default.aspx");
             //Initializing the session's variables
-            //Getting the current client's email username
-            String currentUser = HttpContext.Current.User.Identity.Name.ToString();
-            //Saving username to session
-            Session["User"] = currentUser;
+
+            //User
+            Session["User"] = "";
 
             //Role
             Session["ERole"] = "";
