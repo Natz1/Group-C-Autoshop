@@ -75,10 +75,7 @@ namespace Group_C_Autoshop
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String currentUser = HttpContext.Current.User.Identity.Name.ToString();
-            //Saving username to session
-            Session["User"] = currentUser;
-
+            //Making login/out navigation visible
             if (Session["User"].ToString() == "")
             {
                 NotIn.Visible = true;
@@ -153,28 +150,11 @@ namespace Group_C_Autoshop
 
 
 
-
-            //***********************Creating admin user
+            //***********************Creating manager user
             var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
-            string email = "admin@gmail.com";
+            string email = "manager@gmail.com";
             //***********************Check if user is already present
             var search1 = userManager.FindByEmail(email);
-            if (search1 == null)
-            {
-                var user = new ApplicationUser()
-                {
-                    UserName = "admin@gmail.com",
-                    Email = "admin@gmail.com"
-                };
-                IdentityResult result = userManager.Create(user, "Admin123!"); //Password
-                userManager.AddToRole(user.Id, "admin");
-            }
-
-            //***********************Creating admin user
-            userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
-            email = "manager@gmail.com";
-            //***********************Check if user is already present
-            search1 = userManager.FindByEmail(email);
             if (search1 == null)
             {
                 var user = new ApplicationUser()
@@ -186,35 +166,7 @@ namespace Group_C_Autoshop
                 userManager.AddToRole(user.Id, "manager");
             }
 
-            //***********************Creating admin user
-            email = "salesman@gmail.com";
-            //***********************Check if user is already present
-            search1 = userManager.FindByEmail(email);
-            if (search1 == null)
-            {
-                var user = new ApplicationUser()
-                {
-                    UserName = "salesman@gmail.com",
-                    Email = "salesman@gmail.com"
-                };
-                IdentityResult result = userManager.Create(user, "Sale123!"); //Password
-                userManager.AddToRole(user.Id, "salesman");
-            }
-
-            //***********************Creating admin user
-            email = "mechanic@gmail.com";
-            //***********************Check if user is already present
-            search1 = userManager.FindByEmail(email);
-            if (search1 == null)
-            {
-                var user = new ApplicationUser()
-                {
-                    UserName = "mechanic@gmail.com",
-                    Email = "mechanic@gmail.com"
-                };
-                IdentityResult result = userManager.Create(user, "Mec123!"); //Password
-                userManager.AddToRole(user.Id, "mechanic");
-            }
+            
 
 
 
@@ -240,7 +192,40 @@ namespace Group_C_Autoshop
             mechanic2.Visible= false;
             mechanic3.Visible= false;
 
+            enduser1.Visible = false;
+
             //***********************Make navigation visible depending on user role
+
+            if (Context.User.IsInRole("enduser"))
+            {
+                NotIn.Visible = false;
+                EmpIn.Visible = true;
+                In.Visible = false;
+
+                enduser1.Visible = true;
+
+                admin.Visible = false;
+                admin1.Visible = false;
+                admin2.Visible = false;
+                admin3.Visible = false;
+                admin5.Visible = false;
+
+                manager1.Visible = false;
+                manager2.Visible = false;
+                manager3.Visible = false;
+                manager4.Visible = false;
+                manager5.Visible = false;
+                manager6.Visible = false;
+
+                salesman1.Visible = false;
+                salesman2.Visible = false;
+                salesman3.Visible = false;
+
+                mechanic1.Visible = false;
+                mechanic2.Visible = false;
+                mechanic3.Visible = false;
+            }
+
             if (Context.User.IsInRole("admin") || Session["ERole"].ToString() == "Admin_Personnel")
             {
                 NotIn.Visible = false;
@@ -264,6 +249,9 @@ namespace Group_C_Autoshop
 
             if (Context.User.IsInRole("manager"))
             {
+                NotIn.Visible = false;
+                In.Visible = true;
+                EmpIn.Visible = false;
 
                 manager1.Visible = true;
                 manager2.Visible = true;

@@ -12,20 +12,26 @@ using System.Security.Claims;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using Group_C_Autoshop.UserRoles.Manager;
 using Microsoft.AspNet.Identity;
+using System.Web.Configuration;
 
 namespace Group_C_Autoshop.UserRoles.EndUser
 {
     public partial class ClientOrder : System.Web.UI.Page
     {
-        //Make new SQL Connection
-        SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
+
+
 
             //If chassis session variable is not empty
             if (!string.IsNullOrEmpty(Session["chassis"] as string))
@@ -99,6 +105,17 @@ namespace Group_C_Autoshop.UserRoles.EndUser
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+
+
             //Insert into sales table values**********************************
             //Create a command to insert the values into the database
             SqlCommand cmd = con.CreateCommand();

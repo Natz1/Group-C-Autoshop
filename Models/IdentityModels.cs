@@ -30,7 +30,7 @@ namespace Group_C_Autoshop.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Car_Mart_Web_AppConnectionString", throwIfV1Schema: false)
         {
         }
 

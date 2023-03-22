@@ -26,7 +26,9 @@ namespace Group_C_Autoshop
             //Initializing the session's variables
 
             //User
-            Session["User"] = "";
+            String currentUser = HttpContext.Current.User.Identity.Name.ToString();
+            //Saving username to session
+            Session["User"] = currentUser;
 
             //Role
             Session["ERole"] = "";

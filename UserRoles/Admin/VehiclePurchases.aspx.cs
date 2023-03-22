@@ -9,24 +9,31 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using System.Reflection;
+using System.Web.Configuration;
 
 namespace Group_C_Autoshop.UserRoles
 {
     public partial class VehiclesPurchases : System.Web.UI.Page
     {
-        //Make new SQL Connection
-        SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Add_Click(object sender, EventArgs e)
+        {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-        }
 
-        protected void Add_Click(object sender, EventArgs e)
-        {
+
             PurchaseData.Insert();
 
             //Adding salesman ID

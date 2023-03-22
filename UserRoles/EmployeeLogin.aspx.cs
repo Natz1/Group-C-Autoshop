@@ -6,24 +6,31 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 namespace Group_C_Autoshop.UserRoles
 {
     public partial class EmployeeLogin : System.Web.UI.Page
     {
-        //Make new SQL Connection
-        SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Login_Click(object sender, EventArgs e)
+        {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-        }
 
-        protected void Login_Click(object sender, EventArgs e)
-        {
+
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "Exec ELogin @ID, @password";
@@ -38,32 +45,30 @@ namespace Group_C_Autoshop.UserRoles
 
             if (result == "First Time Login: Please change your password")
             {
-                Response.Write("<script>alert('Employee successfully logged in.')</script");
+                //Response.Write("<script language=javascript>alert('" + EmpIDTxt.Text + "');</script>");
                 Session["User"] = EmpIDTxt.Text;
                 //Get the role of the employee
                 Session["ERole"] = cmd.ExecuteScalar().ToString();
-                Response.Redirect("/Default");
+                //Change user password for first login
+                Response.Redirect("ChangePassword");
                 
             }
             else if (result == "Admin_Personnel")
             {
                 Session["User"] = EmpIDTxt.Text;
                 Session["ERole"] = "Admin_Personnel";
-                Response.Write("<script>alert('Admin successfully logged in.')</script");
                 Response.Redirect("/Default");
             }
             else if(result == "Mechanic")
             {
                 Session["User"] = EmpIDTxt.Text;
                 Session["ERole"] = "Mechanic";
-                Response.Write("<script>alert('Mechanic successfully logged in.')</script");
                 Response.Redirect("/Default");
             }
             else if(result == "Salesman")
             {
                 Session["User"] = EmpIDTxt.Text;
                 Session["ERole"] = "Salesman";
-                Response.Write("<script>alert('Salesman successfully logged in.')</script");
                 Response.Redirect("/Default");
             }
             else

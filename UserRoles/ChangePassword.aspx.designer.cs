@@ -7,54 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_C_Autoshop.Account {
-    
-    
-    public partial class ForgotPassword {
-        
+namespace Group_C_Autoshop.UserRoles
+{
+
+
+    public partial class ChangePassword
+    {
+
         /// <summary>
-        /// loginForm control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder loginForm;
-        
+        protected global::System.Web.UI.WebControls.TextBox Password;
+
         /// <summary>
-        /// ErrorMessage control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ErrorMessage;
-        
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
         /// <summary>
-        /// FailureText control.
+        /// Confirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal FailureText;
-        
+        protected global::System.Web.UI.WebControls.TextBox Confirm;
+
         /// <summary>
-        /// Email control.
+        /// Save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
-        
+        protected global::System.Web.UI.WebControls.Button Save;
+
         /// <summary>
-        /// DisplayEmail control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder DisplayEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
+        /// Result control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Result;
     }
 }

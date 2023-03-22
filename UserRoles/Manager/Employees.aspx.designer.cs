@@ -159,6 +159,33 @@ namespace Group_C_Autoshop.UserRoles.Manager
         protected global::System.Web.UI.WebControls.GridView MecList;
 
         /// <summary>
+        /// MIDTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MIDTxt;
+
+        /// <summary>
+        /// AreaTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AreaTxt;
+
+        /// <summary>
+        /// Mec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Mec;
+
+        /// <summary>
         /// SalesmanData control.
         /// </summary>
         /// <remarks>

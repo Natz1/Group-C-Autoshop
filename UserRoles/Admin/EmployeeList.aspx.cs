@@ -11,24 +11,32 @@ using System.Net.NetworkInformation;
 using Group_C_Autoshop.Models;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
+using System.Web.Configuration;
 
 namespace Group_C_Autoshop.Admin
 {
     public partial class EmployeeList : System.Web.UI.Page
     {
-        //Make new SQL Connection
-        SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Add_Click(object sender, EventArgs e)
+        {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-        }
 
-        protected void Add_Click(object sender, EventArgs e)
-        {
+
+
             EmpData.Insert();
 
             //Employee log in stored procedure

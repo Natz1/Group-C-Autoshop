@@ -27,8 +27,6 @@ namespace Group_C_Autoshop.Account
         {
             if (IsValid)
             {
-                // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
                 // This doesn't count login failures towards account lockout
@@ -41,15 +39,7 @@ namespace Group_C_Autoshop.Account
                         Session["ERole"] = "";
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
-                    /*case SignInStatus.LockedOut:
-                        Response.Redirect("/Account/Lockout");
-                        break;
-                    case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
-                                                        Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
-                        break;*/
+
                     case SignInStatus.Failure:
                     default:
                         FailureText.Text = "Invalid login attempt";

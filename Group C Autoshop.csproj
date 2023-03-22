@@ -152,33 +152,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\Unused\AddPhoneNumber.aspx" />
-    <Content Include="Account\Unused\Confirm.aspx" />
-    <Content Include="Account\Unused\Forgot.aspx" />
-    <Content Include="Account\Unused\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="Account\Unused\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
-    <Content Include="Account\Unused\TwoFactorAuthenticationSignIn.aspx" />
-    <Content Include="Account\Unused\VerifyPhoneNumber.aspx" />
-    <Content Include="AutoshopDB\Demo_Access_Control.sql" />
-    <Content Include="AutoshopDB\Demo_Database_Mail.sql" />
-    <Content Include="AutoshopDB\Demo_Functions.sql" />
-    <Content Include="AutoshopDB\Demo_Insert Statements.sql" />
-    <Content Include="AutoshopDB\Demo_Login_Logic.sql" />
-    <Content Include="AutoshopDB\Demo_Select_Statements.sql" />
-    <Content Include="AutoshopDB\Demo_Statistical_Method.sql" />
-    <Content Include="AutoshopDB\Demo_Stored_Procedures.sql" />
-    <Content Include="AutoshopDB\Demo_Tables.sql" />
-    <Content Include="AutoshopDB\Demo_Transactions.sql" />
-    <Content Include="AutoshopDB\Demo_Triggers.sql" />
-    <Content Include="AutoshopDB\Demo_Views.sql" />
-    <Content Include="AutoshopDB\Security Updates.txt" />
     <Content Include="UserRoles\Admin\ClientInvoice.aspx" />
     <Content Include="UserRoles\Admin\ClientList.aspx" />
     <Content Include="UserRoles\Admin\EmployeeList.aspx" />
@@ -189,6 +169,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="UserRoles\ChangePassword.aspx" />
     <Content Include="UserRoles\Client\ClientInvoice.aspx" />
     <Content Include="UserRoles\Client\OrderError.aspx" />
     <Content Include="UserRoles\EmployeeLogin.aspx" />
@@ -259,34 +240,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\Unused\AddPhoneNumber.aspx.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\AddPhoneNumber.aspx.designer.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Unused\Confirm.aspx.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\Confirm.aspx.designer.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Unused\Forgot.aspx.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\Forgot.aspx.designer.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Unused\Lockout.aspx.cs">
-      <DependentUpon>Lockout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\Lockout.aspx.designer.cs">
-      <DependentUpon>Lockout.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -322,13 +275,6 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Unused\RegisterExternalLogin.aspx.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\RegisterExternalLogin.aspx.designer.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -342,20 +288,6 @@
     </Compile>
     <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Unused\TwoFactorAuthenticationSignIn.aspx.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\TwoFactorAuthenticationSignIn.aspx.designer.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Unused\VerifyPhoneNumber.aspx.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Unused\VerifyPhoneNumber.aspx.designer.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Parts.cs" />
     <Compile Include="Site.Master.designer.cs">
@@ -406,6 +338,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRoles\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserRoles\Client\ClientInvoice.aspx.cs">
       <DependentUpon>ClientInvoice.aspx</DependentUpon>

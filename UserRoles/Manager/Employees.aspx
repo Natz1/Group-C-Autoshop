@@ -181,6 +181,36 @@
     <br />
 
 
+    <!--Form to enter purchase info-->
+    <h3>Update Area of Expertise</h3>
+    <table>
+        <tr>
+            <td><h4>Mechanic ID: </h4></td>
+            <td>
+                <asp:TextBox ID="MIDTxt" runat="server"></asp:TextBox>
+            </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" ID is required." 
+                ControlToValidate="MIDTxt" ValidationGroup="Val4"></asp:RequiredFieldValidator></td>
+        </tr>
+        <tr>
+            <td><h4>Area of Expertise: </h4></td>
+            <td>
+                <asp:TextBox ID="AreaTxt" runat="server"></asp:TextBox>
+            </td>
+            <td><asp:RequiredFieldValidator runat="server" ErrorMessage=" Area of Expertise is required." 
+                ControlToValidate="AreaTxt" ValidationGroup="Val4"></asp:RequiredFieldValidator>
+            </td>
+            <td>
+                <asp:Button ID="Mec" runat="server" Text="Add"  ValidationGroup="Val4" OnClick="Mec_Click" />
+            </td>
+        </tr>
+    </table>
+    <br />
+
+
+
+
+
 
     <h3>Salesmen</h3>
     <!--Link to database-->

@@ -6,24 +6,32 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 namespace Group_C_Autoshop.EndUser
 {
     public partial class VehicleInventory : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=NATZ\NIA;Initial Catalog=Car_Mart_Web_App;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Add1_Click(object sender, EventArgs e)
+        {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-        }
 
-        protected void Add1_Click(object sender, EventArgs e)
-        {
-            if(IsPostBack)
+
+            if (IsPostBack)
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -51,6 +59,17 @@ namespace Group_C_Autoshop.EndUser
         {
             if (IsPostBack)
             {
+                //Make new SQL Connection
+                string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+                SqlConnection con = new SqlConnection(connection);
+
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con.Open();
+
+
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText =
@@ -77,6 +96,17 @@ namespace Group_C_Autoshop.EndUser
         {
             if (IsPostBack)
             {
+                //Make new SQL Connection
+                string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+                SqlConnection con = new SqlConnection(connection);
+
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con.Open();
+
+
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText =
