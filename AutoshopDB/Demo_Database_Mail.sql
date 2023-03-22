@@ -1,4 +1,4 @@
---DATABASE MAILING FUNCTIONALITY
+--DATABASE MAILING FUNCTIONALITY***********
 Use Car_Mart_Web_App
 --Enable Database Mail
 sp_configure 'show advanced options', 1;

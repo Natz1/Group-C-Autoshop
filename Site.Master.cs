@@ -75,9 +75,6 @@ namespace Group_C_Autoshop
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String currentUser = HttpContext.Current.User.Identity.Name.ToString();
-            //Saving username to session
-            Session["User"] = currentUser;
 
             if (Session["User"].ToString() == "")
             {

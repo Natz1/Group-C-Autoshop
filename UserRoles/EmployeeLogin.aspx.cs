@@ -45,6 +45,7 @@ namespace Group_C_Autoshop.UserRoles
 
             if (result == "First Time Login: Please change your password")
             {
+                //Response.Write("<script language=javascript>alert('" + EmpIDTxt.Text + "');</script>");
                 Session["User"] = EmpIDTxt.Text;
                 //Get the role of the employee
                 Session["ERole"] = cmd.ExecuteScalar().ToString();

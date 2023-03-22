@@ -200,7 +200,7 @@ BEGIN TRANSACTION
 END
 GO;
 
---Procedure to Send a verification code a client when logging in
+--Procedure to Send a verification code a client when logging in***********
 Create Procedure Send_Verification_Code_Client
 (
 	@Username varchar(35)
