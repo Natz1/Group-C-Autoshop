@@ -1,7 +1,7 @@
 Use Car_Mart_Web_App
 
 
---Logging In***
+--Logging In******************
 Create procedure CLogin(@username varchar(30), @password varchar(30))
 As
 Begin
@@ -41,7 +41,7 @@ Begin
 End
 Go
 
---Authenticating Client***
+--Authenticating Client******************
 IF EXISTS (Select * From Client_Login_Details Where Username = @username AND Pin_Hash = HASHBYTES('SHA2_256',@pin) AND Temporary_Code_Hash = HASHBYTES('SHA2_256',@temporary_verification_code))
 	BEGIN
 		EXECUTE AS LOGIN = 'Client';

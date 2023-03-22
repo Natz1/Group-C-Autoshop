@@ -75,7 +75,7 @@ namespace Group_C_Autoshop
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Making login/out navigation visible
             if (Session["User"].ToString() == "")
             {
                 NotIn.Visible = true;

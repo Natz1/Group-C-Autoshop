@@ -200,7 +200,7 @@ BEGIN TRANSACTION
 END
 GO;
 
---Procedure to Send a verification code a client when logging in***********
+--Procedure to Send a verification code a client when logging in
 Create Procedure Send_Verification_Code_Client
 (
 	@Username varchar(35)
@@ -239,7 +239,7 @@ END
 GO
 
 --Stored Procedure to add a Employee Password to the system
-Alter Procedure Add_Password_Employee
+Create Procedure Add_Password_Employee
 (
 	@Employee_Id integer, 
 	@Password varchar(30)
@@ -253,7 +253,7 @@ BEGIN TRANSACTION
 	WHERE Employee_Id = @Employee_Id;
 
 	UPDATE Employee_Login_Details
-	SET First_Time_login = 'No'
+	SET First_Time_Login = 'No'
 	WHERE Employee_Id = @Employee_Id
 
 	IF EXISTS (SELECT * FROM Employee_Login_Details 
@@ -270,3 +270,5 @@ BEGIN TRANSACTION
 COMMIT TRANSACTION
 END
 GO
+
+Drop Procedure Add_Password_Employee
