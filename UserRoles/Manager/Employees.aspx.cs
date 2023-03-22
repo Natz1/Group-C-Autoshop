@@ -57,5 +57,31 @@ namespace Group_C_Autoshop.UserRoles.Manager
             AdminData.Update();
             Response.Redirect("Employees");
         }
+
+        protected void Mec_Click(object sender, EventArgs e)
+        {
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["Car_Mart_Web_AppConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+
+            //Updating area of expertise
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Update Mechanic Set Area_of_Expertise = @area where Mechanic_ID = @mec";
+            cmd.Parameters.Add("@area", SqlDbType.VarChar);
+            cmd.Parameters["@area"].Value = AreaTxt.Text;
+
+            cmd.Parameters.Add("@mec", SqlDbType.Int);
+            cmd.Parameters["@mec"].Value = MIDTxt.Text;
+            cmd.ExecuteNonQuery();
+
+            Response.Redirect("Employees");
+        }
     }
 }

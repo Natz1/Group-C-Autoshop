@@ -26,7 +26,7 @@
                         <h4>Email:</h4>
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="Email" TextMode="Email" />
+                        <asp:TextBox runat="server" ID="Email" ForeColor="Black" TextMode="Email" />
                     </td>
                 </tr>
                 <tr>
@@ -46,7 +46,7 @@
                         <h4>Password: </h4>
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="Password" TextMode="Password" />
+                        <asp:TextBox runat="server" ID="Password" ForeColor="Black" TextMode="Password" />
                     </td>
                 </tr>
                 <tr>

@@ -48,7 +48,8 @@ namespace Group_C_Autoshop.UserRoles
                 Session["User"] = EmpIDTxt.Text;
                 //Get the role of the employee
                 Session["ERole"] = cmd.ExecuteScalar().ToString();
-                Response.Redirect("/Default");
+                //Change user password for first login
+                Response.Redirect("ChangePassword");
                 
             }
             else if (result == "Admin_Personnel")

@@ -153,28 +153,11 @@ namespace Group_C_Autoshop
 
 
 
-
-            //***********************Creating admin user
+            //***********************Creating manager user
             var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
-            string email = "admin@gmail.com";
+            string email = "manager@gmail.com";
             //***********************Check if user is already present
             var search1 = userManager.FindByEmail(email);
-            if (search1 == null)
-            {
-                var user = new ApplicationUser()
-                {
-                    UserName = "admin@gmail.com",
-                    Email = "admin@gmail.com"
-                };
-                IdentityResult result = userManager.Create(user, "Admin123!"); //Password
-                userManager.AddToRole(user.Id, "admin");
-            }
-
-            //***********************Creating admin user
-            userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
-            email = "manager@gmail.com";
-            //***********************Check if user is already present
-            search1 = userManager.FindByEmail(email);
             if (search1 == null)
             {
                 var user = new ApplicationUser()
@@ -186,35 +169,7 @@ namespace Group_C_Autoshop
                 userManager.AddToRole(user.Id, "manager");
             }
 
-            //***********************Creating admin user
-            email = "salesman@gmail.com";
-            //***********************Check if user is already present
-            search1 = userManager.FindByEmail(email);
-            if (search1 == null)
-            {
-                var user = new ApplicationUser()
-                {
-                    UserName = "salesman@gmail.com",
-                    Email = "salesman@gmail.com"
-                };
-                IdentityResult result = userManager.Create(user, "Sale123!"); //Password
-                userManager.AddToRole(user.Id, "salesman");
-            }
-
-            //***********************Creating admin user
-            email = "mechanic@gmail.com";
-            //***********************Check if user is already present
-            search1 = userManager.FindByEmail(email);
-            if (search1 == null)
-            {
-                var user = new ApplicationUser()
-                {
-                    UserName = "mechanic@gmail.com",
-                    Email = "mechanic@gmail.com"
-                };
-                IdentityResult result = userManager.Create(user, "Mec123!"); //Password
-                userManager.AddToRole(user.Id, "mechanic");
-            }
+            
 
 
 
@@ -330,7 +285,6 @@ namespace Group_C_Autoshop
 
         protected void Logout_Click(object sender, EventArgs e)
         {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             Session.Abandon();
             Request.Cookies.Clear();
             Response.Redirect("/Default");
