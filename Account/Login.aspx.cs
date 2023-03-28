@@ -36,6 +36,9 @@ namespace Group_C_Autoshop.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        //Saving username to session
+                        Session["User"] = Email.Text;
+
                         Session["ERole"] = "";
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
